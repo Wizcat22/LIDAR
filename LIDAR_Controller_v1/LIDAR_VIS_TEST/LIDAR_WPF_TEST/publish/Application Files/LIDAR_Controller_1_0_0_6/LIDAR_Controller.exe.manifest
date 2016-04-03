@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="LIDAR_Controller.exe" version="1.0.0.6" publicKeyToken="caf21ae02ecdbeaa" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="mini.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="LIDAR_Controller" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="LIDAR_Controller.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC-Manifestoptionen
+             Wenn Sie die Ebene der Benutzerkontensteuerung für Windows ändern möchten, ersetzen Sie den 
+             Knoten "requestedExecutionLevel" wie folgt.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Durch Angabe des Elements "requestedExecutionLevel" wird die Datei- und Registrierungsvirtualisierung deaktiviert. 
+            Entfernen Sie dieses Element, wenn diese Virtualisierung aus Gründen der Abwärtskompatibilität
+            für die Anwendung erforderlich ist.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HelixToolkit.dll" size="4608">
+      <assemblyIdentity name="HelixToolkit" version="2015.1.629.0" publicKeyToken="52AA3500039CAF0D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>thPFN1e76qcPfA2R/2EWJfqQA0yzY/B27E0j01If8Kc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HelixToolkit.Wpf.dll" size="481792">
+      <assemblyIdentity name="HelixToolkit.Wpf" version="2015.1.629.0" publicKeyToken="52AA3500039CAF0D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>K7zYOXX6k1x0Gyu5RwXYX882AnBxAWvlDKdd00H4fBI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LIDAR_Controller.exe" size="772032">
+      <assemblyIdentity name="LIDAR_Controller" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>DCjNtLnxtGypRKhl9+zzUGUsBcxJNaER9Cpj6KX5Ei8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="LIDAR_Controller.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6N7MliNbVJSIAIPrecIshMbZ7zEoKLr5SQvud4LDUOw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="mini.ico" size="370070">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nKQqnGxYdJIHqvFw2lE+o5+HIxaXq8AuHeOMv/MpyY0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Eine Liste der Windows-Versionen, unter denen diese Anwendung getestet
+           und für die sie entwickelt wurde. Wenn Sie die Auskommentierung der entsprechenden Elemente aufheben, 
+           wird von Windows automatisch die kompatibelste Umgebung ausgewählt. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=APOCALYPSE\alex-" issuerKeyHash="af320b793c51371b2ee4427c38c16592fe97a7bb" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>dhSU9BNw29cXYdrJS2wgAGi0hkcFkTicGDkpIXFDK5I=</DigestValue></Reference></SignedInfo><SignatureValue>eqqXMfD+rSJZLlsn90JBq+n1XalWQ9dqkzInqsiRz+C52nX76qucM/rv5cKzbkIC0oVHk9FpVMyi27WmaRbB6jnYHqB8ZcY20I3FL9AfSKCyHhM76tJICp688tRPG8CKRFzceRBOm8CJeQa/reKXNgP9SZJsCWJJraXZR/s18tk=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>y+0M0ixPQUrKTcJwcto3d8CMhtt9cU/PQJW4xzjMw+TcwYGLjNXT6sM3hOrLd8YQ+/Mjl6nZn8g0fWjCoXT6gW695IIZc0nLdFqY/GdoL0LW6VB5bMb0ThQ5uLuV76MDTis7dr0eRWGHTTiDacpGZ7zdT86jVB3cYKXNzv/SYyU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="922b4371212939189c3891054786b46800206c4bc9da6117d7db7013f4941476" Description="" Url=""><as:assemblyIdentity name="LIDAR_Controller.exe" version="1.0.0.6" publicKeyToken="caf21ae02ecdbeaa" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=APOCALYPSE\alex-</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>O9Y8SflrDEk8bixj2KOtL5EDUz/Wo6tg+RR4Fz9T3Z8=</DigestValue></Reference></SignedInfo><SignatureValue>o0E96ErBoUY9EREwSZGZyhfv4489y31GA0QoP+M474OaKBZeA8a6vp/rBeZD6NKv78TGkVXe2CW+wD6HnBBvnWlISv2kGzZbC/koQDfUzFWqUAboA9b+0XATRVJHAnqaSXm2BfO3MZ26lTN/T2rW+nXS/L82DNn/Qohz0T6e+pw=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>y+0M0ixPQUrKTcJwcto3d8CMhtt9cU/PQJW4xzjMw+TcwYGLjNXT6sM3hOrLd8YQ+/Mjl6nZn8g0fWjCoXT6gW695IIZc0nLdFqY/GdoL0LW6VB5bMb0ThQ5uLuV76MDTis7dr0eRWGHTTiDacpGZ7zdT86jVB3cYKXNzv/SYyU=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQetpOiQu69YFA0S8eVDL4njANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDHiAAQQBQAE8AQwBBAEwAWQBQAFMARQBcAGEAbABlAHgALTAeFw0xNjAxMTgxNTI4MjFaFw0xNzAxMTcyMTI4MjFaMCsxKTAnBgNVBAMeIABBAFAATwBDAEEATABZAFAAUwBFAFwAYQBsAGUAeAAtMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDL7QzSLE9BSspNwnBy2jd3wIyG231xT89AlbjHOMzD5NzBgYuM1dPqwzeE6st3xhD78yOXqdmfyDR9aMKhdPqBbr3kghlzSct0Wpj8Z2gvQtbpUHlsxvROFDm4u5XvowNOKzt2vR5FYYdNOINpykZnvN1PzqNUHdxgpc3O/9JjJQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAANUUGyQMLykMaI+/KbZBIgnrMRN1NTSgggarsLHYLyFy9J1iQM8ckfCN/BjgYHueF9Bf3l0nIIVu1XZPWNeNUWPq26Cx+QclvWpmKMrasqjC6x9eK1MCELDoxtsaqEyf0i6wra2BBZ2QPuu+/kgjld7X1LfxWxo9bh1L99/Pqfl</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

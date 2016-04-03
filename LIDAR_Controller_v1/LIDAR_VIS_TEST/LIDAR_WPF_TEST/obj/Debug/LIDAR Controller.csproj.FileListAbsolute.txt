@@ -1,0 +1,2 @@
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR Controller.exe.config
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe.config

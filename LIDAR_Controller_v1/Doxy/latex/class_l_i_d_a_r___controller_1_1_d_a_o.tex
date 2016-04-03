@@ -1,0 +1,193 @@
+\hypertarget{class_l_i_d_a_r___controller_1_1_d_a_o}{}\section{L\+I\+D\+A\+R\+\_\+\+Controller.\+D\+AO Class Reference}
+\label{class_l_i_d_a_r___controller_1_1_d_a_o}\index{L\+I\+D\+A\+R\+\_\+\+Controller.\+D\+AO@{L\+I\+D\+A\+R\+\_\+\+Controller.\+D\+AO}}
+
+
+A \char`\"{}data access object\char`\"{} class. This is used to separate the file operations from the G\+UI logic.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement} $>$ \hyperlink{class_l_i_d_a_r___controller_1_1_d_a_o_acfdac277f8f5c97272fafdaecf3252fb}{load\+Measurements} ()
+\begin{DoxyCompactList}\small\item\em Loads the measurements from a xml file. First ssk user if he/she wants to load data. If not return null. \end{DoxyCompactList}\item 
+static void \hyperlink{class_l_i_d_a_r___controller_1_1_d_a_o_a6ad2697a8c414f60b8076cfdffe433c8}{save\+Measurements} (List$<$ \hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement} $>$ l)
+\begin{DoxyCompactList}\small\item\em Saves the measurements to a xml file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \char`\"{}data access object\char`\"{} class. This is used to separate the file operations from the G\+UI logic. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015 
+\end{DoxyDate}
+
+
+Definition at line 31 of file D\+A\+O.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+D\+AO@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+D\+AO}!load\+Measurements@{load\+Measurements}}
+\index{load\+Measurements@{load\+Measurements}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+D\+AO@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+D\+AO}}
+\subsubsection[{\texorpdfstring{load\+Measurements()}{loadMeasurements()}}]{\setlength{\rightskip}{0pt plus 5cm}public static List$<$ {\bf Measurement} $>$ L\+I\+D\+A\+R\+\_\+\+Controller.\+D\+A\+O.\+load\+Measurements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_l_i_d_a_r___controller_1_1_d_a_o_acfdac277f8f5c97272fafdaecf3252fb}{}\label{class_l_i_d_a_r___controller_1_1_d_a_o_acfdac277f8f5c97272fafdaecf3252fb}
+
+
+Loads the measurements from a xml file. First ssk user if he/she wants to load data. If not return null. 
+
+a\+: If no problems occur then... \begin{DoxyVerb}1. Open a file selector  
+2. If a file was selected, open it  
+3. Create a XmlSerializer  
+4. Deserialize the data into a list  
+5. Get the maximum measurement id and set it  
+6. Close the file  
+7. Inform user about successfully loading all data  
+\end{DoxyVerb}
+
+
+b\+: If something goes wrong, show a Message\+Box.
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+\begin{DoxyReturn}{Returns}
+A list of all measurements. 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file D\+A\+O.\+cs.
+
+
+\begin{DoxyCode}
+58         \{
+59             \textcolor{keywordflow}{if} (MessageBox.Show(\textcolor{stringliteral}{"Möchten Sie Messergebnisse aus einer Datei laden?\(\backslash\)nDabei gehen nicht
+       gespeicherte Messungen verloren!"}, \textcolor{stringliteral}{"Warnung!"}, MessageBoxButton.OKCancel, MessageBoxImage.Warning) == 
+      MessageBoxResult.OK)
+60             \{
+61                 List<Measurement> list;
+62                 \textcolor{comment}{//a.}
+63                 \textcolor{keywordflow}{try}
+64                 \{
+65                     \textcolor{comment}{//1.}
+66                     OpenFileDialog ofdialog = \textcolor{keyword}{new} OpenFileDialog();
+67                     ofdialog.DefaultExt = \textcolor{stringliteral}{".lmd"}; \textcolor{comment}{//LIDAR Measurement Data}
+68                     ofdialog.Filter = \textcolor{stringliteral}{"LIDAR Measurement Data|*.lmd"};
+69                     Nullable<bool> r = ofdialog.ShowDialog();
+70                     \textcolor{keywordflow}{if} (r == \textcolor{keyword}{true})
+71                     \{
+72                         \textcolor{comment}{//2.}
+73                         FileStream fs = \textcolor{keyword}{new} FileStream(ofdialog.FileName, FileMode.Open);
+74                         \textcolor{comment}{//3.}
+75                         Type t = typeof(List<Measurement>);
+76                         XmlSerializer serializer = \textcolor{keyword}{new} XmlSerializer(t);
+77                         \textcolor{comment}{//4.}
+78                         list = (List<Measurement>)serializer.Deserialize(fs);
+79                         \textcolor{comment}{//5.}
+80                         Measurement.id = list[list.Count-1].mId+1;
+81                         \textcolor{comment}{//6.}
+82                         fs.Close();
+83                         \textcolor{comment}{//7.}
+84                         MessageBox.Show(\textcolor{stringliteral}{"Laden erfolgreich."}, \textcolor{stringliteral}{"Info"}, MessageBoxButton.OK, MessageBoxImage.
+      Information);
+85                         \textcolor{keywordflow}{return} list;
+86                     \}
+87 
+88                 \}
+89                 \textcolor{comment}{//b.}
+90                 \textcolor{keywordflow}{catch} (Exception E)
+91                 \{
+92                     MessageBox.Show(E.Message, \textcolor{stringliteral}{"Fehler!"}, MessageBoxButton.OK, MessageBoxImage.Error);
+93                 \}
+94             \}
+95             \textcolor{keywordflow}{return} null;
+96             \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+D\+AO@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+D\+AO}!save\+Measurements@{save\+Measurements}}
+\index{save\+Measurements@{save\+Measurements}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+D\+AO@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+D\+AO}}
+\subsubsection[{\texorpdfstring{save\+Measurements(\+List$<$ Measurement $>$ l)}{saveMeasurements(List< Measurement > l)}}]{\setlength{\rightskip}{0pt plus 5cm}public static void L\+I\+D\+A\+R\+\_\+\+Controller.\+D\+A\+O.\+save\+Measurements (
+\begin{DoxyParamCaption}
+\item[{List$<$ {\bf Measurement} $>$}]{l}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_l_i_d_a_r___controller_1_1_d_a_o_a6ad2697a8c414f60b8076cfdffe433c8}{}\label{class_l_i_d_a_r___controller_1_1_d_a_o_a6ad2697a8c414f60b8076cfdffe433c8}
+
+
+Saves the measurements to a xml file. 
+
+a. If no problems occur then... \begin{DoxyVerb}1. Open a file selector  
+2. If a file was selected, create it  
+3. Create a XmlSerializer  
+4. Serialize the data into the file  
+5. Close the file  
+6. Inform user about successfully saving all data  
+\end{DoxyVerb}
+
+
+b. If something goes wrong, show a Message\+Box.
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em l} & The List$<$\hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement}$>$ to process. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file D\+A\+O.\+cs.
+
+
+\begin{DoxyCode}
+121         \{
+122             \textcolor{comment}{//a.}
+123             \textcolor{keywordflow}{try}
+124             \{
+125                 \textcolor{comment}{//1.}
+126                 SaveFileDialog sfdialog = \textcolor{keyword}{new} SaveFileDialog();
+127                 sfdialog.DefaultExt = \textcolor{stringliteral}{".lmd"}; \textcolor{comment}{//LIDAR Measurment Data}
+128                 sfdialog.Filter = \textcolor{stringliteral}{"LIDAR Measurment Data|*.lmd"};
+129                 Nullable<bool> r = sfdialog.ShowDialog();
+130                 \textcolor{keywordflow}{if} (r == \textcolor{keyword}{true})
+131                 \{
+132                     XmlWriterSettings xmlWriterSettings = \textcolor{keyword}{new} XmlWriterSettings();
+133                     xmlWriterSettings.Indent = \textcolor{keyword}{true};
+134                     \textcolor{comment}{//2.}
+135                     FileStream fs = \textcolor{keyword}{new} FileStream(sfdialog.FileName, FileMode.Create);
+136                     \textcolor{comment}{//3.}
+137                     Type t = typeof(List<Measurement>);
+138                     XmlSerializer serializer = \textcolor{keyword}{new} XmlSerializer(t);
+139                     \textcolor{comment}{//4.}
+140                     XmlWriter xmlWriter = XmlWriter.Create(fs, xmlWriterSettings);
+141                     serializer.Serialize(xmlWriter, l);
+142                     \textcolor{comment}{//5.}
+143                     fs.Close();
+144                     \textcolor{comment}{//6.}
+145                     MessageBox.Show(\textcolor{stringliteral}{"Speichern erfolgreich."}, \textcolor{stringliteral}{"Info"}, MessageBoxButton.OK, MessageBoxImage.
+      Information);
+146                 \}
+147                 
+148             \}
+149             \textcolor{comment}{//b.}
+150             \textcolor{keywordflow}{catch} (Exception E)
+151             \{
+152                 MessageBox.Show(E.Message, \textcolor{stringliteral}{"Fehler!"}, MessageBoxButton.OK, MessageBoxImage.Error);
+153             \}
+154         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+L\+I\+D\+A\+R\+\_\+\+V\+I\+S\+\_\+\+T\+E\+S\+T/\+L\+I\+D\+A\+R\+\_\+\+W\+P\+F\+\_\+\+T\+E\+S\+T/\hyperlink{_d_a_o_8cs}{D\+A\+O.\+cs}\end{DoxyCompactItemize}

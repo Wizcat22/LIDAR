@@ -1,0 +1,652 @@
+\hypertarget{class_l_i_d_a_r___controller_1_1_measurement}{}\section{L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement Class Reference}
+\label{class_l_i_d_a_r___controller_1_1_measurement}\index{L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement}}
+
+
+(Serializable) a measurement.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a626783b871e193bdf1c058ffdc11a6ef}{Measurement} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a44861f2c7f664d1f51e48f658760c664}{Measurement} (Vector3D \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linear\+Offset}, double \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a26ac087dbaf4f45ee4550cf5668ae4ff}{rotary\+OffsetX}, double \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_aeb96de05257dd310531350f3af1eb47e}{rotary\+OffsetZ})
+\begin{DoxyCompactList}\small\item\em Constructor. This constructor sets the initial offset values and generates a random color. \end{DoxyCompactList}\item 
+double \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a1fc45f8d577ed5fe5da313bb0a695127}{get\+Distance\+Data} (int mpos, int spos)
+\begin{DoxyCompactList}\small\item\em Gets distance data. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a929590bf97ba820bc51db6ffa931d550}{set\+Distance\+Data} (int mpos, int spos, int data)
+\begin{DoxyCompactList}\small\item\em Sets distance data. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a933a499970b57f6595614ab7e6877169}{make\+Geometry3D} ()
+\begin{DoxyCompactList}\small\item\em Generates the 3D structure. \end{DoxyCompactList}\item 
+Model\+Visual3D \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_acb4a4c1b8d4e838e1fc95c046a27ad12}{get\+Geometry3D} ()
+\begin{DoxyCompactList}\small\item\em Gets geometry data. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a57da7ae842281b4d9a48e4c3c8378057}{set\+Geometry\+Point3D} (int i, int k)
+\begin{DoxyCompactList}\small\item\em Relocates a specific point. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ae5d481304bf3a19445cdb8280fbc57ca}{Refresh} ()
+\begin{DoxyCompactList}\small\item\em Refreshes this object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a953088b913a0db123029129db70ab5e8}{Equals} (\hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement} m)
+\begin{DoxyCompactList}\small\item\em Tests if this \hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement} is considered equal to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double\mbox{[}$\,$\mbox{]}\mbox{[}$\,$\mbox{]} \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a5ed2a945e26682eabe612fdcbf6d6c54}{distance\+Data} = new double\mbox{[}\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ae4e112299a3c15095e6148bd06a47946}{max\+M\+Pos}+1\mbox{]}\mbox{[}$\,$\mbox{]}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a5ed2a945e26682eabe612fdcbf6d6c54}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a5ed2a945e26682eabe612fdcbf6d6c54}
+
+\begin{DoxyCompactList}\small\item\em Information describing the distance. This array gets filled by the L\+I\+D\+A\+R-\/\+Scanner. \end{DoxyCompactList}\item 
+Point3D \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{origin} = new Point3D(0, 0, 0)\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{}\label{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}
+
+\begin{DoxyCompactList}\small\item\em The origin of the measurement. \end{DoxyCompactList}\item 
+bool \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac9a586dd0d097caa2306aa810abd6fcf}{open} = true\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_ac9a586dd0d097caa2306aa810abd6fcf}{}\label{class_l_i_d_a_r___controller_1_1_measurement_ac9a586dd0d097caa2306aa810abd6fcf}
+
+\begin{DoxyCompactList}\small\item\em Generate a open or closed 3D model. \end{DoxyCompactList}\item 
+Color \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ab3e8e546ef03cf350dc751f2e1e884b0}{color}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_ab3e8e546ef03cf350dc751f2e1e884b0}{}\label{class_l_i_d_a_r___controller_1_1_measurement_ab3e8e546ef03cf350dc751f2e1e884b0}
+
+\begin{DoxyCompactList}\small\item\em The measurement color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ae4e112299a3c15095e6148bd06a47946}{max\+M\+Pos} = 200\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_ae4e112299a3c15095e6148bd06a47946}{}\label{class_l_i_d_a_r___controller_1_1_measurement_ae4e112299a3c15095e6148bd06a47946}
+
+\begin{DoxyCompactList}\small\item\em The maximum motor position. \end{DoxyCompactList}\item 
+static int \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}{max\+S\+Pos} = 90\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}{}\label{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}
+
+\begin{DoxyCompactList}\small\item\em The maximum servo position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a1aa9b624e651ef61b95f13fe5cb8f326}{id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the global measurement identifier. \end{DoxyCompactList}\item 
+int \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac3e8a45ae2970e9d3a538fbc09c5b60b}{m\+Id}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the local measurement identifier. \end{DoxyCompactList}\item 
+Vector3D \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linear\+Offset}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the linear offset. \end{DoxyCompactList}\item 
+double \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a26ac087dbaf4f45ee4550cf5668ae4ff}{rotary\+OffsetX}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the rotary offset around X. \end{DoxyCompactList}\item 
+double \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_aeb96de05257dd310531350f3af1eb47e}{rotary\+OffsetZ}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the rotary offset around Z. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector3D \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_aff21228516e88970db70287d41ff2e42}{Turn3\+D\+Vektor\+XZ} (Vector3D v, double mdegree, double sdegree)
+\begin{DoxyCompactList}\small\item\em Turns a given X vector to the specified position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Mesh\+Geometry3D \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{mesh\+Main3D} = new Mesh\+Geometry3D()\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{}\label{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}
+
+\begin{DoxyCompactList}\small\item\em The mesh that contains all 3\+D-\/\+Data. \end{DoxyCompactList}\item 
+Model\+Visual3D \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a4cfcc2d0aa8295420f3f622921f21c85}{geometry3D} = new Model\+Visual3D()\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a4cfcc2d0aa8295420f3f622921f21c85}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a4cfcc2d0aa8295420f3f622921f21c85}
+
+\begin{DoxyCompactList}\small\item\em The geometry data. \end{DoxyCompactList}\item 
+Geometry\+Model3D \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a7b9f5c03ce8253b95e1d94afef96c533}{geometry\+Model3D} = new Geometry\+Model3D()\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a7b9f5c03ce8253b95e1d94afef96c533}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a7b9f5c03ce8253b95e1d94afef96c533}
+
+\begin{DoxyCompactList}\small\item\em The geometry model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+(Serializable) a measurement. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015 
+\end{DoxyDate}
+
+
+Definition at line 29 of file Measurement.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!Measurement@{Measurement}}
+\index{Measurement@{Measurement}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{Measurement()}{Measurement()}}]{\setlength{\rightskip}{0pt plus 5cm}public L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+Measurement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a626783b871e193bdf1c058ffdc11a6ef}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a626783b871e193bdf1c058ffdc11a6ef}
+
+
+Default constructor. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015 
+\end{DoxyDate}
+
+
+Definition at line 154 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+154 \{ \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!Measurement@{Measurement}}
+\index{Measurement@{Measurement}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{Measurement(\+Vector3\+D linear\+Offset, double rotary\+Offset\+X, double rotary\+Offset\+Z)}{Measurement(Vector3D linearOffset, double rotaryOffsetX, double rotaryOffsetZ)}}]{\setlength{\rightskip}{0pt plus 5cm}public L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+Measurement (
+\begin{DoxyParamCaption}
+\item[{Vector3D}]{linear\+Offset, }
+\item[{double}]{rotary\+OffsetX, }
+\item[{double}]{rotary\+OffsetZ}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a44861f2c7f664d1f51e48f658760c664}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a44861f2c7f664d1f51e48f658760c664}
+
+
+Constructor. This constructor sets the initial offset values and generates a random color. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em linear\+Offset} & The linear offset. \\
+\hline
+{\em rotary\+OffsetX} & The rotary offset around x. \\
+\hline
+{\em rotary\+OffsetZ} & The rotary offset around z. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+171         \{
+172             this.\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset} = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset};
+173             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{origin}.X = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.X;
+174             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{origin}.Y = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.Y;
+175             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{origin}.Z = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.Z;
+176 
+177             this.\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a26ac087dbaf4f45ee4550cf5668ae4ff}{rotaryOffsetX} = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a26ac087dbaf4f45ee4550cf5668ae4ff}{rotaryOffsetX};
+178             this.\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_aeb96de05257dd310531350f3af1eb47e}{rotaryOffsetZ} = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_aeb96de05257dd310531350f3af1eb47e}{rotaryOffsetZ};
+179             Random r = \textcolor{keyword}{new} Random();
+180             this.\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ab3e8e546ef03cf350dc751f2e1e884b0}{color} = Color.FromArgb(150, (Byte)r.Next(0, 256), (Byte)r.Next(0, 256), (Byte)r.Next(
+      0, 256));
+181             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac3e8a45ae2970e9d3a538fbc09c5b60b}{mId} = \textcolor{keywordtype}{id}++;
+182 
+183             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ae4e112299a3c15095e6148bd06a47946}{maxMPos}+1; i++)
+184             \{
+185                 \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a5ed2a945e26682eabe612fdcbf6d6c54}{distanceData}[i] = \textcolor{keyword}{new} \textcolor{keywordtype}{double}[\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}{maxSPos}+1];
+186                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k <= \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}{maxSPos}; k++)
+187                 \{ \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a929590bf97ba820bc51db6ffa931d550}{setDistanceData}(i, k, 4000); \}
+188             \}
+189             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a933a499970b57f6595614ab7e6877169}{makeGeometry3D}();
+190         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!Equals@{Equals}}
+\index{Equals@{Equals}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{Equals(\+Measurement m)}{Equals(Measurement m)}}]{\setlength{\rightskip}{0pt plus 5cm}public bool L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+Equals (
+\begin{DoxyParamCaption}
+\item[{{\bf Measurement}}]{m}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a953088b913a0db123029129db70ab5e8}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a953088b913a0db123029129db70ab5e8}
+
+
+Tests if this \hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement} is considered equal to another. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The measurement to compare to this object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the objects are considered equal, false if they are not. 
+\end{DoxyReturn}
+
+
+Definition at line 417 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+418         \{
+419             \textcolor{keywordflow}{if} (m == null) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \}
+420             \textcolor{keywordflow}{if} (m.mId == \textcolor{keyword}{this}.mId) \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}
+421             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+422         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!get\+Distance\+Data@{get\+Distance\+Data}}
+\index{get\+Distance\+Data@{get\+Distance\+Data}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{get\+Distance\+Data(int mpos, int spos)}{getDistanceData(int mpos, int spos)}}]{\setlength{\rightskip}{0pt plus 5cm}public double L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+get\+Distance\+Data (
+\begin{DoxyParamCaption}
+\item[{int}]{mpos, }
+\item[{int}]{spos}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a1fc45f8d577ed5fe5da313bb0a695127}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a1fc45f8d577ed5fe5da313bb0a695127}
+
+
+Gets distance data. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em mpos} & The motor position. \\
+\hline
+{\em spos} & The servo position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The distance data. 
+\end{DoxyReturn}
+
+
+Definition at line 206 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+207         \{
+208             \textcolor{keywordflow}{return} \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a5ed2a945e26682eabe612fdcbf6d6c54}{distanceData}[mpos][spos];
+209         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!get\+Geometry3D@{get\+Geometry3D}}
+\index{get\+Geometry3D@{get\+Geometry3D}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{get\+Geometry3\+D()}{getGeometry3D()}}]{\setlength{\rightskip}{0pt plus 5cm}public Model\+Visual3D L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+get\+Geometry3D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_acb4a4c1b8d4e838e1fc95c046a27ad12}{}\label{class_l_i_d_a_r___controller_1_1_measurement_acb4a4c1b8d4e838e1fc95c046a27ad12}
+
+
+Gets geometry data. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+\begin{DoxyReturn}{Returns}
+The geometry data. 
+\end{DoxyReturn}
+
+
+Definition at line 311 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+312         \{
+313             \textcolor{keywordflow}{return} \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a4cfcc2d0aa8295420f3f622921f21c85}{geometry3D};
+314         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!make\+Geometry3D@{make\+Geometry3D}}
+\index{make\+Geometry3D@{make\+Geometry3D}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{make\+Geometry3\+D()}{makeGeometry3D()}}]{\setlength{\rightskip}{0pt plus 5cm}public void L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+make\+Geometry3D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a933a499970b57f6595614ab7e6877169}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a933a499970b57f6595614ab7e6877169}
+
+
+Generates the 3D structure. 
+
+
+\begin{DoxyEnumerate}
+\item Add origin as first point
+\item Add all points that represent the distance ~\newline
+ 2.\+1. Turn the Vector of the actual point (distance value = x value) around the z-\/axis, x-\/axis and again around the z-\/axis. ~\newline
+ 2.\+2. Add the rotated point to the model ~\newline
+
+\item Generate triangles to build the bottom/back layer
+\item Generate the area between bottom and back layer
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015 
+\end{DoxyDate}
+
+
+Definition at line 244 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+245         \{
+246             \textcolor{comment}{//1.}
+247             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D} = \textcolor{keyword}{new} MeshGeometry3D();
+248             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.Positions.Add(\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{origin});
+249             \textcolor{comment}{//2.}
+250             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k <= \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}{maxSPos}; k++)
+251             \{
+252                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ae4e112299a3c15095e6148bd06a47946}{maxMPos}; i++)
+253                 \{
+254                     \textcolor{comment}{//2.1.}
+255                     Vector3D v = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_aff21228516e88970db70287d41ff2e42}{Turn3DVektorXZ}(\textcolor{keyword}{new} Vector3D(
+      \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a5ed2a945e26682eabe612fdcbf6d6c54}{distanceData}[i][k], 0, 0), i * (360.0 / maxMPos), k);
+256                     \textcolor{comment}{//2.2.}
+257                     \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.Positions.Add(\textcolor{keyword}{new} Point3D(v.X + 
+      \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.X, v.Y + \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.Y, v.Z + \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.Z));
+258                 \}
+259             \}
+260 
+261             \textcolor{keywordflow}{if} (!\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac9a586dd0d097caa2306aa810abd6fcf}{open})
+262             \{
+263                 \textcolor{comment}{//3.}
+264                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <= \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}{maxSPos}; i += \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}{maxSPos})
+265                 \{
+266                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 1; k <= maxMPos / 2; k++)
+267                     \{
+268                         \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.TriangleIndices.Add(0);
+269                         \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.TriangleIndices.Add(k + (i * maxMPos));
+270                         \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.TriangleIndices.Add(k + 1 + (i * maxMPos));
+271                     \}
+272 
+273                 \}
+274             \}
+275             
+276 
+277             \textcolor{comment}{//4.}
+278             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}{maxSPos}; i++)
+279             \{
+280                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 1; k <= maxMPos / 2; k++)
+281                 \{
+282                     \textcolor{comment}{//left triangles}
+283                     \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.TriangleIndices.Add(k + (i * maxMPos));
+284                     \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.TriangleIndices.Add(k + (i * maxMPos) + 1);
+285                     \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.TriangleIndices.Add(k + ((i + 1) * maxMPos));
+286                     \textcolor{comment}{//right triangles}
+287                     \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.TriangleIndices.Add(k + ((i) * maxMPos) + 1);
+288                     \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.TriangleIndices.Add(k + ((i + 1) * maxMPos) + 1);
+289                     \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.TriangleIndices.Add(k + ((i + 1) * maxMPos));
+290                 \}
+291             \}
+292 
+293             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a7b9f5c03ce8253b95e1d94afef96c533}{geometryModel3D}.Geometry = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D};
+294             DiffuseMaterial matDiffuseMain = \textcolor{keyword}{new} DiffuseMaterial(\textcolor{keyword}{new} SolidColorBrush(
+      \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ab3e8e546ef03cf350dc751f2e1e884b0}{color}));
+295             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a7b9f5c03ce8253b95e1d94afef96c533}{geometryModel3D}.Material = matDiffuseMain;
+296             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a7b9f5c03ce8253b95e1d94afef96c533}{geometryModel3D}.BackMaterial = matDiffuseMain;
+297             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a4cfcc2d0aa8295420f3f622921f21c85}{geometry3D}.Content = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a7b9f5c03ce8253b95e1d94afef96c533}{geometryModel3D};
+298         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!Refresh@{Refresh}}
+\index{Refresh@{Refresh}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{Refresh()}{Refresh()}}]{\setlength{\rightskip}{0pt plus 5cm}public void L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+Refresh (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_ae5d481304bf3a19445cdb8280fbc57ca}{}\label{class_l_i_d_a_r___controller_1_1_measurement_ae5d481304bf3a19445cdb8280fbc57ca}
+
+
+Refreshes this object. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015 
+\end{DoxyDate}
+
+
+Definition at line 388 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+389         \{
+390             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a933a499970b57f6595614ab7e6877169}{makeGeometry3D}();
+391             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{origin}.X = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.X;
+392             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{origin}.Y = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.Y;
+393             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{origin}.Z = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.Z;
+394             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ae4e112299a3c15095e6148bd06a47946}{maxMPos}; i++)
+395             \{
+396                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ad24203fe25dd2b9f232807e2953a2de2}{maxSPos}; k++)
+397                 \{
+398                     \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a57da7ae842281b4d9a48e4c3c8378057}{setGeometryPoint3D}(i, k);
+399                 \}
+400 
+401             \}
+402         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!set\+Distance\+Data@{set\+Distance\+Data}}
+\index{set\+Distance\+Data@{set\+Distance\+Data}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{set\+Distance\+Data(int mpos, int spos, int data)}{setDistanceData(int mpos, int spos, int data)}}]{\setlength{\rightskip}{0pt plus 5cm}public void L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+set\+Distance\+Data (
+\begin{DoxyParamCaption}
+\item[{int}]{mpos, }
+\item[{int}]{spos, }
+\item[{int}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a929590bf97ba820bc51db6ffa931d550}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a929590bf97ba820bc51db6ffa931d550}
+
+
+Sets distance data. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em mpos} & The motor position. \\
+\hline
+{\em spos} & The servo position. \\
+\hline
+{\em data} & The data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 224 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+225         \{
+226             \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a5ed2a945e26682eabe612fdcbf6d6c54}{distanceData}[mpos][spos] = data;
+227         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!set\+Geometry\+Point3D@{set\+Geometry\+Point3D}}
+\index{set\+Geometry\+Point3D@{set\+Geometry\+Point3D}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{set\+Geometry\+Point3\+D(int i, int k)}{setGeometryPoint3D(int i, int k)}}]{\setlength{\rightskip}{0pt plus 5cm}public void L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+set\+Geometry\+Point3D (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{k}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a57da7ae842281b4d9a48e4c3c8378057}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a57da7ae842281b4d9a48e4c3c8378057}
+
+
+Relocates a specific point. 
+
+
+\begin{DoxyEnumerate}
+\item Get all points
+\item Reset origin
+\item Turn the Vector of the actual point (distance value = x value) around the z-\/axis, x-\/axis and again around the z-\/axis.
+\item Set the point
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em i} & Zero-\/based index of the point (and position of the motor). \\
+\hline
+{\em k} & Position of the servo. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 332 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+333         \{
+334             \textcolor{comment}{//1.}
+335             Point3DCollection points = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_af5ee635f5060386fb2eb131af46b962e}{meshMain3D}.Positions;
+336 
+337             \textcolor{comment}{//2.}
+338             points[0] = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ac0d4306c375f9863f2a1b8591192feca}{origin};
+339 
+340             \textcolor{comment}{//3.}
+341             Vector3D v = \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_aff21228516e88970db70287d41ff2e42}{Turn3DVektorXZ}(\textcolor{keyword}{new} Vector3D(\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a5ed2a945e26682eabe612fdcbf6d6c54}{distanceData}[i][k], 0, 0), i
+       * (360.0 / \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ae4e112299a3c15095e6148bd06a47946}{maxMPos}), k);
+342             
+343             \textcolor{comment}{//4.}
+344             points[i + 1 + k * \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_ae4e112299a3c15095e6148bd06a47946}{maxMPos}] = \textcolor{keyword}{new} Point3D(v.X + \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.X, v.Y + 
+      \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.Y, v.Z + \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{linearOffset}.Z);
+345 
+346         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!Turn3\+D\+Vektor\+XZ@{Turn3\+D\+Vektor\+XZ}}
+\index{Turn3\+D\+Vektor\+XZ@{Turn3\+D\+Vektor\+XZ}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{Turn3\+D\+Vektor\+X\+Z(\+Vector3\+D v, double mdegree, double sdegree)}{Turn3DVektorXZ(Vector3D v, double mdegree, double sdegree)}}]{\setlength{\rightskip}{0pt plus 5cm}private Vector3D L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+Turn3\+D\+Vektor\+XZ (
+\begin{DoxyParamCaption}
+\item[{Vector3D}]{v, }
+\item[{double}]{mdegree, }
+\item[{double}]{sdegree}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_aff21228516e88970db70287d41ff2e42}{}\label{class_l_i_d_a_r___controller_1_1_measurement_aff21228516e88970db70287d41ff2e42}
+
+
+Turns a given X vector to the specified position. 
+
+
+\begin{DoxyEnumerate}
+\item Transform degrees into rad
+\item Turn the vector based on the values around zxz-\/axis.
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The Vector3D to process. \\
+\hline
+{\em mdegree} & The motor position in degrees. \\
+\hline
+{\em sdegree} & The servo position in degrees.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Vector3D. 
+\end{DoxyReturn}
+
+
+Definition at line 365 of file Measurement.\+cs.
+
+
+\begin{DoxyCode}
+366         \{
+367             \textcolor{comment}{//1.}
+368             \textcolor{keywordtype}{double} mdeg = (mdegree) * (Math.PI / 180); 
+369             \textcolor{keywordtype}{double} sdeg = (sdegree + \hyperlink{class_l_i_d_a_r___controller_1_1_measurement_a26ac087dbaf4f45ee4550cf5668ae4ff}{rotaryOffsetX}) * (Math.PI / 180); 
+370             \textcolor{keywordtype}{double} mdeg\_offset = (\hyperlink{class_l_i_d_a_r___controller_1_1_measurement_aeb96de05257dd310531350f3af1eb47e}{rotaryOffsetZ}) * (Math.PI / 180); 
+371             \textcolor{comment}{//2.}
+372             Vector3D vn = \textcolor{keyword}{new} Vector3D();
+373             vn.X = v.X * (Math.Cos(mdeg) * Math.Cos(mdeg\_offset) - Math.Sin(mdeg) * Math.Cos(sdeg) * Math.
+      Sin(mdeg\_offset)) + v.Y * (-1 * Math.Sin(mdeg) * Math.Cos(mdeg\_offset) - Math.Cos(mdeg) * Math.Cos(sdeg) * 
+      Math.Sin(mdeg\_offset)) + v.Z * (Math.Sin(sdeg) * Math.Sin(mdeg\_offset));
+374             vn.Y = v.X * (Math.Cos(mdeg) * Math.Sin(mdeg\_offset) + Math.Sin(mdeg) * Math.Cos(sdeg) * Math.
+      Cos(mdeg\_offset)) + v.Y * (-1 * Math.Sin(mdeg) * Math.Sin(mdeg\_offset) + Math.Cos(mdeg) * Math.Cos(sdeg) * 
+      Math.Cos(mdeg\_offset)) + v.Z * (Math.Sin(sdeg) * Math.Cos(mdeg\_offset));
+375             vn.Z = v.X * (Math.Sin(mdeg) * Math.Sin(sdeg)) + v.Y * (Math.Cos(mdeg) * Math.Sin(sdeg)) + v.Z 
+      * (Math.Cos(sdeg));
+376             \textcolor{keywordflow}{return} vn;
+377         \}
+\end{DoxyCode}
+
+
+\subsection{Property Documentation}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!id@{id}}
+\index{id@{id}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{id}{id}}]{\setlength{\rightskip}{0pt plus 5cm}public static int L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+id\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a1aa9b624e651ef61b95f13fe5cb8f326}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a1aa9b624e651ef61b95f13fe5cb8f326}
+
+
+Gets or sets the global measurement identifier. 
+
+\begin{DoxyReturn}{Returns}
+The identifier. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Measurement.\+cs.
+
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!linear\+Offset@{linear\+Offset}}
+\index{linear\+Offset@{linear\+Offset}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{linear\+Offset}{linearOffset}}]{\setlength{\rightskip}{0pt plus 5cm}public Vector3D L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+linear\+Offset\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a00cfc32b350bb7516008ec96ad557f8d}
+
+
+Gets or sets the linear offset. 
+
+\begin{DoxyReturn}{Returns}
+The linear offset in cm. 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file Measurement.\+cs.
+
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!m\+Id@{m\+Id}}
+\index{m\+Id@{m\+Id}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{m\+Id}{mId}}]{\setlength{\rightskip}{0pt plus 5cm}public int L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+m\+Id\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_ac3e8a45ae2970e9d3a538fbc09c5b60b}{}\label{class_l_i_d_a_r___controller_1_1_measurement_ac3e8a45ae2970e9d3a538fbc09c5b60b}
+
+
+Gets or sets the local measurement identifier. 
+
+\begin{DoxyReturn}{Returns}
+The measurement identifier. 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file Measurement.\+cs.
+
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!rotary\+OffsetX@{rotary\+OffsetX}}
+\index{rotary\+OffsetX@{rotary\+OffsetX}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{rotary\+OffsetX}{rotaryOffsetX}}]{\setlength{\rightskip}{0pt plus 5cm}public double L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+rotary\+OffsetX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_a26ac087dbaf4f45ee4550cf5668ae4ff}{}\label{class_l_i_d_a_r___controller_1_1_measurement_a26ac087dbaf4f45ee4550cf5668ae4ff}
+
+
+Gets or sets the rotary offset around X. 
+
+\begin{DoxyReturn}{Returns}
+The rotary offset in degrees. 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file Measurement.\+cs.
+
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}!rotary\+OffsetZ@{rotary\+OffsetZ}}
+\index{rotary\+OffsetZ@{rotary\+OffsetZ}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Measurement}}
+\subsubsection[{\texorpdfstring{rotary\+OffsetZ}{rotaryOffsetZ}}]{\setlength{\rightskip}{0pt plus 5cm}public double L\+I\+D\+A\+R\+\_\+\+Controller.\+Measurement.\+rotary\+OffsetZ\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\hypertarget{class_l_i_d_a_r___controller_1_1_measurement_aeb96de05257dd310531350f3af1eb47e}{}\label{class_l_i_d_a_r___controller_1_1_measurement_aeb96de05257dd310531350f3af1eb47e}
+
+
+Gets or sets the rotary offset around Z. 
+
+\begin{DoxyReturn}{Returns}
+The rotary offset in degrees. 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file Measurement.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+L\+I\+D\+A\+R\+\_\+\+V\+I\+S\+\_\+\+T\+E\+S\+T/\+L\+I\+D\+A\+R\+\_\+\+W\+P\+F\+\_\+\+T\+E\+S\+T/\hyperlink{_measurement_8cs}{Measurement.\+cs}\end{DoxyCompactItemize}

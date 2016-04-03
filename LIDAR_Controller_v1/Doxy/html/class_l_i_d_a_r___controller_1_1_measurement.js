@@ -1,0 +1,27 @@
+var class_l_i_d_a_r___controller_1_1_measurement =
+[
+    [ "Measurement", "class_l_i_d_a_r___controller_1_1_measurement.html#a626783b871e193bdf1c058ffdc11a6ef", null ],
+    [ "Measurement", "class_l_i_d_a_r___controller_1_1_measurement.html#a44861f2c7f664d1f51e48f658760c664", null ],
+    [ "Equals", "class_l_i_d_a_r___controller_1_1_measurement.html#a953088b913a0db123029129db70ab5e8", null ],
+    [ "getDistanceData", "class_l_i_d_a_r___controller_1_1_measurement.html#a1fc45f8d577ed5fe5da313bb0a695127", null ],
+    [ "getGeometry3D", "class_l_i_d_a_r___controller_1_1_measurement.html#acb4a4c1b8d4e838e1fc95c046a27ad12", null ],
+    [ "makeGeometry3D", "class_l_i_d_a_r___controller_1_1_measurement.html#a933a499970b57f6595614ab7e6877169", null ],
+    [ "Refresh", "class_l_i_d_a_r___controller_1_1_measurement.html#ae5d481304bf3a19445cdb8280fbc57ca", null ],
+    [ "setDistanceData", "class_l_i_d_a_r___controller_1_1_measurement.html#a929590bf97ba820bc51db6ffa931d550", null ],
+    [ "setGeometryPoint3D", "class_l_i_d_a_r___controller_1_1_measurement.html#a57da7ae842281b4d9a48e4c3c8378057", null ],
+    [ "Turn3DVektorXZ", "class_l_i_d_a_r___controller_1_1_measurement.html#aff21228516e88970db70287d41ff2e42", null ],
+    [ "color", "class_l_i_d_a_r___controller_1_1_measurement.html#ab3e8e546ef03cf350dc751f2e1e884b0", null ],
+    [ "distanceData", "class_l_i_d_a_r___controller_1_1_measurement.html#a5ed2a945e26682eabe612fdcbf6d6c54", null ],
+    [ "geometry3D", "class_l_i_d_a_r___controller_1_1_measurement.html#a4cfcc2d0aa8295420f3f622921f21c85", null ],
+    [ "geometryModel3D", "class_l_i_d_a_r___controller_1_1_measurement.html#a7b9f5c03ce8253b95e1d94afef96c533", null ],
+    [ "maxMPos", "class_l_i_d_a_r___controller_1_1_measurement.html#ae4e112299a3c15095e6148bd06a47946", null ],
+    [ "maxSPos", "class_l_i_d_a_r___controller_1_1_measurement.html#ad24203fe25dd2b9f232807e2953a2de2", null ],
+    [ "meshMain3D", "class_l_i_d_a_r___controller_1_1_measurement.html#af5ee635f5060386fb2eb131af46b962e", null ],
+    [ "open", "class_l_i_d_a_r___controller_1_1_measurement.html#ac9a586dd0d097caa2306aa810abd6fcf", null ],
+    [ "origin", "class_l_i_d_a_r___controller_1_1_measurement.html#ac0d4306c375f9863f2a1b8591192feca", null ],
+    [ "id", "class_l_i_d_a_r___controller_1_1_measurement.html#a1aa9b624e651ef61b95f13fe5cb8f326", null ],
+    [ "linearOffset", "class_l_i_d_a_r___controller_1_1_measurement.html#a00cfc32b350bb7516008ec96ad557f8d", null ],
+    [ "mId", "class_l_i_d_a_r___controller_1_1_measurement.html#ac3e8a45ae2970e9d3a538fbc09c5b60b", null ],
+    [ "rotaryOffsetX", "class_l_i_d_a_r___controller_1_1_measurement.html#a26ac087dbaf4f45ee4550cf5668ae4ff", null ],
+    [ "rotaryOffsetZ", "class_l_i_d_a_r___controller_1_1_measurement.html#aeb96de05257dd310531350f3af1eb47e", null ]
+];

@@ -1,0 +1,1090 @@
+\hypertarget{class_l_i_d_a_r___controller_1_1_main_window}{}\section{L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window Class Reference}
+\label{class_l_i_d_a_r___controller_1_1_main_window}\index{L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window}}
+
+
+The application\textquotesingle{}s main form. This class contains all necessary event and exception handlers.  
+
+
+Inheritance diagram for L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_l_i_d_a_r___controller_1_1_main_window}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_adb6496654efc3e0d3d8b2db6b220252a}{Main\+Window} ()
+\begin{DoxyCompactList}\small\item\em Default constructor of \hyperlink{class_l_i_d_a_r___controller_1_1_main_window}{Main\+Window}. This constructor does all the initialisation work. At first it initialises all G\+UI objects. Then it calls the init() function. This function adds C\+O\+M-\/\+Port informations to some G\+UI objects. The last function initializes the Viewport object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a06e7e925f385b26d3fea4717bf359609}{Com\+Port\+Receive\+Handler} (object Sender, Serial\+Data\+Received\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Handler, called when the C\+O\+M-\/port receives something. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a1c0ad2dd56b20d3fdb928b918c0bc153}{Exeption\+Handler} (Exception ex) \textbackslash{}D+\char`\"{}
+\begin{DoxyCompactList}\small\item\em Handler, called when a exception occurs. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a784f9cfcd0edd64ca5aa044112a34b49}{Init} ()
+\begin{DoxyCompactList}\small\item\em Initialises both combo boxes with relevant data (e.\+g. available C\+O\+M-\/\+Ports). \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a9d5c30796bf1dac53610783e94d10b37}{combo\+Box2\+\_\+\+Selection\+Changed} (object Sender, Selection\+Changed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by combo\+Box2 for selection changed events. This handler gets the offset values of the selected measurement and displays them. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_acd58042bfc74176a4d65a7f7b9c8b455}{Init3D} ()
+\begin{DoxyCompactList}\small\item\em Initialises the viewport object. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a2447b7c8a7d2310a89212d3cdc90e7f2}{verbinden\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by verbinden for click events. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a0be51e6fbf9c79cc4bbd40f41f044c47}{button2\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by button2 for click events. This functions sends the \char`\"{}\#1\char`\"{} (Onetime Measure) command to the L\+I\+D\+A\+R-\/\+Scanner. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a889652277fc1bd0a5f3e1aa584d30a20}{button3\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by button3 for click events. This functions sends the \char`\"{}\#2\char`\"{} (Radar mode 2D) command to the L\+I\+D\+A\+R-\/\+Scanner. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ac59530029320b9182c0db19ec2bb1344}{pos\+Btn\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by pos\+Btn for click events. This functions sends the \char`\"{}\#3\char`\"{} (Set Position) command with the position infos from \char`\"{}txt\+\_\+\+M\+Pos\char`\"{} \& \char`\"{}txt\+\_\+\+S\+Pos\char`\"{} to the L\+I\+D\+A\+R-\/\+Scanner. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a7819bd652f8bd6630e5879a7b101ec51}{button6\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by button6 for click events. This functions sends the \char`\"{}\#4\char`\"{} (Calibration) command to the L\+I\+D\+A\+R-\/\+Scanner. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ab831283d55f1beb21fcf043db6690c11}{neu\+Messung\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by neu\+Messung for click events. This function adds a new \hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement} to Measure\+List and refreshes combobox2. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a94d838335feade09f122cad6a5600b74}{entf\+Messung\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by entf\+Messung for click events. This functions deletes the selected measurement and updates combobox2. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a786d1e5b609bbb158111051107ff860f}{offset\+Btn\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by offset\+Btn for click events. This function gets the offset information. Then id adds this values to the selected measurement. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a5897a8f1e59121209c0461bfd960b26a}{save\+Btn\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by save\+Btn for click events. Calls \char`\"{}\+D\+A\+O.\+save\+Measurements\char`\"{} to save all measurements to a xml file. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a3b7bbddaea2352a5c539b1d920a175b2}{load\+Btn\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by load\+Btn for click events. Calls \char`\"{}\+D\+A\+O.\+load\+Measurements\char`\"{} to load measurements from a xml file. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_acea12fa391cab47bba07e6af85e4a765}{send\+Btn\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by send\+Btn for click events. This function sends the text of \char`\"{}send\+Txt\char`\"{} to the L\+I\+D\+A\+R-\/\+Scanner. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_abc77995f990c7ef9dd53c0331b2c70a1}{enable\+Visuals} (bool b)
+\begin{DoxyCompactList}\small\item\em Enables/\+Disables the visuals. \end{DoxyCompactList}\item 
+void \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a644193ce9f107d5269d1443f8ff1d855}{reverse\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Event handler. Called by reverse for click events. This function transforms the 3D model to a open/closed shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Serial\+Port \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{Com\+Port} = null\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{}\label{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}
+
+\begin{DoxyCompactList}\small\item\em The C\+OM port which is used to communicate with the L\+I\+D\+A\+R-\/\+Scanner. \end{DoxyCompactList}\item 
+int \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selected\+Measure}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}
+
+\begin{DoxyCompactList}\small\item\em The actually selected measurement. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement} $>$ \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{Measure\+List} = new List$<$\hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement}$>$()\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{}\label{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}
+
+\begin{DoxyCompactList}\small\item\em List of all measurements. \end{DoxyCompactList}\item 
+Helix\+Viewport3D \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{my\+Viewport} = new Helix\+Viewport3D()\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}
+
+\begin{DoxyCompactList}\small\item\em A viewport object that handles all 3\+D-\/\+Drawings. \end{DoxyCompactList}\item 
+Grid\+Lines\+Visual3D \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{grid\+Lines\+XY} = new Grid\+Lines\+Visual3D()\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}
+
+\begin{DoxyCompactList}\small\item\em The grid lines of the xy-\/plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The application\textquotesingle{}s main form. This class contains all necessary event and exception handlers. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015 
+\end{DoxyDate}
+
+
+Definition at line 31 of file Main\+Window.\+xaml.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!Main\+Window@{Main\+Window}}
+\index{Main\+Window@{Main\+Window}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{Main\+Window()}{MainWindow()}}]{\setlength{\rightskip}{0pt plus 5cm}public L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+Main\+Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_adb6496654efc3e0d3d8b2db6b220252a}{}\label{class_l_i_d_a_r___controller_1_1_main_window_adb6496654efc3e0d3d8b2db6b220252a}
+
+
+Default constructor of \hyperlink{class_l_i_d_a_r___controller_1_1_main_window}{Main\+Window}. This constructor does all the initialisation work. At first it initialises all G\+UI objects. Then it calls the init() function. This function adds C\+O\+M-\/\+Port informations to some G\+UI objects. The last function initializes the Viewport object. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015 
+\end{DoxyDate}
+
+
+Definition at line 65 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+66         \{
+67             InitializeComponent();
+68             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a784f9cfcd0edd64ca5aa044112a34b49}{Init}();
+69             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_acd58042bfc74176a4d65a7f7b9c8b455}{Init3D}();
+70         \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!button2\+\_\+\+Click@{button2\+\_\+\+Click}}
+\index{button2\+\_\+\+Click@{button2\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{button2\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{button2_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+button2\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a0be51e6fbf9c79cc4bbd40f41f044c47}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a0be51e6fbf9c79cc4bbd40f41f044c47}
+
+
+Event handler. Called by button2 for click events. This functions sends the \char`\"{}\#1\char`\"{} (Onetime Measure) command to the L\+I\+D\+A\+R-\/\+Scanner. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 361 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+362         \{
+363             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.WriteLine(\textcolor{stringliteral}{"#1"});
+364         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!button3\+\_\+\+Click@{button3\+\_\+\+Click}}
+\index{button3\+\_\+\+Click@{button3\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{button3\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{button3_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+button3\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a889652277fc1bd0a5f3e1aa584d30a20}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a889652277fc1bd0a5f3e1aa584d30a20}
+
+
+Event handler. Called by button3 for click events. This functions sends the \char`\"{}\#2\char`\"{} (Radar mode 2D) command to the L\+I\+D\+A\+R-\/\+Scanner. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 379 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+380         \{
+381             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.WriteLine(\textcolor{stringliteral}{"#2"});
+382         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!button6\+\_\+\+Click@{button6\+\_\+\+Click}}
+\index{button6\+\_\+\+Click@{button6\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{button6\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{button6_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+button6\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a7819bd652f8bd6630e5879a7b101ec51}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a7819bd652f8bd6630e5879a7b101ec51}
+
+
+Event handler. Called by button6 for click events. This functions sends the \char`\"{}\#4\char`\"{} (Calibration) command to the L\+I\+D\+A\+R-\/\+Scanner. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 427 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+428         \{
+429             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.WriteLine(\textcolor{stringliteral}{"#4"});
+430         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!combo\+Box2\+\_\+\+Selection\+Changed@{combo\+Box2\+\_\+\+Selection\+Changed}}
+\index{combo\+Box2\+\_\+\+Selection\+Changed@{combo\+Box2\+\_\+\+Selection\+Changed}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{combo\+Box2\+\_\+\+Selection\+Changed(object Sender, Selection\+Changed\+Event\+Args e)}{comboBox2_SelectionChanged(object Sender, SelectionChangedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+combo\+Box2\+\_\+\+Selection\+Changed (
+\begin{DoxyParamCaption}
+\item[{object}]{Sender, }
+\item[{Selection\+Changed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a9d5c30796bf1dac53610783e94d10b37}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a9d5c30796bf1dac53610783e94d10b37}
+
+
+Event handler. Called by combo\+Box2 for selection changed events. This handler gets the offset values of the selected measurement and displays them. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em Sender} & Source of the event. \\
+\hline
+{\em e} & Selection changed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 206 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+207         \{
+208             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure} = comboBox2.SelectedIndex;
+209             \textcolor{keywordflow}{if} (\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure} >= 0)
+210             \{
+211                 xOffsetTxt.Text = \textcolor{stringliteral}{""} + \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].linearOffset.
+      X;
+212                 yOffsetTxt.Text = \textcolor{stringliteral}{""} + \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].linearOffset.
+      Y;
+213                 zOffsetTxt.Text = \textcolor{stringliteral}{""} + \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].linearOffset.
+      Z;
+214                 degOffsetXTxt.Text = \textcolor{stringliteral}{""} + \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].
+      rotaryOffsetX;
+215                 degOffsetZTxt.Text = \textcolor{stringliteral}{""} + \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].
+      rotaryOffsetZ;
+216             \}
+217 
+218         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!Com\+Port\+Receive\+Handler@{Com\+Port\+Receive\+Handler}}
+\index{Com\+Port\+Receive\+Handler@{Com\+Port\+Receive\+Handler}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{Com\+Port\+Receive\+Handler(object Sender, Serial\+Data\+Received\+Event\+Args e)}{ComPortReceiveHandler(object Sender, SerialDataReceivedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+Com\+Port\+Receive\+Handler (
+\begin{DoxyParamCaption}
+\item[{object}]{Sender, }
+\item[{Serial\+Data\+Received\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a06e7e925f385b26d3fea4717bf359609}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a06e7e925f385b26d3fea4717bf359609}
+
+
+Handler, called when the C\+O\+M-\/port receives something. 
+
+a\+: if no problems occur then...
+
+
+\begin{DoxyEnumerate}
+\item Check if Com\+Port is open
+\item Read line from buffer
+\item Add the received line to text\+Box1
+\item Get relevant data from string using a regular expression
+\item Parse data into integers
+\item Set a point of the selected measurement based on the received data.
+\end{DoxyEnumerate}
+
+b\+: If something goes wrong, call the exception handler.
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em Sender} & Source of the event. \\
+\hline
+{\em e} & Serial data received event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+96         \{
+97             \textcolor{comment}{//a}
+98             \textcolor{keywordflow}{try}
+99             \{
+100                 \textcolor{comment}{//1}
+101                 \textcolor{keywordflow}{if} (!\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.IsOpen) \textcolor{keywordflow}{return};
+102                 \textcolor{keywordtype}{string} ReceivedText = \textcolor{stringliteral}{""};
+103                 \textcolor{comment}{//2}
+104                 ReceivedText = \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.ReadLine();
+105                 \textcolor{comment}{//3}
+106                 Dispatcher.BeginInvoke(\textcolor{keyword}{new} Action(() =>
+107                 \{
+108                     this.textBox1.AppendText(ReceivedText);
+109                     this.textBox1.ScrollToEnd();
+110                 \}));
+111                 \textcolor{comment}{//4}
+112                 \textcolor{keywordtype}{string}[] numbers = Regex.Split(ReceivedText, \textcolor{stringliteral}{@"\(\backslash\)D+"});
+113                 \textcolor{comment}{//5}
+114                 \textcolor{keywordflow}{if} (numbers.Length == 5)
+115                 \{
+116                     \textcolor{keywordtype}{int} mpos = 0;
+117                     \textcolor{keywordtype}{int} spos = 0;
+118                     \textcolor{keywordtype}{int} value = 0;
+119                     \textcolor{keywordflow}{if} (\textcolor{keywordtype}{int}.TryParse(numbers[1], out mpos) && \textcolor{keywordtype}{int}.TryParse(numbers[2], out spos) && \textcolor{keywordtype}{int}.
+      TryParse(numbers[3],out value))
+120                         \textcolor{comment}{//6}
+121                         \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].setDistanceData(mpos+1, spos
+      , value);
+122                     Dispatcher.BeginInvoke(\textcolor{keyword}{new} Action(() =>
+123                     \{
+124                         \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].setGeometryPoint3D(mpos+1 , 
+      spos);
+125 
+126                     \}));
+127 
+128 
+129 
+130                 \}
+131             \}
+132             \textcolor{comment}{//b}
+133             \textcolor{keywordflow}{catch} (Exception ex) \{ \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a1c0ad2dd56b20d3fdb928b918c0bc153}{ExeptionHandler}(ex); \}
+134         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!enable\+Visuals@{enable\+Visuals}}
+\index{enable\+Visuals@{enable\+Visuals}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{enable\+Visuals(bool b)}{enableVisuals(bool b)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+enable\+Visuals (
+\begin{DoxyParamCaption}
+\item[{bool}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_abc77995f990c7ef9dd53c0331b2c70a1}{}\label{class_l_i_d_a_r___controller_1_1_main_window_abc77995f990c7ef9dd53c0331b2c70a1}
+
+
+Enables/\+Disables the visuals. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em b} & true enables visuals and false disables them. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 654 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+655         \{
+656             \textcolor{comment}{//neuMessung.IsEnabled = b;}
+657             \textcolor{comment}{//entfMessung.IsEnabled = b;}
+658             \textcolor{comment}{//offsetBtn.IsEnabled = b;}
+659             btn\_einzelmessung.IsEnabled = b;
+660             btn\_kalibrieren.IsEnabled = b;
+661             posBtn.IsEnabled = b;
+662             btn\_radar.IsEnabled = b;
+663             txt\_MPos.IsEnabled = b;
+664             txt\_SPos.IsEnabled = b;
+665             \textcolor{comment}{//sendBtn.IsEnabled = b;}
+666             \textcolor{comment}{//comboBox2.IsEnabled = b;}
+667             \textcolor{comment}{//sendTxt.IsEnabled = b;}
+668             \textcolor{comment}{//txt\_punktmessung.IsEnabled = b;}
+669             \textcolor{comment}{//xOffsetTxt.IsEnabled = b;}
+670             \textcolor{comment}{//yOffsetTxt.IsEnabled = b;}
+671             \textcolor{comment}{//zOffsetTxt.IsEnabled = b;}
+672             \textcolor{comment}{//degOffsetTxt.IsEnabled = b;}
+673             \textcolor{comment}{//textBox1.IsEnabled = b;}
+674         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!entf\+Messung\+\_\+\+Click@{entf\+Messung\+\_\+\+Click}}
+\index{entf\+Messung\+\_\+\+Click@{entf\+Messung\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{entf\+Messung\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{entfMessung_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+entf\+Messung\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a94d838335feade09f122cad6a5600b74}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a94d838335feade09f122cad6a5600b74}
+
+
+Event handler. Called by entf\+Messung for click events. This functions deletes the selected measurement and updates combobox2. 
+
+
+\begin{DoxyEnumerate}
+\item Check if at least 2 measurements are available
+\item Remove the selected measurement form Measure\+List
+\item Clear combobox2
+\item Add all remaining measurements to combobox2
+\item Reset my\+Viewport
+\item Add all remaining measurements to my\+Viewport as children to display them
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 486 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+487         \{
+488             \textcolor{comment}{//1}
+489             \textcolor{keywordflow}{if} (\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}.Count > 1)
+490             \{
+491                 \textcolor{comment}{//2}
+492                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}.RemoveAt(\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure});
+493                 \textcolor{comment}{//3}
+494                 comboBox2.Items.Clear();
+495                 \textcolor{comment}{//4}
+496                 \textcolor{keywordflow}{foreach} (Measurement x \textcolor{keywordflow}{in} \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList})
+497                 \{
+498                     comboBox2.Items.Add(x);
+499                 \}
+500                 comboBox2.SelectedIndex = 0;
+501                 \textcolor{comment}{//5}
+502                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Clear();
+503                 \textcolor{comment}{//6}
+504                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{gridLinesXY});
+505                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(\textcolor{keyword}{new} DefaultLights());
+506                 \textcolor{keywordflow}{foreach} (Measurement x \textcolor{keywordflow}{in} MeasureList)
+507                 \{
+508                     \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(x.getGeometry3D());
+509                 \}
+510             \}
+511 
+512 
+513         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!Exeption\+Handler@{Exeption\+Handler}}
+\index{Exeption\+Handler@{Exeption\+Handler}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{Exeption\+Handler(\+Exception ex)}{ExeptionHandler(Exception ex)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+Exeption\+Handler (
+\begin{DoxyParamCaption}
+\item[{Exception}]{ex}
+\end{DoxyParamCaption}
+) \textbackslash{}D+\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a1c0ad2dd56b20d3fdb928b918c0bc153}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a1c0ad2dd56b20d3fdb928b918c0bc153}
+
+
+Handler, called when a exception occurs. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em ex} & The exception that occurred. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 147 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+148         \{
+149             \textcolor{keywordflow}{switch} (ex.GetType().Name)
+150             \{
+151                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"IOException"}:
+152                     MessageBox.Show(\textcolor{stringliteral}{"Name: "} + ex.GetType().Name + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nBeschreibung:\(\backslash\)r\(\backslash\)n"} + ex.Message, \textcolor{stringliteral}{"
+      Fehler!"}, MessageBoxButton.OK, MessageBoxImage.Error);
+153                     \textcolor{keywordflow}{break};
+154                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"ArgumentException"}:
+155                     MessageBox.Show(\textcolor{stringliteral}{"Bitte Eingaben überprüfen!"}, \textcolor{stringliteral}{"Fehleingabe erkannt!"}, MessageBoxButton.
+      OK, MessageBoxImage.Information);
+156                     \textcolor{keywordflow}{break};
+157                 \textcolor{keywordflow}{default}:
+158                     MessageBox.Show(\textcolor{stringliteral}{"Name: "} + ex.GetType().Name + \textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nBeschreibung:\(\backslash\)r\(\backslash\)n"} + ex.Message, \textcolor{stringliteral}{"
+      Unbekannter Fehler!"}, MessageBoxButton.OK, MessageBoxImage.Error);
+159                     \textcolor{keywordflow}{break};
+160             \}
+161 
+162         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!Init@{Init}}
+\index{Init@{Init}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{Init()}{Init()}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a784f9cfcd0edd64ca5aa044112a34b49}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a784f9cfcd0edd64ca5aa044112a34b49}
+
+
+Initialises both combo boxes with relevant data (e.\+g. available C\+O\+M-\/\+Ports). 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015 
+\end{DoxyDate}
+
+
+Definition at line 173 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+174         \{
+175             \textcolor{comment}{//add all COM-Ports to combobox}
+176             \textcolor{keywordflow}{foreach} (\textcolor{keywordtype}{string} ports \textcolor{keywordflow}{in} SerialPort.GetPortNames())
+177             \{
+178                 comboBox.Items.Add(ports);
+179             \}
+180             \textcolor{comment}{//initial measurement}
+181             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}.Add(\textcolor{keyword}{new} Measurement(\textcolor{keyword}{new} Vector3D(0, 0, 0.5), 0, 0));
+182 
+183             \textcolor{comment}{//add measurement to combobox2 and register a new event handler for "SelectionChangedEvent"}
+184             comboBox2.Items.Add(\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}]);
+185             comboBox2.DisplayMemberPath = \textcolor{stringliteral}{"mId"};
+186             comboBox2.SelectionChanged += \textcolor{keyword}{new} SelectionChangedEventHandler(
+      \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a9d5c30796bf1dac53610783e94d10b37}{comboBox2\_SelectionChanged});
+187             comboBox2.SelectedIndex = 0;
+188             \textcolor{comment}{//Enable/Disable all GUI-Elements that need a connected COM-Port}
+189             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_abc77995f990c7ef9dd53c0331b2c70a1}{enableVisuals}(\textcolor{keyword}{false});
+190 
+191         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!Init3D@{Init3D}}
+\index{Init3D@{Init3D}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{Init3\+D()}{Init3D()}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+Init3D (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_acd58042bfc74176a4d65a7f7b9c8b455}{}\label{class_l_i_d_a_r___controller_1_1_main_window_acd58042bfc74176a4d65a7f7b9c8b455}
+
+
+Initialises the viewport object. 
+
+
+\begin{DoxyEnumerate}
+\item Configure the grid lines for the xy-\/\+Plane.
+\item Configure my\+Viewport to show additional data.
+\item Add grid\+Lines\+XY, a default light and the 3\+D-\/\+Model of the selected measurement to my\+Viewport as children.
+\item Add my\+Viewport to grid (G\+U\+I-\/\+Element) as child and refresh.
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015 
+\end{DoxyDate}
+
+
+Definition at line 233 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+234         \{
+235             \textcolor{comment}{//1}
+236             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{gridLinesXY}.MinorDistance = 10; \textcolor{comment}{//Distance in cm for the minor lines }
+237             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{gridLinesXY}.MajorDistance = 100; \textcolor{comment}{//Distance in cm for the major lines }
+238             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{gridLinesXY}.Thickness = 1.5; \textcolor{comment}{//Line thickness}
+239             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{gridLinesXY}.Length = 10000; \textcolor{comment}{//Maximum grid size}
+240             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{gridLinesXY}.Width = 10000; \textcolor{comment}{//Maximum grid size}
+241 
+242             \textcolor{comment}{//2}
+243             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.ShowFrameRate = \textcolor{keyword}{true}; \textcolor{comment}{//Show framerate}
+244             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.ShowCoordinateSystem = \textcolor{keyword}{true}; \textcolor{comment}{//Show small Coordinate system}
+245             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.ShowFieldOfView = \textcolor{keyword}{true}; \textcolor{comment}{//Show Field of View}
+246 
+247             \textcolor{comment}{//3}
+248             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{gridLinesXY});
+249             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(\textcolor{keyword}{new} DefaultLights());
+250             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[
+      \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].getGeometry3D());
+251 
+252             \textcolor{comment}{//4}
+253             grid.Children.Add(\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport});
+254             grid.UpdateLayout();
+255 
+256         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!load\+Btn\+\_\+\+Click@{load\+Btn\+\_\+\+Click}}
+\index{load\+Btn\+\_\+\+Click@{load\+Btn\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{load\+Btn\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{loadBtn_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+load\+Btn\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a3b7bbddaea2352a5c539b1d920a175b2}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a3b7bbddaea2352a5c539b1d920a175b2}
+
+
+Event handler. Called by load\+Btn for click events. Calls \char`\"{}\+D\+A\+O.\+load\+Measurements\char`\"{} to load measurements from a xml file. 
+
+
+\begin{DoxyEnumerate}
+\item Get a list of Measurements from a xml file
+\item Clear combobox2
+\item Add all measurements to combobox2
+\item Reset my\+Viewport
+\item Add all measurements to my\+Viewport as children to display them
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 595 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+596         \{
+597             \textcolor{comment}{//1.}
+598             List<Measurement> loaded = DAO.loadMeasurements();
+599             \textcolor{keywordflow}{if} (loaded != null)
+600             \{
+601                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList} = loaded;
+602                 \textcolor{comment}{//2.}
+603                 comboBox2.Items.Clear();
+604                 \textcolor{comment}{//3.}
+605                 \textcolor{keywordflow}{foreach} (Measurement x \textcolor{keywordflow}{in} \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList})
+606                 \{
+607                     comboBox2.Items.Add(x);
+608                 \}
+609                 comboBox2.SelectedIndex = 0;
+610                 \textcolor{comment}{//4.}
+611                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Clear();
+612                 \textcolor{comment}{//5.}
+613                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a6be1b6eac4cf8176399dc7489e35f486}{gridLinesXY});
+614                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(\textcolor{keyword}{new} DefaultLights());
+615                 \textcolor{keywordflow}{foreach} (Measurement x \textcolor{keywordflow}{in} MeasureList)
+616                 \{
+617                     x.makeGeometry3D();
+618                     \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(x.getGeometry3D());
+619                 \}
+620             \}
+621         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!neu\+Messung\+\_\+\+Click@{neu\+Messung\+\_\+\+Click}}
+\index{neu\+Messung\+\_\+\+Click@{neu\+Messung\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{neu\+Messung\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{neuMessung_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+neu\+Messung\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_ab831283d55f1beb21fcf043db6690c11}{}\label{class_l_i_d_a_r___controller_1_1_main_window_ab831283d55f1beb21fcf043db6690c11}
+
+
+Event handler. Called by neu\+Messung for click events. This function adds a new \hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement} to Measure\+List and refreshes combobox2. 
+
+
+\begin{DoxyEnumerate}
+\item Add new \hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement} to Measure\+List
+\item Clear combobox2
+\item Add all Measurements to combobox2
+\item Display the new \hyperlink{class_l_i_d_a_r___controller_1_1_measurement}{Measurement}
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 449 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+450         \{
+451             \textcolor{comment}{//1.}
+452             Measurement mhelper = \textcolor{keyword}{new} Measurement(\textcolor{keyword}{new} Vector3D(), 0, 0);
+453             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}.Add(mhelper);
+454             \textcolor{comment}{//2.}
+455             comboBox2.Items.Clear();
+456             \textcolor{comment}{//3.}
+457             \textcolor{keywordflow}{foreach} (Measurement x \textcolor{keywordflow}{in} \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList})
+458             \{
+459                 comboBox2.Items.Add(x);
+460             \}
+461             comboBox2.SelectedIndex = 0;
+462             \textcolor{comment}{//4.}
+463             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a4b0350fc0b7116a0d744ee8e489ab34a}{myViewport}.Children.Add(mhelper.getGeometry3D());
+464 
+465         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!offset\+Btn\+\_\+\+Click@{offset\+Btn\+\_\+\+Click}}
+\index{offset\+Btn\+\_\+\+Click@{offset\+Btn\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{offset\+Btn\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{offsetBtn_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+offset\+Btn\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a786d1e5b609bbb158111051107ff860f}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a786d1e5b609bbb158111051107ff860f}
+
+
+Event handler. Called by offset\+Btn for click events. This function gets the offset information. Then id adds this values to the selected measurement. 
+
+a. Try to parse all values \begin{DoxyVerb}1.  Set all offset values   
+\end{DoxyVerb}
+
+
+b. If parsing fails show a Message\+Box.
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 534 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+535         \{
+536             \textcolor{keywordtype}{double} x, y, z, degX ,degZ = 0;
+537             \textcolor{comment}{//a}
+538             \textcolor{keywordflow}{if} (\textcolor{keywordtype}{double}.TryParse(xOffsetTxt.Text, out x) &&
+539                 \textcolor{keywordtype}{double}.TryParse(yOffsetTxt.Text, out y) &&
+540                 \textcolor{keywordtype}{double}.TryParse(zOffsetTxt.Text, out z) &&
+541                 \textcolor{keywordtype}{double}.TryParse(degOffsetXTxt.Text, out degX) &&
+542                 \textcolor{keywordtype}{double}.TryParse(degOffsetZTxt.Text, out degZ)
+543                 )
+544             \{
+545                 \textcolor{comment}{//1}
+546                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].linearOffset = \textcolor{keyword}{new} Vector3D(x, y, z)
+      ;
+547                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].rotaryOffsetX = degX;
+548                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].rotaryOffsetZ = degZ;
+549                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].Refresh();
+550 
+551             \}
+552             \textcolor{comment}{//b}
+553             \textcolor{keywordflow}{else}
+554             \{
+555                 MessageBox.Show(\textcolor{stringliteral}{"Für den Offset sind nur Zahlenwerte erlaubt."}, \textcolor{stringliteral}{"Fehleingabe erkannt!"}, 
+      MessageBoxButton.OK, MessageBoxImage.Information);
+556             \}
+557         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!pos\+Btn\+\_\+\+Click@{pos\+Btn\+\_\+\+Click}}
+\index{pos\+Btn\+\_\+\+Click@{pos\+Btn\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{pos\+Btn\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{posBtn_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+pos\+Btn\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_ac59530029320b9182c0db19ec2bb1344}{}\label{class_l_i_d_a_r___controller_1_1_main_window_ac59530029320b9182c0db19ec2bb1344}
+
+
+Event handler. Called by pos\+Btn for click events. This functions sends the \char`\"{}\#3\char`\"{} (Set Position) command with the position infos from \char`\"{}txt\+\_\+\+M\+Pos\char`\"{} \& \char`\"{}txt\+\_\+\+S\+Pos\char`\"{} to the L\+I\+D\+A\+R-\/\+Scanner. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 397 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+398         \{
+399             \textcolor{keywordtype}{int} m;
+400             \textcolor{keywordtype}{int} s;
+401             \textcolor{keywordflow}{if} (\textcolor{keywordtype}{int}.TryParse(txt\_MPos.Text, out m) && (\textcolor{keywordtype}{int}.TryParse(txt\_SPos.Text, out s)))
+402             \{
+403                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.WriteLine(\textcolor{stringliteral}{"#3"});
+404                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.WriteLine(\textcolor{stringliteral}{""} + m);
+405                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.WriteLine(\textcolor{stringliteral}{""} + s);
+406             \}
+407             \textcolor{keywordflow}{else}
+408             \{
+409                 MessageBox.Show(\textcolor{stringliteral}{"Es sind nur positive ganze Zahlen als Position erlaubt!"}, \textcolor{stringliteral}{"Fehleingabe
+       erkannt!"}, MessageBoxButton.OK, MessageBoxImage.Information);
+410             \}
+411 
+412         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!reverse\+\_\+\+Click@{reverse\+\_\+\+Click}}
+\index{reverse\+\_\+\+Click@{reverse\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{reverse\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{reverse_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+reverse\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a644193ce9f107d5269d1443f8ff1d855}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a644193ce9f107d5269d1443f8ff1d855}
+
+
+Event handler. Called by reverse for click events. This function transforms the 3D model to a open/closed shape. 
+
+\begin{DoxyAuthor}{Author}
+Alex 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18.\+01.\+2016
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 690 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+691         \{
+692             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].open = !
+      \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].open;
+693             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList}[\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a01f677b33ad15d2f0cdf8df1c64cd0e2}{selectedMeasure}].Refresh();
+694         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!save\+Btn\+\_\+\+Click@{save\+Btn\+\_\+\+Click}}
+\index{save\+Btn\+\_\+\+Click@{save\+Btn\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{save\+Btn\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{saveBtn_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+save\+Btn\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a5897a8f1e59121209c0461bfd960b26a}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a5897a8f1e59121209c0461bfd960b26a}
+
+
+Event handler. Called by save\+Btn for click events. Calls \char`\"{}\+D\+A\+O.\+save\+Measurements\char`\"{} to save all measurements to a xml file. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 572 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+573         \{
+574             DAO.saveMeasurements(\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_add7555b1a79fa1c17cd18dcf98859b9c}{MeasureList});
+575         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!send\+Btn\+\_\+\+Click@{send\+Btn\+\_\+\+Click}}
+\index{send\+Btn\+\_\+\+Click@{send\+Btn\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{send\+Btn\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{sendBtn_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+send\+Btn\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_acea12fa391cab47bba07e6af85e4a765}{}\label{class_l_i_d_a_r___controller_1_1_main_window_acea12fa391cab47bba07e6af85e4a765}
+
+
+Event handler. Called by send\+Btn for click events. This function sends the text of \char`\"{}send\+Txt\char`\"{} to the L\+I\+D\+A\+R-\/\+Scanner. 
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 636 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+637         \{
+638 
+639             \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.Write(sendTxt.Text);
+640 
+641         \}
+\end{DoxyCode}
+\index{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}!verbinden\+\_\+\+Click@{verbinden\+\_\+\+Click}}
+\index{verbinden\+\_\+\+Click@{verbinden\+\_\+\+Click}!L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window@{L\+I\+D\+A\+R\+\_\+\+Controller\+::\+Main\+Window}}
+\subsubsection[{\texorpdfstring{verbinden\+\_\+\+Click(object sender, Routed\+Event\+Args e)}{verbinden_Click(object sender, RoutedEventArgs e)}}]{\setlength{\rightskip}{0pt plus 5cm}private void L\+I\+D\+A\+R\+\_\+\+Controller.\+Main\+Window.\+verbinden\+\_\+\+Click (
+\begin{DoxyParamCaption}
+\item[{object}]{sender, }
+\item[{Routed\+Event\+Args}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_l_i_d_a_r___controller_1_1_main_window_a2447b7c8a7d2310a89212d3cdc90e7f2}{}\label{class_l_i_d_a_r___controller_1_1_main_window_a2447b7c8a7d2310a89212d3cdc90e7f2}
+
+
+Event handler. Called by verbinden for click events. 
+
+a\+: if no problems occur then...
+
+
+\begin{DoxyEnumerate}
+\item If no device is connected then ...
+
+1.\+1. Get baud rate from combobox1 ~\newline
+ 1.\+2. Create a new connection ~\newline
+ 1.\+3. Register a handler for \char`\"{}\+Data\+Received\char`\"{}-\/\+Events ~\newline
+ 1.\+4. Open connection ~\newline
+ 1.\+5. Clear all buffers ~\newline
+ 1.\+6. Enable all G\+U\+I-\/\+Elements ~\newline
+
+\item else
+
+2.\+1. Check if the connection is still open ~\newline
+ 2.\+2. Clear all buffers ~\newline
+ 2.\+3. Close the connection ~\newline
+ 2.\+4. Delete the connection ~\newline
+ 2.\+5. Disable some G\+U\+I-\/\+Elements
+\end{DoxyEnumerate}
+
+b\+: If something goes wrong, call the exception handler.
+
+\begin{DoxyAuthor}{Author}
+Alexander Miller (7089316) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22.\+12.\+2015
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & Source of the event. \\
+\hline
+{\em e} & Routed event information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 291 of file Main\+Window.\+xaml.\+cs.
+
+
+\begin{DoxyCode}
+292         \{
+293             \textcolor{comment}{//a}
+294             \textcolor{keywordflow}{try}
+295             \{
+296                 \textcolor{comment}{//1}
+297                 \textcolor{keywordflow}{if} (\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort} == null)
+298                 \{
+299                     \textcolor{comment}{//1.1}
+300                     \textcolor{keywordtype}{int} baud;
+301                     Int32.TryParse(comboBox1.Text, out baud);
+302                     \textcolor{comment}{//1.2}
+303                     \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort} = \textcolor{keyword}{new} SerialPort(comboBox.Text, baud);
+304                     \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.DtrEnable = \textcolor{keyword}{true};
+305                     \textcolor{comment}{//1.3}
+306                     \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.DataReceived += \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a06e7e925f385b26d3fea4717bf359609}{ComPortReceiveHandler};
+307                     \textcolor{comment}{//1.4}
+308                     \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.Open();
+309                     \textcolor{comment}{//1.5}
+310                     \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.DiscardInBuffer();
+311                     \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.DiscardOutBuffer();
+312 
+313                     textBox1.Clear();
+314 
+315                     button.Content = \textcolor{stringliteral}{"Trennen"};
+316                     label.Content = \textcolor{stringliteral}{"Verbunden"};
+317                     \textcolor{comment}{//1.6}
+318                     \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_abc77995f990c7ef9dd53c0331b2c70a1}{enableVisuals}(\textcolor{keyword}{true});
+319 
+320                 \}
+321                 \textcolor{comment}{//2}
+322                 \textcolor{keywordflow}{else}
+323                 \{
+324                     \textcolor{comment}{//2.1}
+325                     \textcolor{keywordflow}{if} (\hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.IsOpen)
+326                     \{
+327                         \textcolor{comment}{//2.2}
+328                         \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.DiscardInBuffer();
+329                         \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.DiscardOutBuffer();
+330                         \textcolor{comment}{//2.3}
+331                         \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort}.Close();
+332                         \textcolor{comment}{//2.4}
+333                         \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_ae8b01d789601ddbc234ede8a0b43eb7b}{ComPort} = null;
+334                         button.Content = \textcolor{stringliteral}{"Verbinden"};
+335                         label.Content = \textcolor{stringliteral}{"Nicht verbunden!"};
+336                         \textcolor{comment}{//2.5}
+337                         \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_abc77995f990c7ef9dd53c0331b2c70a1}{enableVisuals}(\textcolor{keyword}{false});
+338                     \}
+339                 \}
+340             \}
+341             \textcolor{comment}{//b}
+342             \textcolor{keywordflow}{catch} (Exception ex)
+343             \{
+344                 \hyperlink{class_l_i_d_a_r___controller_1_1_main_window_a1c0ad2dd56b20d3fdb928b918c0bc153}{ExeptionHandler}(ex);
+345             \}
+346         \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+L\+I\+D\+A\+R\+\_\+\+V\+I\+S\+\_\+\+T\+E\+S\+T/\+L\+I\+D\+A\+R\+\_\+\+W\+P\+F\+\_\+\+T\+E\+S\+T/\hyperlink{_main_window_8xaml_8cs}{Main\+Window.\+xaml.\+cs}\end{DoxyCompactItemize}

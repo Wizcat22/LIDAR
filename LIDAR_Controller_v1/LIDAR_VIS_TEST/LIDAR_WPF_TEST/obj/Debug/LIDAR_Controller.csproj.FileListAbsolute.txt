@@ -1,0 +1,74 @@
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe.config
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.pdb
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.dll
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.Wpf.dll
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.pdb
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.xml
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.Wpf.pdb
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.Wpf.xml
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\MainWindow.g.cs
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\App.g.cs
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller_MarkupCompile.cache
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller_MarkupCompile.lref
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\MainWindow.baml
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.g.resources
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.Properties.Resources.resources
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.csproj.GenerateResource.Cache
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.exe
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.pdb
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe.manifest
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.application
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.TrustInfo.xml
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.exe.manifest
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.application
+C:\Users\alex-\sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.csprojResolveAssemblyReference.cache
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe.config
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe.manifest
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.application
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.pdb
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.dll
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.Wpf.dll
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.pdb
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.xml
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.Wpf.pdb
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.Wpf.xml
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\MainWindow.g.cs
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\App.g.cs
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller_MarkupCompile.cache
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller_MarkupCompile.lref
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\MainWindow.baml
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.g.resources
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.Properties.Resources.resources
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.csproj.GenerateResource.Cache
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.TrustInfo.xml
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.exe.manifest
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.application
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.exe
+D:\Sciebo\LIDAR_VIS_TEST\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.pdb
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe.config
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.exe
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.pdb
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.csprojResolveAssemblyReference.cache
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\MainWindow.g.cs
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\App.g.cs
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller_MarkupCompile.cache
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller_MarkupCompile.lref
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\MainWindow.baml
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.g.resources
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.Properties.Resources.resources
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.csproj.GenerateResource.Cache
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.TrustInfo.xml
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe.manifest
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.application
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.exe
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\LIDAR_Controller.pdb
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.dll
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.Wpf.dll
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.pdb
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.xml
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.Wpf.pdb
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\bin\Debug\HelixToolkit.Wpf.xml
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.exe.manifest
+D:\Alexander Miller\Desktop\LIDAR_Controller_v1\LIDAR_VIS_TEST\LIDAR_WPF_TEST\obj\Debug\LIDAR_Controller.application

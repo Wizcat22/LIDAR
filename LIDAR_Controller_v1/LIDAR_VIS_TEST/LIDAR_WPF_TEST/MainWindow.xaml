@@ -1,0 +1,70 @@
+﻿<Window x:Class="LIDAR_Controller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LIDAR_Controller"
+        mc:Ignorable="d"
+        Title="LIDAR Controller" Height="582.725" Width="927.7">
+    <Grid>
+        <GroupBox x:Name="groupBox" Header="Verbindung" Margin="10,10,0,0" HorizontalAlignment="Left" Width="258" Height="157" VerticalAlignment="Top">
+            <Grid Margin="-4,0,-4,-4">
+                <Button x:Name="button" Content="Verbinden" Margin="10,37,0,0" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="88" Click="verbinden_Click"/>
+                <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="115" SelectedIndex="0" SelectedValuePath="Content"/>
+                <Label x:Name="label" Content="Nicht Verbunden." HorizontalAlignment="Left" Margin="60,64,0,0" VerticalAlignment="Top" Width="163"/>
+                <Label x:Name="label1" Content="Status:" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Width="45"/>
+                <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="130,10,0,0" VerticalAlignment="Top" Width="115">
+                    <ComboBoxItem Content="9600" IsSelected="True"/>
+                    <ComboBoxItem Content="14400"/>
+                    <ComboBoxItem Content="19200"/>
+                    <ComboBoxItem Content="28800"/>
+                    <ComboBoxItem Content="38400"/>
+                    <ComboBoxItem Content="38400"/>
+                    <ComboBoxItem Content="56000" IsSelected="True"/>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Kommunikation" HorizontalAlignment="Left" Margin="10,167,0,10" Width="258">
+            <Grid Margin="-4,0,-4,-4">
+                <TextBox x:Name="sendTxt" TextWrapping="Wrap" Height="20" VerticalAlignment="Bottom" ToolTip="Hier Befehle eingeben." Margin="2,0,82,3" Background="White"/>
+                <TextBox x:Name="textBox1" Margin="2,0,2,28" TextWrapping="Wrap" FontFamily="Monospac821 BT" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Focusable="False" />
+                <Button x:Name="sendBtn" Content="Senden" HorizontalAlignment="Left" Margin="177,0,0,3" Width="75" Height="20" VerticalAlignment="Bottom" Click="sendBtn_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox2" Header="Daten" Margin="429,10,10,10">
+            <Grid Margin="0,0,2,2">
+                <Grid x:Name="grid" Margin="10"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox3" Header="Aktionen" Margin="273,10,0,10" HorizontalAlignment="Left" Width="151">
+            <Grid Margin="-4,0,-4,-4">
+                <Button x:Name="btn_einzelmessung" Content="Einzelmessung" Margin="10,334,10,0" VerticalAlignment="Top" Click="button2_Click"/>
+                <Button x:Name="btn_radar" Content="Radarmodus 2D" Margin="10,359,10,0" VerticalAlignment="Top" Click="button3_Click"/>
+                <Button x:Name="posBtn" Content="Position setzen" Margin="10,384,10,0" Height="20" VerticalAlignment="Top" Click="posBtn_Click"/>
+                <TextBox x:Name="txt_MPos" Margin="34,409,75,0" TextWrapping="Wrap" Text="0" Height="20" VerticalAlignment="Top"/>
+                <Button x:Name="btn_kalibrieren" Content="Kalibrieren" HorizontalAlignment="Left" Margin="10,434,0,0" VerticalAlignment="Top" Width="127" Click="button6_Click"/>
+                <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Width="127"/>
+                <Label x:Name="label2" Content="Messung:" HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="127"/>
+                <Button x:Name="neuMessung" Content="neu" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="62" Click="neuMessung_Click"/>
+                <Button x:Name="entfMessung" Content="entf." HorizontalAlignment="Left" Margin="77,57,0,0" VerticalAlignment="Top" Width="60" Click="entfMessung_Click"/>
+                <Button x:Name="offsetBtn" Content="Offset einstellen" HorizontalAlignment="Left" Margin="10,264,0,0" VerticalAlignment="Top" Width="127" Click="offsetBtn_Click"/>
+                <TextBox x:Name="xOffsetTxt" HorizontalAlignment="Left" Height="20" Margin="77,88,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60"/>
+                <TextBox x:Name="yOffsetTxt" HorizontalAlignment="Left" Height="20" Margin="77,122,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60"/>
+                <TextBox x:Name="zOffsetTxt" HorizontalAlignment="Left" Height="20" Margin="77,156,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60"/>
+                <TextBox x:Name="degOffsetXTxt" HorizontalAlignment="Left" Height="20" Margin="77,190,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60"/>
+                <Label x:Name="xoffsetLabel" Content="X" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Height="29" Width="62"/>
+                <Label x:Name="yoffsetLabel" Content="Y" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top" Height="29" Width="62"/>
+                <Label x:Name="zoffsetLabel" Content="Z" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Height="29" Width="62"/>
+                <Label x:Name="degOffsetXLabel" Content="Grad X:" HorizontalAlignment="Left" Margin="10,186,0,0" VerticalAlignment="Top" Height="29" Width="62"/>
+                <Button x:Name="saveBtn" Content="Speichern" HorizontalAlignment="Left" Margin="10,484,0,0" VerticalAlignment="Top" Width="127" Click="saveBtn_Click"/>
+                <Button x:Name="loadBtn" Content="Laden" HorizontalAlignment="Left" Margin="10,459,0,0" VerticalAlignment="Top" Width="127" Click="loadBtn_Click"/>
+                <Label x:Name="mposLabel" Content="M:" HorizontalAlignment="Left" Margin="10,405,0,0" VerticalAlignment="Top" Height="29"/>
+                <Label x:Name="sposLabel" Content="S:" HorizontalAlignment="Left" Margin="72,405,0,0" VerticalAlignment="Top" Height="29" RenderTransformOrigin="4.304,-0.034"/>
+                <TextBox x:Name="txt_SPos" Margin="99,409,10,0" TextWrapping="Wrap" Text="0" Height="20" VerticalAlignment="Top" RenderTransformOrigin="0.763,0.8"/>
+                <Label x:Name="degOffsetZLabel" Content="Grad Z:" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Height="29" Width="62"/>
+                <TextBox x:Name="degOffsetZTxt" HorizontalAlignment="Left" Height="20" Margin="77,224,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="60"/>
+                <Button x:Name="reverse" Content="Umkehren" HorizontalAlignment="Left" Margin="10,289,0,0" VerticalAlignment="Top" Width="127" Click="reverse_Click"/>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
