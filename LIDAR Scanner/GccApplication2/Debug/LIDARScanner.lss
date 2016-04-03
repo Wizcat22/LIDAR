@@ -1,0 +1,3723 @@
+
+LIDARScanner.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000302  00800100  0000102c  000010c0  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000102c  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000001b  00800402  00800402  000013c2  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000013c2  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000013f4  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000228  00000000  00000000  00001434  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   0000255c  00000000  00000000  0000165c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000d48  00000000  00000000  00003bb8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000d8a  00000000  00000000  00004900  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000057c  00000000  00000000  0000568c  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000640  00000000  00000000  00005c08  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00001f1b  00000000  00000000  00006248  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000002d8  00000000  00000000  00008163  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 43 00 	jmp	0x86	; 0x86 <__ctors_end>
+       4:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+       8:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+       c:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      10:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      14:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      18:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      1c:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      20:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      24:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      28:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      2c:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      30:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      34:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      38:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      3c:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      40:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      44:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      48:	0c 94 88 05 	jmp	0xb10	; 0xb10 <__vector_18>
+      4c:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      50:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      54:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      58:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      5c:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      60:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      64:	0c 94 60 00 	jmp	0xc0	; 0xc0 <__bad_interrupt>
+      68:	6c 03       	fmul	r22, r20
+      6a:	80 03       	fmuls	r16, r16
+      6c:	cd 03       	fmulsu	r20, r21
+      6e:	dd 03       	fmulsu	r21, r21
+      70:	e4 03       	fmuls	r22, r20
+      72:	44 04       	cpc	r4, r4
+      74:	5e 04       	cpc	r5, r14
+      76:	83 04       	cpc	r8, r3
+      78:	a8 04       	cpc	r10, r8
+      7a:	c3 04       	cpc	r12, r3
+      7c:	c3 04       	cpc	r12, r3
+      7e:	c3 04       	cpc	r12, r3
+      80:	c3 04       	cpc	r12, r3
+      82:	c3 04       	cpc	r12, r3
+      84:	3e 03       	fmul	r19, r22
+
+00000086 <__ctors_end>:
+      86:	11 24       	eor	r1, r1
+      88:	1f be       	out	0x3f, r1	; 63
+      8a:	cf ef       	ldi	r28, 0xFF	; 255
+      8c:	d8 e0       	ldi	r29, 0x08	; 8
+      8e:	de bf       	out	0x3e, r29	; 62
+      90:	cd bf       	out	0x3d, r28	; 61
+
+00000092 <__do_copy_data>:
+      92:	14 e0       	ldi	r17, 0x04	; 4
+      94:	a0 e0       	ldi	r26, 0x00	; 0
+      96:	b1 e0       	ldi	r27, 0x01	; 1
+      98:	ec e2       	ldi	r30, 0x2C	; 44
+      9a:	f0 e1       	ldi	r31, 0x10	; 16
+      9c:	02 c0       	rjmp	.+4      	; 0xa2 <__do_copy_data+0x10>
+      9e:	05 90       	lpm	r0, Z+
+      a0:	0d 92       	st	X+, r0
+      a2:	a2 30       	cpi	r26, 0x02	; 2
+      a4:	b1 07       	cpc	r27, r17
+      a6:	d9 f7       	brne	.-10     	; 0x9e <__do_copy_data+0xc>
+
+000000a8 <__do_clear_bss>:
+      a8:	24 e0       	ldi	r18, 0x04	; 4
+      aa:	a2 e0       	ldi	r26, 0x02	; 2
+      ac:	b4 e0       	ldi	r27, 0x04	; 4
+      ae:	01 c0       	rjmp	.+2      	; 0xb2 <.do_clear_bss_start>
+
+000000b0 <.do_clear_bss_loop>:
+      b0:	1d 92       	st	X+, r1
+
+000000b2 <.do_clear_bss_start>:
+      b2:	ad 31       	cpi	r26, 0x1D	; 29
+      b4:	b2 07       	cpc	r27, r18
+      b6:	e1 f7       	brne	.-8      	; 0xb0 <.do_clear_bss_loop>
+      b8:	0e 94 d3 02 	call	0x5a6	; 0x5a6 <main>
+      bc:	0c 94 14 08 	jmp	0x1028	; 0x1028 <_exit>
+
+000000c0 <__bad_interrupt>:
+      c0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000c4 <adc_init>:
+ * @date	22.12.2015
+ **************************************************************************************************/
+
+void adc_init(){
+	
+	ADMUX |= (1<<REFS0) | (1<<MUX0);
+      c4:	ec e7       	ldi	r30, 0x7C	; 124
+      c6:	f0 e0       	ldi	r31, 0x00	; 0
+      c8:	80 81       	ld	r24, Z
+      ca:	81 64       	ori	r24, 0x41	; 65
+      cc:	80 83       	st	Z, r24
+	ADCSRA |= (1<<ADEN) | (1<<ADSC) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0);
+      ce:	ea e7       	ldi	r30, 0x7A	; 122
+      d0:	f0 e0       	ldi	r31, 0x00	; 0
+      d2:	80 81       	ld	r24, Z
+      d4:	87 6c       	ori	r24, 0xC7	; 199
+      d6:	80 83       	st	Z, r24
+	
+	while (ADCSRA & (1<<ADSC))
+      d8:	80 81       	ld	r24, Z
+      da:	86 fd       	sbrc	r24, 6
+      dc:	fd cf       	rjmp	.-6      	; 0xd8 <adc_init+0x14>
+	{
+	}
+	
+	(void) ADCW;
+      de:	80 91 78 00 	lds	r24, 0x0078
+      e2:	90 91 79 00 	lds	r25, 0x0079
+      e6:	08 95       	ret
+
+000000e8 <adc_read>:
+ * @return	Value.
+ **************************************************************************************************/
+
+uint16_t adc_read(){
+	
+	ADCSRA |= (1<<ADSC);
+      e8:	ea e7       	ldi	r30, 0x7A	; 122
+      ea:	f0 e0       	ldi	r31, 0x00	; 0
+      ec:	80 81       	ld	r24, Z
+      ee:	80 64       	ori	r24, 0x40	; 64
+      f0:	80 83       	st	Z, r24
+	while (ADCSRA & (1<<ADSC))
+      f2:	80 81       	ld	r24, Z
+      f4:	86 fd       	sbrc	r24, 6
+      f6:	fd cf       	rjmp	.-6      	; 0xf2 <adc_read+0xa>
+	{
+	}
+	return ADCW;
+      f8:	80 91 78 00 	lds	r24, 0x0078
+      fc:	90 91 79 00 	lds	r25, 0x0079
+}
+     100:	08 95       	ret
+
+00000102 <adc_read_avg>:
+ * @param	x	Number of values to make.
+ *
+ * @return	Average.
+ **************************************************************************************************/
+
+uint16_t adc_read_avg(char x){
+     102:	0f 93       	push	r16
+     104:	1f 93       	push	r17
+     106:	cf 93       	push	r28
+     108:	df 93       	push	r29
+     10a:	d8 2f       	mov	r29, r24
+	uint16_t avg = 0;
+	for (char i = 0 ; i<x ;i++)
+     10c:	88 23       	and	r24, r24
+     10e:	59 f0       	breq	.+22     	; 0x126 <adc_read_avg+0x24>
+     110:	c0 e0       	ldi	r28, 0x00	; 0
+     112:	00 e0       	ldi	r16, 0x00	; 0
+     114:	10 e0       	ldi	r17, 0x00	; 0
+	{
+		avg+=adc_read();
+     116:	0e 94 74 00 	call	0xe8	; 0xe8 <adc_read>
+     11a:	08 0f       	add	r16, r24
+     11c:	19 1f       	adc	r17, r25
+ * @return	Average.
+ **************************************************************************************************/
+
+uint16_t adc_read_avg(char x){
+	uint16_t avg = 0;
+	for (char i = 0 ; i<x ;i++)
+     11e:	cf 5f       	subi	r28, 0xFF	; 255
+     120:	cd 13       	cpse	r28, r29
+     122:	f9 cf       	rjmp	.-14     	; 0x116 <adc_read_avg+0x14>
+     124:	02 c0       	rjmp	.+4      	; 0x12a <adc_read_avg+0x28>
+ *
+ * @return	Average.
+ **************************************************************************************************/
+
+uint16_t adc_read_avg(char x){
+	uint16_t avg = 0;
+     126:	00 e0       	ldi	r16, 0x00	; 0
+     128:	10 e0       	ldi	r17, 0x00	; 0
+	for (char i = 0 ; i<x ;i++)
+	{
+		avg+=adc_read();
+	}
+	return (avg/x);
+     12a:	6d 2f       	mov	r22, r29
+     12c:	70 e0       	ldi	r23, 0x00	; 0
+     12e:	c8 01       	movw	r24, r16
+     130:	0e 94 86 07 	call	0xf0c	; 0xf0c <__udivmodhi4>
+     134:	cb 01       	movw	r24, r22
+     136:	df 91       	pop	r29
+     138:	cf 91       	pop	r28
+     13a:	1f 91       	pop	r17
+     13c:	0f 91       	pop	r16
+     13e:	08 95       	ret
+
+00000140 <lidar_getValue>:
+/*! \brief Get value of distance measure
+ *
+ *  This function start a new distance measure.
+ *  \return Distance measure
+ */
+uint16_t lidar_getValue(){
+     140:	cf 93       	push	r28
+     142:	df 93       	push	r29
+     144:	00 d0       	rcall	.+0      	; 0x146 <lidar_getValue+0x6>
+     146:	cd b7       	in	r28, 0x3d	; 61
+     148:	de b7       	in	r29, 0x3e	; 62
+	uint16_t convert;
+	uint8_t data[2];
+	uint8_t *dp = &data[0];
+	uint8_t errorW = 100;
+	uint8_t errorR = 100;
+	cli();
+     14a:	f8 94       	cli
+	while (errorW != 0)
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, REGISTER_MEASURE, MEASURE_VALUE_WITH_DC);
+     14c:	44 e0       	ldi	r20, 0x04	; 4
+     14e:	60 e0       	ldi	r22, 0x00	; 0
+     150:	82 e6       	ldi	r24, 0x62	; 98
+     152:	0e 94 d8 06 	call	0xdb0	; 0xdb0 <twi_writeReg>
+		if (errorW == TWI_CONNECTION_ERROR)
+     156:	85 30       	cpi	r24, 0x05	; 5
+     158:	41 f1       	breq	.+80     	; 0x1aa <lidar_getValue+0x6a>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     15a:	ef e9       	ldi	r30, 0x9F	; 159
+     15c:	ff e0       	ldi	r31, 0x0F	; 15
+     15e:	31 97       	sbiw	r30, 0x01	; 1
+     160:	f1 f7       	brne	.-4      	; 0x15e <lidar_getValue+0x1e>
+     162:	00 c0       	rjmp	.+0      	; 0x164 <lidar_getValue+0x24>
+     164:	00 00       	nop
+	uint8_t data[2];
+	uint8_t *dp = &data[0];
+	uint8_t errorW = 100;
+	uint8_t errorR = 100;
+	cli();
+	while (errorW != 0)
+     166:	81 11       	cpse	r24, r1
+     168:	f1 cf       	rjmp	.-30     	; 0x14c <lidar_getValue+0xc>
+		}
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	while (errorR != 0)
+	{
+		errorR = twi_readReg(LIDARLite_ADDRESS, REGISTER_VALUE, dp, 2);
+     16a:	22 e0       	ldi	r18, 0x02	; 2
+     16c:	ae 01       	movw	r20, r28
+     16e:	4f 5f       	subi	r20, 0xFF	; 255
+     170:	5f 4f       	sbci	r21, 0xFF	; 255
+     172:	6f e8       	ldi	r22, 0x8F	; 143
+     174:	82 e6       	ldi	r24, 0x62	; 98
+     176:	0e 94 f8 06 	call	0xdf0	; 0xdf0 <twi_readReg>
+     17a:	ef e9       	ldi	r30, 0x9F	; 159
+     17c:	ff e0       	ldi	r31, 0x0F	; 15
+     17e:	31 97       	sbiw	r30, 0x01	; 1
+     180:	f1 f7       	brne	.-4      	; 0x17e <lidar_getValue+0x3e>
+     182:	00 c0       	rjmp	.+0      	; 0x184 <lidar_getValue+0x44>
+     184:	00 00       	nop
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+		if (errorR == TWI_CONNECTION_ERROR)
+     186:	85 30       	cpi	r24, 0x05	; 5
+     188:	99 f0       	breq	.+38     	; 0x1b0 <lidar_getValue+0x70>
+		{
+			return TWI_CONNECTION_ERROR;
+		}
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	while (errorR != 0)
+     18a:	81 11       	cpse	r24, r1
+     18c:	ee cf       	rjmp	.-36     	; 0x16a <lidar_getValue+0x2a>
+		if (errorR == TWI_CONNECTION_ERROR)
+		{
+			return TWI_CONNECTION_ERROR;
+		}
+	}
+	sei();
+     18e:	78 94       	sei
+	int16_t temp;
+	temp = data[0];
+     190:	29 81       	ldd	r18, Y+1	; 0x01
+     192:	30 e0       	ldi	r19, 0x00	; 0
+	temp = (temp <<8);
+	convert = (temp + data[1]);
+     194:	8a 81       	ldd	r24, Y+2	; 0x02
+		}
+	}
+	sei();
+	int16_t temp;
+	temp = data[0];
+	temp = (temp <<8);
+     196:	32 2f       	mov	r19, r18
+     198:	22 27       	eor	r18, r18
+	convert = (temp + data[1]);
+     19a:	28 0f       	add	r18, r24
+     19c:	31 1d       	adc	r19, r1
+	if (convert == 0)
+     19e:	21 15       	cp	r18, r1
+     1a0:	31 05       	cpc	r19, r1
+     1a2:	49 f0       	breq	.+18     	; 0x1b6 <lidar_getValue+0x76>
+	{
+		return MAX_VALUE;
+	}
+	return convert;
+     1a4:	82 2f       	mov	r24, r18
+     1a6:	93 2f       	mov	r25, r19
+     1a8:	08 c0       	rjmp	.+16     	; 0x1ba <lidar_getValue+0x7a>
+	while (errorW != 0)
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, REGISTER_MEASURE, MEASURE_VALUE_WITH_DC);
+		if (errorW == TWI_CONNECTION_ERROR)
+		{
+			return TWI_CONNECTION_ERROR;
+     1aa:	85 e0       	ldi	r24, 0x05	; 5
+     1ac:	90 e0       	ldi	r25, 0x00	; 0
+     1ae:	05 c0       	rjmp	.+10     	; 0x1ba <lidar_getValue+0x7a>
+	{
+		errorR = twi_readReg(LIDARLite_ADDRESS, REGISTER_VALUE, dp, 2);
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+		if (errorR == TWI_CONNECTION_ERROR)
+		{
+			return TWI_CONNECTION_ERROR;
+     1b0:	85 e0       	ldi	r24, 0x05	; 5
+     1b2:	90 e0       	ldi	r25, 0x00	; 0
+     1b4:	02 c0       	rjmp	.+4      	; 0x1ba <lidar_getValue+0x7a>
+	temp = data[0];
+	temp = (temp <<8);
+	convert = (temp + data[1]);
+	if (convert == 0)
+	{
+		return MAX_VALUE;
+     1b6:	80 ea       	ldi	r24, 0xA0	; 160
+     1b8:	9f e0       	ldi	r25, 0x0F	; 15
+	}
+	return convert;
+}
+     1ba:	0f 90       	pop	r0
+     1bc:	0f 90       	pop	r0
+     1be:	df 91       	pop	r29
+     1c0:	cf 91       	pop	r28
+     1c2:	08 95       	ret
+
+000001c4 <lidar_getValueAVG>:
+ *	This function makes a average of a given count of distance measures
+ *
+ *	\param count Quantity of Values
+ *  \return Distance measure average
+ */
+uint16_t lidar_getValueAVG(uint16_t count){
+     1c4:	ef 92       	push	r14
+     1c6:	ff 92       	push	r15
+     1c8:	0f 93       	push	r16
+     1ca:	1f 93       	push	r17
+     1cc:	cf 93       	push	r28
+     1ce:	7c 01       	movw	r14, r24
+	uint16_t average = 0;
+	for (uint8_t i =0; i < count; i++)
+     1d0:	89 2b       	or	r24, r25
+     1d2:	71 f0       	breq	.+28     	; 0x1f0 <lidar_getValueAVG+0x2c>
+     1d4:	c0 e0       	ldi	r28, 0x00	; 0
+     1d6:	00 e0       	ldi	r16, 0x00	; 0
+     1d8:	10 e0       	ldi	r17, 0x00	; 0
+	{
+		average = average + lidar_getValue();
+     1da:	0e 94 a0 00 	call	0x140	; 0x140 <lidar_getValue>
+     1de:	08 0f       	add	r16, r24
+     1e0:	19 1f       	adc	r17, r25
+ *	\param count Quantity of Values
+ *  \return Distance measure average
+ */
+uint16_t lidar_getValueAVG(uint16_t count){
+	uint16_t average = 0;
+	for (uint8_t i =0; i < count; i++)
+     1e2:	cf 5f       	subi	r28, 0xFF	; 255
+     1e4:	2c 2f       	mov	r18, r28
+     1e6:	30 e0       	ldi	r19, 0x00	; 0
+     1e8:	2e 15       	cp	r18, r14
+     1ea:	3f 05       	cpc	r19, r15
+     1ec:	b0 f3       	brcs	.-20     	; 0x1da <lidar_getValueAVG+0x16>
+     1ee:	02 c0       	rjmp	.+4      	; 0x1f4 <lidar_getValueAVG+0x30>
+ *
+ *	\param count Quantity of Values
+ *  \return Distance measure average
+ */
+uint16_t lidar_getValueAVG(uint16_t count){
+	uint16_t average = 0;
+     1f0:	00 e0       	ldi	r16, 0x00	; 0
+     1f2:	10 e0       	ldi	r17, 0x00	; 0
+	for (uint8_t i =0; i < count; i++)
+	{
+		average = average + lidar_getValue();
+		//_delay_us(50);
+	}
+	average = average / count;
+     1f4:	c8 01       	movw	r24, r16
+     1f6:	b7 01       	movw	r22, r14
+     1f8:	0e 94 86 07 	call	0xf0c	; 0xf0c <__udivmodhi4>
+     1fc:	cb 01       	movw	r24, r22
+	return average;
+}
+     1fe:	cf 91       	pop	r28
+     200:	1f 91       	pop	r17
+     202:	0f 91       	pop	r16
+     204:	ff 90       	pop	r15
+     206:	ef 90       	pop	r14
+     208:	08 95       	ret
+
+0000020a <lidar_setVelocityEnable>:
+ *  100         | 0.10 m/s        | 0
+ *  10          | 1.00 m/s        | 1
+ *
+ */
+
+void lidar_setVelocityEnable(uint8_t scale){
+     20a:	cf 93       	push	r28
+	uint8_t regval;
+	if (scale == 0)
+     20c:	88 23       	and	r24, r24
+     20e:	11 f0       	breq	.+4      	; 0x214 <lidar_setVelocityEnable+0xa>
+	{
+		regval = 0xA0;
+	}
+	else
+	{
+		regval = 0x80;
+     210:	c0 e8       	ldi	r28, 0x80	; 128
+     212:	01 c0       	rjmp	.+2      	; 0x216 <lidar_setVelocityEnable+0xc>
+
+void lidar_setVelocityEnable(uint8_t scale){
+	uint8_t regval;
+	if (scale == 0)
+	{
+		regval = 0xA0;
+     214:	c0 ea       	ldi	r28, 0xA0	; 160
+	else
+	{
+		regval = 0x80;
+	}
+	uint8_t errorW = 100;
+	cli();
+     216:	f8 94       	cli
+	while (errorW != 0)
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, MEASURE_VALUE_WITH_DC, regval);
+     218:	4c 2f       	mov	r20, r28
+     21a:	64 e0       	ldi	r22, 0x04	; 4
+     21c:	82 e6       	ldi	r24, 0x62	; 98
+     21e:	0e 94 d8 06 	call	0xdb0	; 0xdb0 <twi_writeReg>
+     222:	ef e9       	ldi	r30, 0x9F	; 159
+     224:	ff e0       	ldi	r31, 0x0F	; 15
+     226:	31 97       	sbiw	r30, 0x01	; 1
+     228:	f1 f7       	brne	.-4      	; 0x226 <lidar_setVelocityEnable+0x1c>
+     22a:	00 c0       	rjmp	.+0      	; 0x22c <lidar_setVelocityEnable+0x22>
+     22c:	00 00       	nop
+	{
+		regval = 0x80;
+	}
+	uint8_t errorW = 100;
+	cli();
+	while (errorW != 0)
+     22e:	81 11       	cpse	r24, r1
+     230:	f3 cf       	rjmp	.-26     	; 0x218 <lidar_setVelocityEnable+0xe>
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, MEASURE_VALUE_WITH_DC, regval);
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	sei();
+     232:	78 94       	sei
+}
+     234:	cf 91       	pop	r28
+     236:	08 95       	ret
+
+00000238 <lidar_setVelocityDisable>:
+ *  This function disables the Velocity measure.
+ *  
+ */
+void lidar_setVelocityDisable(){
+	uint8_t errorW = 1;
+	cli();
+     238:	f8 94       	cli
+	while (errorW != 0)
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, REGISTER_MEASURE, 0x00);
+     23a:	40 e0       	ldi	r20, 0x00	; 0
+     23c:	60 e0       	ldi	r22, 0x00	; 0
+     23e:	82 e6       	ldi	r24, 0x62	; 98
+     240:	0e 94 d8 06 	call	0xdb0	; 0xdb0 <twi_writeReg>
+     244:	ef e9       	ldi	r30, 0x9F	; 159
+     246:	ff e0       	ldi	r31, 0x0F	; 15
+     248:	31 97       	sbiw	r30, 0x01	; 1
+     24a:	f1 f7       	brne	.-4      	; 0x248 <lidar_setVelocityDisable+0x10>
+     24c:	00 c0       	rjmp	.+0      	; 0x24e <lidar_setVelocityDisable+0x16>
+     24e:	00 00       	nop
+ *  
+ */
+void lidar_setVelocityDisable(){
+	uint8_t errorW = 1;
+	cli();
+	while (errorW != 0)
+     250:	81 11       	cpse	r24, r1
+     252:	f3 cf       	rjmp	.-26     	; 0x23a <lidar_setVelocityDisable+0x2>
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, REGISTER_MEASURE, 0x00);
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	sei();
+     254:	78 94       	sei
+     256:	08 95       	ret
+
+00000258 <lidar_getVelocity>:
+ *
+ *  This function gives a new velocity measure.
+ *	\return Velocity measure
+ */
+int8_t lidar_getVelocity()
+{
+     258:	cf 93       	push	r28
+     25a:	df 93       	push	r29
+     25c:	1f 92       	push	r1
+     25e:	cd b7       	in	r28, 0x3d	; 61
+     260:	de b7       	in	r29, 0x3e	; 62
+	uint8_t data;
+	uint8_t *dp = &data;
+	uint8_t errorW = 1;
+	uint8_t errorR = 1;
+	cli();
+     262:	f8 94       	cli
+	while (errorW != 0)
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, REGISTER_MEASURE, MEASURE_VALUE_WITH_DC);
+     264:	44 e0       	ldi	r20, 0x04	; 4
+     266:	60 e0       	ldi	r22, 0x00	; 0
+     268:	82 e6       	ldi	r24, 0x62	; 98
+     26a:	0e 94 d8 06 	call	0xdb0	; 0xdb0 <twi_writeReg>
+		if (errorW == TWI_CONNECTION_ERROR)
+     26e:	85 30       	cpi	r24, 0x05	; 5
+     270:	e9 f0       	breq	.+58     	; 0x2ac <lidar_getVelocity+0x54>
+     272:	ef e9       	ldi	r30, 0x9F	; 159
+     274:	ff e0       	ldi	r31, 0x0F	; 15
+     276:	31 97       	sbiw	r30, 0x01	; 1
+     278:	f1 f7       	brne	.-4      	; 0x276 <lidar_getVelocity+0x1e>
+     27a:	00 c0       	rjmp	.+0      	; 0x27c <lidar_getVelocity+0x24>
+     27c:	00 00       	nop
+	uint8_t data;
+	uint8_t *dp = &data;
+	uint8_t errorW = 1;
+	uint8_t errorR = 1;
+	cli();
+	while (errorW != 0)
+     27e:	81 11       	cpse	r24, r1
+     280:	f1 cf       	rjmp	.-30     	; 0x264 <lidar_getVelocity+0xc>
+		}
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	while (errorR != 0)
+	{
+		errorR = twi_readReg(LIDARLite_ADDRESS, REGISTER_MEASURE_VELOCITY, dp, 1);
+     282:	21 e0       	ldi	r18, 0x01	; 1
+     284:	ae 01       	movw	r20, r28
+     286:	4f 5f       	subi	r20, 0xFF	; 255
+     288:	5f 4f       	sbci	r21, 0xFF	; 255
+     28a:	69 e0       	ldi	r22, 0x09	; 9
+     28c:	82 e6       	ldi	r24, 0x62	; 98
+     28e:	0e 94 f8 06 	call	0xdf0	; 0xdf0 <twi_readReg>
+		if (errorR == TWI_CONNECTION_ERROR)
+     292:	85 30       	cpi	r24, 0x05	; 5
+     294:	69 f0       	breq	.+26     	; 0x2b0 <lidar_getVelocity+0x58>
+     296:	ef e9       	ldi	r30, 0x9F	; 159
+     298:	ff e0       	ldi	r31, 0x0F	; 15
+     29a:	31 97       	sbiw	r30, 0x01	; 1
+     29c:	f1 f7       	brne	.-4      	; 0x29a <lidar_getVelocity+0x42>
+     29e:	00 c0       	rjmp	.+0      	; 0x2a0 <lidar_getVelocity+0x48>
+     2a0:	00 00       	nop
+		{
+			return TWI_CONNECTION_ERROR;
+		}
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	while (errorR != 0)
+     2a2:	81 11       	cpse	r24, r1
+     2a4:	ee cf       	rjmp	.-36     	; 0x282 <lidar_getVelocity+0x2a>
+		{
+			return TWI_CONNECTION_ERROR;
+		}
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	sei();
+     2a6:	78 94       	sei
+	return data;
+     2a8:	89 81       	ldd	r24, Y+1	; 0x01
+     2aa:	03 c0       	rjmp	.+6      	; 0x2b2 <lidar_getVelocity+0x5a>
+	while (errorW != 0)
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, REGISTER_MEASURE, MEASURE_VALUE_WITH_DC);
+		if (errorW == TWI_CONNECTION_ERROR)
+		{
+			return TWI_CONNECTION_ERROR;
+     2ac:	85 e0       	ldi	r24, 0x05	; 5
+     2ae:	01 c0       	rjmp	.+2      	; 0x2b2 <lidar_getVelocity+0x5a>
+	while (errorR != 0)
+	{
+		errorR = twi_readReg(LIDARLite_ADDRESS, REGISTER_MEASURE_VELOCITY, dp, 1);
+		if (errorR == TWI_CONNECTION_ERROR)
+		{
+			return TWI_CONNECTION_ERROR;
+     2b0:	85 e0       	ldi	r24, 0x05	; 5
+		}
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	sei();
+	return data;
+}
+     2b2:	0f 90       	pop	r0
+     2b4:	df 91       	pop	r29
+     2b6:	cf 91       	pop	r28
+     2b8:	08 95       	ret
+
+000002ba <lidar_getVelocityAVG>:
+*	This function makes a average of a given count of velocity measures
+*
+*	\param count Quantity of Values
+*  \return Velocity measure average
+ */
+int8_t lidar_getVelocityAVG(uint8_t count){
+     2ba:	1f 93       	push	r17
+     2bc:	cf 93       	push	r28
+     2be:	df 93       	push	r29
+     2c0:	18 2f       	mov	r17, r24
+	int8_t average = 0;
+	int8_t temp =0;
+	for (uint8_t i =0; i < count; i++)
+     2c2:	88 23       	and	r24, r24
+     2c4:	69 f0       	breq	.+26     	; 0x2e0 <lidar_getVelocityAVG+0x26>
+     2c6:	c0 e0       	ldi	r28, 0x00	; 0
+     2c8:	d0 e0       	ldi	r29, 0x00	; 0
+	{
+		temp = lidar_getVelocity();
+     2ca:	0e 94 2c 01 	call	0x258	; 0x258 <lidar_getVelocity>
+		if (temp < 0)
+     2ce:	88 23       	and	r24, r24
+     2d0:	14 f4       	brge	.+4      	; 0x2d6 <lidar_getVelocityAVG+0x1c>
+		{
+			temp = (temp *(-1));
+			average = average - temp;
+     2d2:	d8 0f       	add	r29, r24
+     2d4:	01 c0       	rjmp	.+2      	; 0x2d8 <lidar_getVelocityAVG+0x1e>
+		}
+		else
+		{
+			average = average + temp;
+     2d6:	d8 0f       	add	r29, r24
+*  \return Velocity measure average
+ */
+int8_t lidar_getVelocityAVG(uint8_t count){
+	int8_t average = 0;
+	int8_t temp =0;
+	for (uint8_t i =0; i < count; i++)
+     2d8:	cf 5f       	subi	r28, 0xFF	; 255
+     2da:	c1 13       	cpse	r28, r17
+     2dc:	f6 cf       	rjmp	.-20     	; 0x2ca <lidar_getVelocityAVG+0x10>
+     2de:	01 c0       	rjmp	.+2      	; 0x2e2 <lidar_getVelocityAVG+0x28>
+*
+*	\param count Quantity of Values
+*  \return Velocity measure average
+ */
+int8_t lidar_getVelocityAVG(uint8_t count){
+	int8_t average = 0;
+     2e0:	d0 e0       	ldi	r29, 0x00	; 0
+		else
+		{
+			average = average + temp;
+		}
+	}
+	average = average / count;
+     2e2:	8d 2f       	mov	r24, r29
+     2e4:	dd 0f       	add	r29, r29
+     2e6:	99 0b       	sbc	r25, r25
+     2e8:	61 2f       	mov	r22, r17
+     2ea:	70 e0       	ldi	r23, 0x00	; 0
+     2ec:	0e 94 9a 07 	call	0xf34	; 0xf34 <__divmodhi4>
+     2f0:	86 2f       	mov	r24, r22
+	return average;
+}
+     2f2:	df 91       	pop	r29
+     2f4:	cf 91       	pop	r28
+     2f6:	1f 91       	pop	r17
+     2f8:	08 95       	ret
+
+000002fa <lidar_setDistanceCalibration>:
+
+/*! \brief Set distance calibration
+ *
+ *  This function set the value for the offset calibration.
+ */
+void lidar_setDistanceCalibration(int8_t value){
+     2fa:	cf 93       	push	r28
+     2fc:	c8 2f       	mov	r28, r24
+	{
+		value = -128;
+	}
+	
+	uint8_t errorW = 1;
+	cli();
+     2fe:	f8 94       	cli
+	while (errorW != 0)
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, CALIBRATION_REGISTER, value);
+     300:	4c 2f       	mov	r20, r28
+     302:	63 e1       	ldi	r22, 0x13	; 19
+     304:	82 e6       	ldi	r24, 0x62	; 98
+     306:	0e 94 d8 06 	call	0xdb0	; 0xdb0 <twi_writeReg>
+     30a:	ef e9       	ldi	r30, 0x9F	; 159
+     30c:	ff e0       	ldi	r31, 0x0F	; 15
+     30e:	31 97       	sbiw	r30, 0x01	; 1
+     310:	f1 f7       	brne	.-4      	; 0x30e <lidar_setDistanceCalibration+0x14>
+     312:	00 c0       	rjmp	.+0      	; 0x314 <lidar_setDistanceCalibration+0x1a>
+     314:	00 00       	nop
+		value = -128;
+	}
+	
+	uint8_t errorW = 1;
+	cli();
+	while (errorW != 0)
+     316:	81 11       	cpse	r24, r1
+     318:	f3 cf       	rjmp	.-26     	; 0x300 <lidar_setDistanceCalibration+0x6>
+	{
+		errorW = twi_writeReg(LIDARLite_ADDRESS, CALIBRATION_REGISTER, value);
+		_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	sei();
+     31a:	78 94       	sei
+}
+     31c:	cf 91       	pop	r28
+     31e:	08 95       	ret
+
+00000320 <lidar_init>:
+/*! \brief Initialize the LIDAR-Lite
+ *
+ *  This function inizialize the TWI-communication and set the default calibration value.
+ */
+void lidar_init(){
+	twi_init();
+     320:	0e 94 96 06 	call	0xd2c	; 0xd2c <twi_init>
+	lidar_setDistanceCalibration(CALIBRATION_BOOT);
+     324:	80 e0       	ldi	r24, 0x00	; 0
+     326:	0e 94 7d 01 	call	0x2fa	; 0x2fa <lidar_setDistanceCalibration>
+     32a:	08 95       	ret
+
+0000032c <lidar_getDistanceCalibration>:
+/*! \brief Get distance calibration
+ *
+ *  This function return the value of the offset calibration.
+ *	\return Offset value
+ */
+int8_t lidar_getDistanceCalibration(){
+     32c:	cf 93       	push	r28
+     32e:	df 93       	push	r29
+     330:	1f 92       	push	r1
+     332:	cd b7       	in	r28, 0x3d	; 61
+     334:	de b7       	in	r29, 0x3e	; 62
+	uint8_t data;
+	uint8_t *dp = &data;
+	uint8_t errorR = 1;
+	cli();
+     336:	f8 94       	cli
+	while (errorR != 0)
+	{
+		errorR = twi_readReg(LIDARLite_ADDRESS, CALIBRATION_REGISTER, dp, 1);
+     338:	21 e0       	ldi	r18, 0x01	; 1
+     33a:	ae 01       	movw	r20, r28
+     33c:	4f 5f       	subi	r20, 0xFF	; 255
+     33e:	5f 4f       	sbci	r21, 0xFF	; 255
+     340:	63 e1       	ldi	r22, 0x13	; 19
+     342:	82 e6       	ldi	r24, 0x62	; 98
+     344:	0e 94 f8 06 	call	0xdf0	; 0xdf0 <twi_readReg>
+		if (errorR == TWI_CONNECTION_ERROR)
+     348:	85 30       	cpi	r24, 0x05	; 5
+     34a:	29 f0       	breq	.+10     	; 0x356 <lidar_getDistanceCalibration+0x2a>
+int8_t lidar_getDistanceCalibration(){
+	uint8_t data;
+	uint8_t *dp = &data;
+	uint8_t errorR = 1;
+	cli();
+	while (errorR != 0)
+     34c:	81 11       	cpse	r24, r1
+     34e:	f4 cf       	rjmp	.-24     	; 0x338 <lidar_getDistanceCalibration+0xc>
+		{
+			return TWI_CONNECTION_ERROR;
+		}
+		//_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	sei();
+     350:	78 94       	sei
+	return data;
+     352:	89 81       	ldd	r24, Y+1	; 0x01
+     354:	01 c0       	rjmp	.+2      	; 0x358 <lidar_getDistanceCalibration+0x2c>
+	while (errorR != 0)
+	{
+		errorR = twi_readReg(LIDARLite_ADDRESS, CALIBRATION_REGISTER, dp, 1);
+		if (errorR == TWI_CONNECTION_ERROR)
+		{
+			return TWI_CONNECTION_ERROR;
+     356:	85 e0       	ldi	r24, 0x05	; 5
+		}
+		//_delay_ms(TWI_PREVENT_OVERPOLLING_DELAY);
+	}
+	sei();
+	return data;
+}
+     358:	0f 90       	pop	r0
+     35a:	df 91       	pop	r29
+     35c:	cf 91       	pop	r28
+     35e:	08 95       	ret
+
+00000360 <_sleep_ms>:
+ * @param	ms	The milliseconds.
+ **************************************************************************************************/
+
+void _sleep_ms(int ms){
+	
+	for (int i = 0;i<ms;i++)
+     360:	18 16       	cp	r1, r24
+     362:	19 06       	cpc	r1, r25
+     364:	6c f4       	brge	.+26     	; 0x380 <_sleep_ms+0x20>
+     366:	20 e0       	ldi	r18, 0x00	; 0
+     368:	30 e0       	ldi	r19, 0x00	; 0
+     36a:	ef e9       	ldi	r30, 0x9F	; 159
+     36c:	ff e0       	ldi	r31, 0x0F	; 15
+     36e:	31 97       	sbiw	r30, 0x01	; 1
+     370:	f1 f7       	brne	.-4      	; 0x36e <_sleep_ms+0xe>
+     372:	00 c0       	rjmp	.+0      	; 0x374 <_sleep_ms+0x14>
+     374:	00 00       	nop
+     376:	2f 5f       	subi	r18, 0xFF	; 255
+     378:	3f 4f       	sbci	r19, 0xFF	; 255
+     37a:	28 17       	cp	r18, r24
+     37c:	39 07       	cpc	r19, r25
+     37e:	a9 f7       	brne	.-22     	; 0x36a <_sleep_ms+0xa>
+     380:	08 95       	ret
+
+00000382 <motor_timer_init>:
+ * @author	Alex
+ * @date	22.12.2015
+ **************************************************************************************************/
+
+void motor_timer_init(void){
+	TCCR0A |= (1<<COM0A1) | (1<<COM0B1) | (1<<WGM01) | (1<<WGM00);
+     382:	84 b5       	in	r24, 0x24	; 36
+     384:	83 6a       	ori	r24, 0xA3	; 163
+     386:	84 bd       	out	0x24, r24	; 36
+	TCCR0B |= (1<<CS01);
+     388:	85 b5       	in	r24, 0x25	; 37
+     38a:	82 60       	ori	r24, 0x02	; 2
+     38c:	85 bd       	out	0x25, r24	; 37
+	
+	OCR0A = (255/100) * POWER;
+     38e:	88 e7       	ldi	r24, 0x78	; 120
+     390:	87 bd       	out	0x27, r24	; 39
+	OCR0B = (255/100) * POWER;
+     392:	88 bd       	out	0x28, r24	; 40
+     394:	08 95       	ret
+
+00000396 <motor_init>:
+ * @author	Alex
+ * @date	22.12.2015
+ **************************************************************************************************/
+
+void motor_init(void){
+	DDRD |= (1<<PWMA) | (1<<PWMB) | (1<<MOTA1) | (1<<MOTA2)  | (1<<MOTB2) | (1<<STBY);
+     396:	8a b1       	in	r24, 0x0a	; 10
+     398:	8c 6f       	ori	r24, 0xFC	; 252
+     39a:	8a b9       	out	0x0a, r24	; 10
+	DDRB |= (1<<MOTB1);
+     39c:	20 9a       	sbi	0x04, 0	; 4
+	PORTD |= (1<<PWMA) | (1<<PWMB) | (1<<STBY);
+     39e:	8b b1       	in	r24, 0x0b	; 11
+     3a0:	80 67       	ori	r24, 0x70	; 112
+     3a2:	8b b9       	out	0x0b, r24	; 11
+
+
+	motor_timer_init();
+     3a4:	0e 94 c1 01 	call	0x382	; 0x382 <motor_timer_init>
+     3a8:	08 95       	ret
+
+000003aa <motor_turn>:
+ *
+ * @param	steps	Number of steps.
+ * @param	dir  	Direction (CW or CCW).
+ **************************************************************************************************/
+
+void motor_turn(char steps,char dir){
+     3aa:	ef 92       	push	r14
+     3ac:	ff 92       	push	r15
+     3ae:	0f 93       	push	r16
+     3b0:	1f 93       	push	r17
+     3b2:	cf 93       	push	r28
+	for (char s = 0; s<steps ; s++)
+     3b4:	88 23       	and	r24, r24
+     3b6:	09 f4       	brne	.+2      	; 0x3ba <motor_turn+0x10>
+     3b8:	74 c0       	rjmp	.+232    	; 0x4a2 <motor_turn+0xf8>
+     3ba:	c6 2f       	mov	r28, r22
+     3bc:	08 2f       	mov	r16, r24
+     3be:	10 e0       	ldi	r17, 0x00	; 0
+				break;
+			}
+		}
+		else
+		{
+			motor_position = (motor_position-1) % MOTOR_MAX_STEPS;
+     3c0:	0f 2e       	mov	r0, r31
+     3c2:	f8 ec       	ldi	r31, 0xC8	; 200
+     3c4:	ef 2e       	mov	r14, r31
+     3c6:	f1 2c       	mov	r15, r1
+     3c8:	f0 2d       	mov	r31, r0
+ **************************************************************************************************/
+
+void motor_turn(char steps,char dir){
+	for (char s = 0; s<steps ; s++)
+	{
+		step = (step + 1) % 4;
+     3ca:	20 91 03 04 	lds	r18, 0x0403
+     3ce:	30 e0       	ldi	r19, 0x00	; 0
+     3d0:	2f 5f       	subi	r18, 0xFF	; 255
+     3d2:	3f 4f       	sbci	r19, 0xFF	; 255
+     3d4:	23 70       	andi	r18, 0x03	; 3
+     3d6:	30 78       	andi	r19, 0x80	; 128
+     3d8:	33 23       	and	r19, r19
+     3da:	34 f4       	brge	.+12     	; 0x3e8 <motor_turn+0x3e>
+     3dc:	21 50       	subi	r18, 0x01	; 1
+     3de:	31 09       	sbc	r19, r1
+     3e0:	2c 6f       	ori	r18, 0xFC	; 252
+     3e2:	3f 6f       	ori	r19, 0xFF	; 255
+     3e4:	2f 5f       	subi	r18, 0xFF	; 255
+     3e6:	3f 4f       	sbci	r19, 0xFF	; 255
+     3e8:	20 93 03 04 	sts	0x0403, r18
+		if (dir == CW)
+     3ec:	c1 30       	cpi	r28, 0x01	; 1
+     3ee:	49 f5       	brne	.+82     	; 0x442 <motor_turn+0x98>
+		{
+			motor_position = (motor_position+1) % MOTOR_MAX_STEPS;
+     3f0:	80 91 02 04 	lds	r24, 0x0402
+     3f4:	90 e0       	ldi	r25, 0x00	; 0
+     3f6:	01 96       	adiw	r24, 0x01	; 1
+     3f8:	b7 01       	movw	r22, r14
+     3fa:	0e 94 9a 07 	call	0xf34	; 0xf34 <__divmodhi4>
+     3fe:	80 93 02 04 	sts	0x0402, r24
+			switch (step)
+     402:	21 30       	cpi	r18, 0x01	; 1
+     404:	61 f0       	breq	.+24     	; 0x41e <motor_turn+0x74>
+     406:	28 f0       	brcs	.+10     	; 0x412 <motor_turn+0x68>
+     408:	22 30       	cpi	r18, 0x02	; 2
+     40a:	79 f0       	breq	.+30     	; 0x42a <motor_turn+0x80>
+     40c:	23 30       	cpi	r18, 0x03	; 3
+     40e:	99 f0       	breq	.+38     	; 0x436 <motor_turn+0x8c>
+     410:	40 c0       	rjmp	.+128    	; 0x492 <motor_turn+0xe8>
+			{
+				case 0:
+				PORTD |= (1<<MOTA1);
+     412:	5b 9a       	sbi	0x0b, 3	; 11
+				PORTB |= (1<<MOTB1);
+     414:	28 9a       	sbi	0x05, 0	; 5
+				PORTD &=  ~((1<<MOTA2) | (1<<MOTB2));
+     416:	8b b1       	in	r24, 0x0b	; 11
+     418:	8b 77       	andi	r24, 0x7B	; 123
+     41a:	8b b9       	out	0x0b, r24	; 11
+				break;
+     41c:	3a c0       	rjmp	.+116    	; 0x492 <motor_turn+0xe8>
+				case 1:
+				PORTD |= (1<<MOTA1) | (1<<MOTB2);
+     41e:	8b b1       	in	r24, 0x0b	; 11
+     420:	88 68       	ori	r24, 0x88	; 136
+     422:	8b b9       	out	0x0b, r24	; 11
+				PORTD &=  ~(1<<MOTA2);
+     424:	5a 98       	cbi	0x0b, 2	; 11
+				PORTB &= ~(1<<MOTB1);
+     426:	28 98       	cbi	0x05, 0	; 5
+				break;
+     428:	34 c0       	rjmp	.+104    	; 0x492 <motor_turn+0xe8>
+				case 2:
+				PORTD |= (1<<MOTA2)  | (1<<MOTB2);
+     42a:	8b b1       	in	r24, 0x0b	; 11
+     42c:	84 68       	ori	r24, 0x84	; 132
+     42e:	8b b9       	out	0x0b, r24	; 11
+				PORTD &=  ~(1<<MOTA1);
+     430:	5b 98       	cbi	0x0b, 3	; 11
+				PORTB &= ~(1<<MOTB1);
+     432:	28 98       	cbi	0x05, 0	; 5
+				break;
+     434:	2e c0       	rjmp	.+92     	; 0x492 <motor_turn+0xe8>
+				case 3:
+				PORTD |=  (1<<MOTA2);
+     436:	5a 9a       	sbi	0x0b, 2	; 11
+				PORTB |= (1<<MOTB1);
+     438:	28 9a       	sbi	0x05, 0	; 5
+				PORTD &=  ~((1<<MOTA1) | (1<<MOTB2));
+     43a:	8b b1       	in	r24, 0x0b	; 11
+     43c:	87 77       	andi	r24, 0x77	; 119
+     43e:	8b b9       	out	0x0b, r24	; 11
+				break;
+     440:	28 c0       	rjmp	.+80     	; 0x492 <motor_turn+0xe8>
+			}
+		}
+		else
+		{
+			motor_position = (motor_position-1) % MOTOR_MAX_STEPS;
+     442:	80 91 02 04 	lds	r24, 0x0402
+     446:	90 e0       	ldi	r25, 0x00	; 0
+     448:	01 97       	sbiw	r24, 0x01	; 1
+     44a:	b7 01       	movw	r22, r14
+     44c:	0e 94 9a 07 	call	0xf34	; 0xf34 <__divmodhi4>
+     450:	80 93 02 04 	sts	0x0402, r24
+			switch (step)
+     454:	21 30       	cpi	r18, 0x01	; 1
+     456:	61 f0       	breq	.+24     	; 0x470 <motor_turn+0xc6>
+     458:	28 f0       	brcs	.+10     	; 0x464 <motor_turn+0xba>
+     45a:	22 30       	cpi	r18, 0x02	; 2
+     45c:	79 f0       	breq	.+30     	; 0x47c <motor_turn+0xd2>
+     45e:	23 30       	cpi	r18, 0x03	; 3
+     460:	99 f0       	breq	.+38     	; 0x488 <motor_turn+0xde>
+     462:	17 c0       	rjmp	.+46     	; 0x492 <motor_turn+0xe8>
+			{
+				case 0:
+				PORTD |= (1<<MOTA2);
+     464:	5a 9a       	sbi	0x0b, 2	; 11
+				PORTB |= (1<<MOTB1);
+     466:	28 9a       	sbi	0x05, 0	; 5
+				PORTD &=  ~((1<<MOTA1) | (1<<MOTB2));
+     468:	8b b1       	in	r24, 0x0b	; 11
+     46a:	87 77       	andi	r24, 0x77	; 119
+     46c:	8b b9       	out	0x0b, r24	; 11
+				break;
+     46e:	11 c0       	rjmp	.+34     	; 0x492 <motor_turn+0xe8>
+				case 1:
+				PORTD |= (1<<MOTA2) | (1<<MOTB2);
+     470:	8b b1       	in	r24, 0x0b	; 11
+     472:	84 68       	ori	r24, 0x84	; 132
+     474:	8b b9       	out	0x0b, r24	; 11
+				PORTD &=  ~(1<<MOTA1);
+     476:	5b 98       	cbi	0x0b, 3	; 11
+				PORTB &= ~(1<<MOTB1);
+     478:	28 98       	cbi	0x05, 0	; 5
+				break;
+     47a:	0b c0       	rjmp	.+22     	; 0x492 <motor_turn+0xe8>
+				case 2:
+				PORTD |= (1<<MOTA1)  | (1<<MOTB2);
+     47c:	8b b1       	in	r24, 0x0b	; 11
+     47e:	88 68       	ori	r24, 0x88	; 136
+     480:	8b b9       	out	0x0b, r24	; 11
+				PORTD &=  ~(1<<MOTA2);
+     482:	5a 98       	cbi	0x0b, 2	; 11
+				PORTB &= ~(1<<MOTB1);
+     484:	28 98       	cbi	0x05, 0	; 5
+				break;
+     486:	05 c0       	rjmp	.+10     	; 0x492 <motor_turn+0xe8>
+				case 3:
+				PORTD |=  (1<<MOTA1);
+     488:	5b 9a       	sbi	0x0b, 3	; 11
+				PORTB |= (1<<MOTB1);
+     48a:	28 9a       	sbi	0x05, 0	; 5
+				PORTD &=  ~((1<<MOTA2) | (1<<MOTB2));
+     48c:	8b b1       	in	r24, 0x0b	; 11
+     48e:	8b 77       	andi	r24, 0x7B	; 123
+     490:	8b b9       	out	0x0b, r24	; 11
+				break;
+			}
+		}
+		
+		_sleep_ms(speed);
+     492:	80 91 00 01 	lds	r24, 0x0100
+     496:	90 e0       	ldi	r25, 0x00	; 0
+     498:	0e 94 b0 01 	call	0x360	; 0x360 <_sleep_ms>
+ * @param	steps	Number of steps.
+ * @param	dir  	Direction (CW or CCW).
+ **************************************************************************************************/
+
+void motor_turn(char steps,char dir){
+	for (char s = 0; s<steps ; s++)
+     49c:	1f 5f       	subi	r17, 0xFF	; 255
+     49e:	10 13       	cpse	r17, r16
+     4a0:	94 cf       	rjmp	.-216    	; 0x3ca <motor_turn+0x20>
+		
+		_sleep_ms(speed);
+		
+	}
+	
+}
+     4a2:	cf 91       	pop	r28
+     4a4:	1f 91       	pop	r17
+     4a6:	0f 91       	pop	r16
+     4a8:	ff 90       	pop	r15
+     4aa:	ef 90       	pop	r14
+     4ac:	08 95       	ret
+
+000004ae <motor_toPosition>:
+ *
+ * @param	p	The char to process.
+ **************************************************************************************************/
+
+void motor_toPosition(char p){
+	p = p % MOTOR_MAX_STEPS;
+     4ae:	91 e0       	ldi	r25, 0x01	; 1
+     4b0:	88 3c       	cpi	r24, 0xC8	; 200
+     4b2:	08 f4       	brcc	.+2      	; 0x4b6 <motor_toPosition+0x8>
+     4b4:	90 e0       	ldi	r25, 0x00	; 0
+     4b6:	28 e3       	ldi	r18, 0x38	; 56
+     4b8:	92 9f       	mul	r25, r18
+     4ba:	80 0d       	add	r24, r0
+     4bc:	11 24       	eor	r1, r1
+     4be:	98 2f       	mov	r25, r24
+	if (motor_position > p )
+     4c0:	80 91 02 04 	lds	r24, 0x0402
+     4c4:	98 17       	cp	r25, r24
+     4c6:	28 f4       	brcc	.+10     	; 0x4d2 <motor_toPosition+0x24>
+	{
+		motor_turn(motor_position-p,CCW);
+     4c8:	6f ef       	ldi	r22, 0xFF	; 255
+     4ca:	89 1b       	sub	r24, r25
+     4cc:	0e 94 d5 01 	call	0x3aa	; 0x3aa <motor_turn>
+     4d0:	08 95       	ret
+	}
+	else if (motor_position < p)
+     4d2:	89 17       	cp	r24, r25
+     4d4:	28 f4       	brcc	.+10     	; 0x4e0 <motor_toPosition+0x32>
+	{
+		motor_turn(p-motor_position,CW);
+     4d6:	61 e0       	ldi	r22, 0x01	; 1
+     4d8:	98 1b       	sub	r25, r24
+     4da:	89 2f       	mov	r24, r25
+     4dc:	0e 94 d5 01 	call	0x3aa	; 0x3aa <motor_turn>
+     4e0:	08 95       	ret
+
+000004e2 <motor_get_position>:
+ * @return	Motor position in steps.
+ **************************************************************************************************/
+
+char motor_get_position(void){
+	return motor_position;
+}
+     4e2:	80 91 02 04 	lds	r24, 0x0402
+     4e6:	08 95       	ret
+
+000004e8 <motor_calibrate>:
+ *
+ * @author	Alex
+ * @date	22.12.2015
+ **************************************************************************************************/
+
+void motor_calibrate(){
+     4e8:	ef 92       	push	r14
+     4ea:	ff 92       	push	r15
+     4ec:	0f 93       	push	r16
+     4ee:	1f 93       	push	r17
+     4f0:	cf 93       	push	r28
+     4f2:	df 93       	push	r29
+	uint16_t a;
+	char p = 0;
+	char top = 60;
+	int8_t d = CW;
+     4f4:	d1 e0       	ldi	r29, 0x01	; 1
+ **************************************************************************************************/
+
+void motor_calibrate(){
+	uint16_t a;
+	char p = 0;
+	char top = 60;
+     4f6:	0f 2e       	mov	r0, r31
+     4f8:	fc e3       	ldi	r31, 0x3C	; 60
+     4fa:	ef 2e       	mov	r14, r31
+     4fc:	f0 2d       	mov	r31, r0
+     4fe:	ff 24       	eor	r15, r15
+     500:	f3 94       	inc	r15
+     502:	cf 2d       	mov	r28, r15
+		a = adc_read_avg(5);
+		//a= adc_read_avg(3);
+		
+		//serial_write_int(a); //debug infos
+		//serial_write_string("\r\n");
+		if (a<=top)
+     504:	0e 2d       	mov	r16, r14
+     506:	10 e0       	ldi	r17, 0x00	; 0
+	char p = 0;
+	char top = 60;
+	int8_t d = CW;
+	while (1)
+	{
+		wdt_reset();
+     508:	a8 95       	wdr
+		
+		a = adc_read_avg(5);
+     50a:	85 e0       	ldi	r24, 0x05	; 5
+     50c:	0e 94 81 00 	call	0x102	; 0x102 <adc_read_avg>
+		//a= adc_read_avg(3);
+		
+		//serial_write_int(a); //debug infos
+		//serial_write_string("\r\n");
+		if (a<=top)
+     510:	08 17       	cp	r16, r24
+     512:	19 07       	cpc	r17, r25
+     514:	20 f0       	brcs	.+8      	; 0x51e <motor_calibrate+0x36>
+ *
+ * @param	pos	The position.
+ **************************************************************************************************/
+
+void motor_set_position(char pos){
+	motor_position = pos;
+     516:	82 e3       	ldi	r24, 0x32	; 50
+     518:	80 93 02 04 	sts	0x0402, r24
+     51c:	16 c0       	rjmp	.+44     	; 0x54a <motor_calibrate+0x62>
+			//motor_turn(2,d);
+			motor_set_position(MOTOR_MAX_STEPS/4);
+			return;
+		}
+		
+		if(d==CW)
+     51e:	d1 30       	cpi	r29, 0x01	; 1
+     520:	29 f4       	brne	.+10     	; 0x52c <motor_calibrate+0x44>
+		{
+			motor_turn(1,CW);
+     522:	6f 2d       	mov	r22, r15
+     524:	8f 2d       	mov	r24, r15
+     526:	0e 94 d5 01 	call	0x3aa	; 0x3aa <motor_turn>
+     52a:	04 c0       	rjmp	.+8      	; 0x534 <motor_calibrate+0x4c>
+			p++;
+		}
+		else
+		{
+			motor_turn(1,CCW);
+     52c:	6f ef       	ldi	r22, 0xFF	; 255
+     52e:	8f 2d       	mov	r24, r15
+     530:	0e 94 d5 01 	call	0x3aa	; 0x3aa <motor_turn>
+     534:	cf 5f       	subi	r28, 0xFF	; 255
+			p++;
+		}
+		if (p == 100)
+     536:	c5 36       	cpi	r28, 0x65	; 101
+     538:	39 f7       	brne	.-50     	; 0x508 <motor_calibrate+0x20>
+		{
+			d = d * (-1);
+     53a:	d1 95       	neg	r29
+			motor_turn(100,d);
+     53c:	6d 2f       	mov	r22, r29
+     53e:	84 e6       	ldi	r24, 0x64	; 100
+     540:	0e 94 d5 01 	call	0x3aa	; 0x3aa <motor_turn>
+			p = 0;
+			top+=5;
+     544:	85 e0       	ldi	r24, 0x05	; 5
+     546:	e8 0e       	add	r14, r24
+     548:	dc cf       	rjmp	.-72     	; 0x502 <motor_calibrate+0x1a>
+		}
+		
+	}
+     54a:	df 91       	pop	r29
+     54c:	cf 91       	pop	r28
+     54e:	1f 91       	pop	r17
+     550:	0f 91       	pop	r16
+     552:	ff 90       	pop	r15
+     554:	ef 90       	pop	r14
+     556:	08 95       	ret
+
+00000558 <send_data>:
+ * @param	mpos	The motor position.
+ * @param	sdeg	The servo position.
+ * @param	val 	The distance value.
+ **************************************************************************************************/
+
+void send_data(char mpos, char sdeg, uint16_t val){
+     558:	0f 93       	push	r16
+     55a:	1f 93       	push	r17
+     55c:	cf 93       	push	r28
+     55e:	df 93       	push	r29
+     560:	08 2f       	mov	r16, r24
+     562:	16 2f       	mov	r17, r22
+     564:	ea 01       	movw	r28, r20
+	serial_write_string("mpos: ");
+     566:	82 e0       	ldi	r24, 0x02	; 2
+     568:	91 e0       	ldi	r25, 0x01	; 1
+     56a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	serial_write_int(mpos);
+     56e:	80 2f       	mov	r24, r16
+     570:	90 e0       	ldi	r25, 0x00	; 0
+     572:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <serial_write_int>
+	serial_write_string(" sdeg: ");
+     576:	89 e0       	ldi	r24, 0x09	; 9
+     578:	91 e0       	ldi	r25, 0x01	; 1
+     57a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	serial_write_int(sdeg);
+     57e:	81 2f       	mov	r24, r17
+     580:	90 e0       	ldi	r25, 0x00	; 0
+     582:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <serial_write_int>
+	serial_write_string(" val: ");
+     586:	81 e1       	ldi	r24, 0x11	; 17
+     588:	91 e0       	ldi	r25, 0x01	; 1
+     58a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	serial_write_int(val);
+     58e:	ce 01       	movw	r24, r28
+     590:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <serial_write_int>
+	serial_write_string("\r\n");
+     594:	86 e9       	ldi	r24, 0x96	; 150
+     596:	93 e0       	ldi	r25, 0x03	; 3
+     598:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+}
+     59c:	df 91       	pop	r29
+     59e:	cf 91       	pop	r28
+     5a0:	1f 91       	pop	r17
+     5a2:	0f 91       	pop	r16
+     5a4:	08 95       	ret
+
+000005a6 <main>:
+				: "r0"
+		);
+	}
+	else
+	{
+		__asm__ __volatile__ (
+     5a6:	9f e0       	ldi	r25, 0x0F	; 15
+     5a8:	88 e1       	ldi	r24, 0x18	; 24
+     5aa:	0f b6       	in	r0, 0x3f	; 63
+     5ac:	f8 94       	cli
+     5ae:	a8 95       	wdr
+     5b0:	80 93 60 00 	sts	0x0060, r24
+     5b4:	0f be       	out	0x3f, r0	; 63
+     5b6:	90 93 60 00 	sts	0x0060, r25
+	uint16_t avg = 10;
+	int16_t v = 0;
+	char stop = 0;
+	
+	
+	serial_init();
+     5ba:	0e 94 c8 04 	call	0x990	; 0x990 <serial_init>
+	serial_write_string("SERIAL READY!\r\n");
+     5be:	88 e1       	ldi	r24, 0x18	; 24
+     5c0:	91 e0       	ldi	r25, 0x01	; 1
+     5c2:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	wdt_reset();
+     5c6:	a8 95       	wdr
+	lidar_init();
+     5c8:	0e 94 90 01 	call	0x320	; 0x320 <lidar_init>
+	serial_write_string("TWI READY!\r\n");
+     5cc:	88 e2       	ldi	r24, 0x28	; 40
+     5ce:	91 e0       	ldi	r25, 0x01	; 1
+     5d0:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	wdt_reset();
+     5d4:	a8 95       	wdr
+	adc_init();
+     5d6:	0e 94 62 00 	call	0xc4	; 0xc4 <adc_init>
+	serial_write_string("ADC READY!\r\n");
+     5da:	85 e3       	ldi	r24, 0x35	; 53
+     5dc:	91 e0       	ldi	r25, 0x01	; 1
+     5de:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	wdt_reset();
+     5e2:	a8 95       	wdr
+	motor_init();
+     5e4:	0e 94 cb 01 	call	0x396	; 0x396 <motor_init>
+	serial_write_string("STEPPER READY!\r\n");
+     5e8:	82 e4       	ldi	r24, 0x42	; 66
+     5ea:	91 e0       	ldi	r25, 0x01	; 1
+     5ec:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	wdt_reset();
+     5f0:	a8 95       	wdr
+	servo_init();
+     5f2:	0e 94 c9 05 	call	0xb92	; 0xb92 <servo_init>
+	serial_write_string("SERVO READY!\r\n");
+     5f6:	83 e5       	ldi	r24, 0x53	; 83
+     5f8:	91 e0       	ldi	r25, 0x01	; 1
+     5fa:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	wdt_reset();
+     5fe:	a8 95       	wdr
+	serial_write_string("Calibrating...\r\n");
+     600:	82 e6       	ldi	r24, 0x62	; 98
+     602:	91 e0       	ldi	r25, 0x01	; 1
+     604:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	motor_calibrate();
+     608:	0e 94 74 02 	call	0x4e8	; 0x4e8 <motor_calibrate>
+	wdt_reset();
+     60c:	a8 95       	wdr
+	serial_write_string("############################ \r\n");
+     60e:	83 e7       	ldi	r24, 0x73	; 115
+     610:	91 e0       	ldi	r25, 0x01	; 1
+     612:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	serial_write_string("LIDAR Ready! \r\n");
+     616:	83 e9       	ldi	r24, 0x93	; 147
+     618:	91 e0       	ldi	r25, 0x01	; 1
+     61a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	serial_write_string("Type #? for more information.\r\n");
+     61e:	83 ea       	ldi	r24, 0xA3	; 163
+     620:	91 e0       	ldi	r25, 0x01	; 1
+     622:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	wdt_reset();
+     626:	a8 95       	wdr
+ **************************************************************************************************/
+
+int main(void)
+{
+	wdt_enable(WDTO_2S);
+	uint16_t avg = 10;
+     628:	1a e0       	ldi	r17, 0x0A	; 10
+     62a:	31 2c       	mov	r3, r1
+				break;
+				//////////////////////////////////////////////////////////////////////////
+				case '8': serial_write_string("#8 : Onetime measure of velocity in 10cm/s\r\n");
+
+				wdt_reset();
+				lidar_setVelocityEnable(0);
+     62c:	b1 2c       	mov	r11, r1
+				break;
+				//////////////////////////////////////////////////////////////////////////
+				case '7': serial_write_string("#7 : Onetime measure of velocity in 1m/s\r\n");
+
+				wdt_reset();
+				lidar_setVelocityEnable(1);
+     62e:	44 24       	eor	r4, r4
+     630:	43 94       	inc	r4
+						wdt_reset();
+						if (stop == 1)
+						{
+							break;
+						}
+						servo_toPosition(k);
+     632:	cb 2c       	mov	r12, r11
+
+							for(int i = 0; i<=MOTOR_MAX_STEPS/2;i++ ){
+								wdt_reset();
+								if(serial_read_char() == '#'){
+									motor_calibrate();
+									stop = 1 ;
+     634:	94 2c       	mov	r9, r4
+							k++;
+							servo_toPosition(k);
+						
+							for(int i = MOTOR_MAX_STEPS/2; i>=0;i-- ){
+								wdt_reset();
+								if (stop == 1){break;}
+     636:	0f 2e       	mov	r0, r31
+     638:	f4 e6       	ldi	r31, 0x64	; 100
+     63a:	af 2e       	mov	r10, r31
+     63c:	f0 2d       	mov	r31, r0
+						wdt_reset();
+						if (stop == 1)
+						{
+							break;
+						}
+						servo_toPosition(k);
+     63e:	eb 2c       	mov	r14, r11
+							k++;
+							servo_toPosition(k);
+						
+							for(int i = MOTOR_MAX_STEPS/2; i>=0;i-- ){
+								wdt_reset();
+								if (stop == 1){break;}
+     640:	da 2c       	mov	r13, r10
+									
+								if(serial_read_char() == '#'){
+									motor_calibrate();
+									stop = 1 ;
+     642:	f4 2c       	mov	r15, r4
+	char a;
+	char b;
+
+	while (1)
+	{
+		wdt_reset();
+     644:	a8 95       	wdr
+     646:	2f ef       	ldi	r18, 0xFF	; 255
+     648:	81 ee       	ldi	r24, 0xE1	; 225
+     64a:	94 e0       	ldi	r25, 0x04	; 4
+     64c:	21 50       	subi	r18, 0x01	; 1
+     64e:	80 40       	sbci	r24, 0x00	; 0
+     650:	90 40       	sbci	r25, 0x00	; 0
+     652:	e1 f7       	brne	.-8      	; 0x64c <main+0xa6>
+     654:	00 c0       	rjmp	.+0      	; 0x656 <main+0xb0>
+     656:	00 00       	nop
+		stop = 0;
+		_delay_ms(100);
+		a = serial_read_char();
+     658:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+     65c:	c8 2f       	mov	r28, r24
+		b = serial_read_char();
+     65e:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+		
+		//servo_toPosition(0);
+		if(a == '#')
+     662:	c3 32       	cpi	r28, 0x23	; 35
+     664:	79 f7       	brne	.-34     	; 0x644 <main+0x9e>
+		{
+			switch(b){
+     666:	90 e0       	ldi	r25, 0x00	; 0
+     668:	fc 01       	movw	r30, r24
+     66a:	f1 97       	sbiw	r30, 0x31	; 49
+     66c:	ef 30       	cpi	r30, 0x0F	; 15
+     66e:	f1 05       	cpc	r31, r1
+     670:	08 f0       	brcs	.+2      	; 0x674 <main+0xce>
+     672:	89 c1       	rjmp	.+786    	; 0x986 <__stack+0x87>
+     674:	ec 5c       	subi	r30, 0xCC	; 204
+     676:	ff 4f       	sbci	r31, 0xFF	; 255
+     678:	0c 94 ae 07 	jmp	0xf5c	; 0xf5c <__tablejump2__>
+				//////////////////////////////////////////////////////////////////////////
+				case '?':
+				wdt_reset();
+     67c:	a8 95       	wdr
+				serial_write_string("Possible actions: \r\n");
+     67e:	83 ec       	ldi	r24, 0xC3	; 195
+     680:	91 e0       	ldi	r25, 0x01	; 1
+     682:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#? : Help \r\n");
+     686:	88 ed       	ldi	r24, 0xD8	; 216
+     688:	91 e0       	ldi	r25, 0x01	; 1
+     68a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#1 : Onetime measure of distance\r\n");
+     68e:	85 ee       	ldi	r24, 0xE5	; 229
+     690:	91 e0       	ldi	r25, 0x01	; 1
+     692:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#2 : Radar mode 2D\r\n");
+     696:	88 e0       	ldi	r24, 0x08	; 8
+     698:	92 e0       	ldi	r25, 0x02	; 2
+     69a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#3 mmm sss : Set Position of Motor and Servo \r\n");
+     69e:	8d e1       	ldi	r24, 0x1D	; 29
+     6a0:	92 e0       	ldi	r25, 0x02	; 2
+     6a2:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#4 : Calibration \r\n");
+     6a6:	8d e4       	ldi	r24, 0x4D	; 77
+     6a8:	92 e0       	ldi	r25, 0x02	; 2
+     6aa:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#5 : Radar mode 3D (M first)\r\n");
+     6ae:	81 e6       	ldi	r24, 0x61	; 97
+     6b0:	92 e0       	ldi	r25, 0x02	; 2
+     6b2:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#6 : Set number of values per measurement (default = 10)\r\n");
+     6b6:	80 e8       	ldi	r24, 0x80	; 128
+     6b8:	92 e0       	ldi	r25, 0x02	; 2
+     6ba:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#7 : Onetime measure of velocity in 1m/s\r\n");
+     6be:	8b eb       	ldi	r24, 0xBB	; 187
+     6c0:	92 e0       	ldi	r25, 0x02	; 2
+     6c2:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#8 : Onetime measure of velocity in 10cm/s\r\n");
+     6c6:	86 ee       	ldi	r24, 0xE6	; 230
+     6c8:	92 e0       	ldi	r25, 0x02	; 2
+     6ca:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_string("#9 x: Set Offset of measurement\r\n");
+     6ce:	83 e1       	ldi	r24, 0x13	; 19
+     6d0:	93 e0       	ldi	r25, 0x03	; 3
+     6d2:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+
+				break;
+     6d6:	b6 cf       	rjmp	.-148    	; 0x644 <main+0x9e>
+				//////////////////////////////////////////////////////////////////////////
+				case '1':
+				wdt_reset();
+     6d8:	a8 95       	wdr
+				serial_write_string("Onetime Measure: \r\n");
+     6da:	85 e3       	ldi	r24, 0x35	; 53
+     6dc:	93 e0       	ldi	r25, 0x03	; 3
+     6de:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				send_data(motor_get_position(),servo_get_position(),lidar_getValueAVG(avg));
+     6e2:	81 2f       	mov	r24, r17
+     6e4:	93 2d       	mov	r25, r3
+     6e6:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <lidar_getValueAVG>
+     6ea:	ec 01       	movw	r28, r24
+     6ec:	0e 94 ec 05 	call	0xbd8	; 0xbd8 <servo_get_position>
+     6f0:	88 2e       	mov	r8, r24
+     6f2:	0e 94 71 02 	call	0x4e2	; 0x4e2 <motor_get_position>
+     6f6:	ae 01       	movw	r20, r28
+     6f8:	68 2d       	mov	r22, r8
+     6fa:	0e 94 ac 02 	call	0x558	; 0x558 <send_data>
+
+				break;
+     6fe:	a2 cf       	rjmp	.-188    	; 0x644 <main+0x9e>
+				//////////////////////////////////////////////////////////////////////////
+				case '2':
+				wdt_reset();
+     700:	a8 95       	wdr
+				serial_write_string("Radar mode 2D activated! \r\n");
+     702:	89 e4       	ldi	r24, 0x49	; 73
+     704:	93 e0       	ldi	r25, 0x03	; 3
+     706:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	char b;
+
+	while (1)
+	{
+		wdt_reset();
+		stop = 0;
+     70a:	6b 2c       	mov	r6, r11
+				case '2':
+				wdt_reset();
+				serial_write_string("Radar mode 2D activated! \r\n");
+				while (1)
+				{
+					wdt_reset();
+     70c:	a8 95       	wdr
+					if (stop == 1)
+     70e:	21 e0       	ldi	r18, 0x01	; 1
+     710:	62 16       	cp	r6, r18
+     712:	09 f4       	brne	.+2      	; 0x716 <main+0x170>
+     714:	97 cf       	rjmp	.-210    	; 0x644 <main+0x9e>
+					{
+						break;
+					}
+					if (motor_get_position() == 1)
+     716:	0e 94 71 02 	call	0x4e2	; 0x4e2 <motor_get_position>
+     71a:	81 30       	cpi	r24, 0x01	; 1
+     71c:	f9 f4       	brne	.+62     	; 0x75c <main+0x1b6>
+     71e:	0c 2d       	mov	r16, r12
+					{
+						for(int i = 0; i<=MOTOR_MAX_STEPS/2;i++ ){
+							wdt_reset();
+     720:	a8 95       	wdr
+							if(serial_read_char() == '#'){
+     722:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+     726:	83 32       	cpi	r24, 0x23	; 35
+     728:	21 f4       	brne	.+8      	; 0x732 <main+0x18c>
+								motor_calibrate();
+     72a:	0e 94 74 02 	call	0x4e8	; 0x4e8 <motor_calibrate>
+								stop = 1 ;
+     72e:	69 2c       	mov	r6, r9
+								break;
+     730:	ed cf       	rjmp	.-38     	; 0x70c <main+0x166>
+							}
+							motor_toPosition(i);
+     732:	80 2f       	mov	r24, r16
+     734:	0e 94 57 02 	call	0x4ae	; 0x4ae <motor_toPosition>
+							send_data(motor_get_position(),servo_get_position(),lidar_getValueAVG(avg));
+     738:	81 2f       	mov	r24, r17
+     73a:	93 2d       	mov	r25, r3
+     73c:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <lidar_getValueAVG>
+     740:	ec 01       	movw	r28, r24
+     742:	0e 94 ec 05 	call	0xbd8	; 0xbd8 <servo_get_position>
+     746:	78 2e       	mov	r7, r24
+     748:	0e 94 71 02 	call	0x4e2	; 0x4e2 <motor_get_position>
+     74c:	ae 01       	movw	r20, r28
+     74e:	67 2d       	mov	r22, r7
+     750:	0e 94 ac 02 	call	0x558	; 0x558 <send_data>
+     754:	0f 5f       	subi	r16, 0xFF	; 255
+					{
+						break;
+					}
+					if (motor_get_position() == 1)
+					{
+						for(int i = 0; i<=MOTOR_MAX_STEPS/2;i++ ){
+     756:	05 36       	cpi	r16, 0x65	; 101
+     758:	19 f7       	brne	.-58     	; 0x720 <main+0x17a>
+     75a:	d8 cf       	rjmp	.-80     	; 0x70c <main+0x166>
+     75c:	8a 2c       	mov	r8, r10
+						}
+					}
+					else
+					{
+						for(int i = MOTOR_MAX_STEPS/2; i>0;i-- ){
+							wdt_reset();
+     75e:	a8 95       	wdr
+							if(serial_read_char() == '#'){
+     760:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+     764:	83 32       	cpi	r24, 0x23	; 35
+     766:	21 f4       	brne	.+8      	; 0x770 <main+0x1ca>
+								motor_calibrate();
+     768:	0e 94 74 02 	call	0x4e8	; 0x4e8 <motor_calibrate>
+								stop = 1 ;
+     76c:	69 2c       	mov	r6, r9
+								break;
+     76e:	ce cf       	rjmp	.-100    	; 0x70c <main+0x166>
+							}
+							motor_toPosition(i);
+     770:	88 2d       	mov	r24, r8
+     772:	0e 94 57 02 	call	0x4ae	; 0x4ae <motor_toPosition>
+							send_data(motor_get_position(),servo_get_position(),lidar_getValueAVG(avg));
+     776:	81 2f       	mov	r24, r17
+     778:	93 2d       	mov	r25, r3
+     77a:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <lidar_getValueAVG>
+     77e:	ec 01       	movw	r28, r24
+     780:	0e 94 ec 05 	call	0xbd8	; 0xbd8 <servo_get_position>
+     784:	78 2e       	mov	r7, r24
+     786:	0e 94 71 02 	call	0x4e2	; 0x4e2 <motor_get_position>
+     78a:	ae 01       	movw	r20, r28
+     78c:	67 2d       	mov	r22, r7
+     78e:	0e 94 ac 02 	call	0x558	; 0x558 <send_data>
+     792:	8a 94       	dec	r8
+							send_data(motor_get_position(),servo_get_position(),lidar_getValueAVG(avg));
+						}
+					}
+					else
+					{
+						for(int i = MOTOR_MAX_STEPS/2; i>0;i-- ){
+     794:	81 10       	cpse	r8, r1
+     796:	e3 cf       	rjmp	.-58     	; 0x75e <main+0x1b8>
+     798:	b9 cf       	rjmp	.-142    	; 0x70c <main+0x166>
+				
+				break;
+				//////////////////////////////////////////////////////////////////////////
+				case '3':
+				{
+					wdt_reset();
+     79a:	a8 95       	wdr
+					uint16_t m ;
+					uint16_t s ;
+					serial_read_char();
+     79c:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+					m = serial_read_int();
+     7a0:	0e 94 31 05 	call	0xa62	; 0xa62 <serial_read_int>
+     7a4:	d8 2f       	mov	r29, r24
+					s = serial_read_int();
+     7a6:	0e 94 31 05 	call	0xa62	; 0xa62 <serial_read_int>
+     7aa:	c8 2f       	mov	r28, r24
+					motor_toPosition(m);
+     7ac:	8d 2f       	mov	r24, r29
+     7ae:	0e 94 57 02 	call	0x4ae	; 0x4ae <motor_toPosition>
+					servo_toPosition(s);
+     7b2:	8c 2f       	mov	r24, r28
+     7b4:	0e 94 d2 05 	call	0xba4	; 0xba4 <servo_toPosition>
+					
+				}
+				
+				break;
+     7b8:	45 cf       	rjmp	.-374    	; 0x644 <main+0x9e>
+				//////////////////////////////////////////////////////////////////////////
+				case '4':
+				motor_calibrate();
+     7ba:	0e 94 74 02 	call	0x4e8	; 0x4e8 <motor_calibrate>
+				serial_write_string("Calibrated \r\n");
+     7be:	85 e6       	ldi	r24, 0x65	; 101
+     7c0:	93 e0       	ldi	r25, 0x03	; 3
+     7c2:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				break;
+     7c6:	3e cf       	rjmp	.-388    	; 0x644 <main+0x9e>
+				//////////////////////////////////////////////////////////////////////////
+				case '5': serial_write_string("Radar mode 3D (M first) activated! \r\n");
+     7c8:	83 e7       	ldi	r24, 0x73	; 115
+     7ca:	93 e0       	ldi	r25, 0x03	; 3
+     7cc:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+	char b;
+
+	while (1)
+	{
+		wdt_reset();
+		stop = 0;
+     7d0:	6b 2c       	mov	r6, r11
+				break;
+				//////////////////////////////////////////////////////////////////////////
+				case '5': serial_write_string("Radar mode 3D (M first) activated! \r\n");
+				while (1)
+				{
+					wdt_reset();
+     7d2:	a8 95       	wdr
+					if (stop == 1)
+     7d4:	81 e0       	ldi	r24, 0x01	; 1
+     7d6:	68 16       	cp	r6, r24
+     7d8:	09 f4       	brne	.+2      	; 0x7dc <main+0x236>
+     7da:	34 cf       	rjmp	.-408    	; 0x644 <main+0x9e>
+					{
+						break;
+					}
+					for (char k = 0; k<= SERVO_MAX_DEG/2 ; k++)
+					{
+						wdt_reset();
+     7dc:	a8 95       	wdr
+     7de:	7c 2c       	mov	r7, r12
+     7e0:	04 c0       	rjmp	.+8      	; 0x7ea <main+0x244>
+     7e2:	a8 95       	wdr
+						if (stop == 1)
+     7e4:	91 e0       	ldi	r25, 0x01	; 1
+     7e6:	69 16       	cp	r6, r25
+     7e8:	a1 f3       	breq	.-24     	; 0x7d2 <main+0x22c>
+						{
+							break;
+						}
+						servo_toPosition(k);
+     7ea:	87 2d       	mov	r24, r7
+     7ec:	0e 94 d2 05 	call	0xba4	; 0xba4 <servo_toPosition>
+     7f0:	0e 2d       	mov	r16, r14
+
+							for(int i = 0; i<=MOTOR_MAX_STEPS/2;i++ ){
+								wdt_reset();
+     7f2:	a8 95       	wdr
+								if(serial_read_char() == '#'){
+     7f4:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+     7f8:	83 32       	cpi	r24, 0x23	; 35
+     7fa:	21 f4       	brne	.+8      	; 0x804 <main+0x25e>
+									motor_calibrate();
+     7fc:	0e 94 74 02 	call	0x4e8	; 0x4e8 <motor_calibrate>
+									stop = 1 ;
+     800:	6f 2c       	mov	r6, r15
+									break;
+     802:	14 c0       	rjmp	.+40     	; 0x82c <main+0x286>
+								}
+								motor_toPosition(i);
+     804:	80 2f       	mov	r24, r16
+     806:	0e 94 57 02 	call	0x4ae	; 0x4ae <motor_toPosition>
+								send_data(motor_get_position(),servo_get_position(),lidar_getValueAVG(avg));
+     80a:	81 2f       	mov	r24, r17
+     80c:	93 2d       	mov	r25, r3
+     80e:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <lidar_getValueAVG>
+     812:	ec 01       	movw	r28, r24
+     814:	0e 94 ec 05 	call	0xbd8	; 0xbd8 <servo_get_position>
+     818:	58 2e       	mov	r5, r24
+     81a:	0e 94 71 02 	call	0x4e2	; 0x4e2 <motor_get_position>
+     81e:	ae 01       	movw	r20, r28
+     820:	65 2d       	mov	r22, r5
+     822:	0e 94 ac 02 	call	0x558	; 0x558 <send_data>
+     826:	0f 5f       	subi	r16, 0xFF	; 255
+						{
+							break;
+						}
+						servo_toPosition(k);
+
+							for(int i = 0; i<=MOTOR_MAX_STEPS/2;i++ ){
+     828:	05 36       	cpi	r16, 0x65	; 101
+     82a:	19 f7       	brne	.-58     	; 0x7f2 <main+0x24c>
+								}
+								motor_toPosition(i);
+								send_data(motor_get_position(),servo_get_position(),lidar_getValueAVG(avg));
+							}
+							k++;
+							servo_toPosition(k);
+     82c:	81 e0       	ldi	r24, 0x01	; 1
+     82e:	87 0d       	add	r24, r7
+     830:	0e 94 d2 05 	call	0xba4	; 0xba4 <servo_toPosition>
+						
+							for(int i = MOTOR_MAX_STEPS/2; i>=0;i-- ){
+								wdt_reset();
+     834:	a8 95       	wdr
+								if (stop == 1){break;}
+     836:	21 e0       	ldi	r18, 0x01	; 1
+     838:	62 16       	cp	r6, r18
+     83a:	01 f1       	breq	.+64     	; 0x87c <main+0x2d6>
+     83c:	8d 2c       	mov	r8, r13
+     83e:	01 c0       	rjmp	.+2      	; 0x842 <main+0x29c>
+							}
+							k++;
+							servo_toPosition(k);
+						
+							for(int i = MOTOR_MAX_STEPS/2; i>=0;i-- ){
+								wdt_reset();
+     840:	a8 95       	wdr
+								if (stop == 1){break;}
+									
+								if(serial_read_char() == '#'){
+     842:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+     846:	83 32       	cpi	r24, 0x23	; 35
+     848:	21 f4       	brne	.+8      	; 0x852 <main+0x2ac>
+									motor_calibrate();
+     84a:	0e 94 74 02 	call	0x4e8	; 0x4e8 <motor_calibrate>
+									stop = 1 ;
+     84e:	6f 2c       	mov	r6, r15
+									break;
+     850:	15 c0       	rjmp	.+42     	; 0x87c <main+0x2d6>
+								}
+								motor_toPosition(i);
+     852:	88 2d       	mov	r24, r8
+     854:	0e 94 57 02 	call	0x4ae	; 0x4ae <motor_toPosition>
+								send_data(motor_get_position(),servo_get_position(),lidar_getValueAVG(avg));
+     858:	81 2f       	mov	r24, r17
+     85a:	93 2d       	mov	r25, r3
+     85c:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <lidar_getValueAVG>
+     860:	ec 01       	movw	r28, r24
+     862:	0e 94 ec 05 	call	0xbd8	; 0xbd8 <servo_get_position>
+     866:	58 2e       	mov	r5, r24
+     868:	0e 94 71 02 	call	0x4e2	; 0x4e2 <motor_get_position>
+     86c:	ae 01       	movw	r20, r28
+     86e:	65 2d       	mov	r22, r5
+     870:	0e 94 ac 02 	call	0x558	; 0x558 <send_data>
+     874:	8a 94       	dec	r8
+								send_data(motor_get_position(),servo_get_position(),lidar_getValueAVG(avg));
+							}
+							k++;
+							servo_toPosition(k);
+						
+							for(int i = MOTOR_MAX_STEPS/2; i>=0;i-- ){
+     876:	8f ef       	ldi	r24, 0xFF	; 255
+     878:	88 12       	cpse	r8, r24
+     87a:	e2 cf       	rjmp	.-60     	; 0x840 <main+0x29a>
+					wdt_reset();
+					if (stop == 1)
+					{
+						break;
+					}
+					for (char k = 0; k<= SERVO_MAX_DEG/2 ; k++)
+     87c:	73 94       	inc	r7
+     87e:	73 94       	inc	r7
+     880:	9c e5       	ldi	r25, 0x5C	; 92
+     882:	79 12       	cpse	r7, r25
+     884:	ae cf       	rjmp	.-164    	; 0x7e2 <main+0x23c>
+     886:	a5 cf       	rjmp	.-182    	; 0x7d2 <main+0x22c>
+					}
+				}
+				
+				break;
+				//////////////////////////////////////////////////////////////////////////
+				case '6': serial_write_string("#6 : Set number of values per measurement\r\n");
+     888:	89 e9       	ldi	r24, 0x99	; 153
+     88a:	93 e0       	ldi	r25, 0x03	; 3
+     88c:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+
+				wdt_reset();
+     890:	a8 95       	wdr
+				serial_read_char();
+     892:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+				avg = serial_read_int();
+     896:	0e 94 31 05 	call	0xa62	; 0xa62 <serial_read_int>
+     89a:	d8 2f       	mov	r29, r24
+     89c:	c9 2f       	mov	r28, r25
+     89e:	18 2f       	mov	r17, r24
+     8a0:	39 2e       	mov	r3, r25
+				serial_write_string("Number of Values = ");
+     8a2:	85 ec       	ldi	r24, 0xC5	; 197
+     8a4:	93 e0       	ldi	r25, 0x03	; 3
+     8a6:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_int(avg);
+     8aa:	8d 2f       	mov	r24, r29
+     8ac:	9c 2f       	mov	r25, r28
+     8ae:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <serial_write_int>
+				serial_write_string("\r\n");
+     8b2:	86 e9       	ldi	r24, 0x96	; 150
+     8b4:	93 e0       	ldi	r25, 0x03	; 3
+     8b6:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+
+				
+				break;
+     8ba:	c4 ce       	rjmp	.-632    	; 0x644 <main+0x9e>
+				//////////////////////////////////////////////////////////////////////////
+				case '7': serial_write_string("#7 : Onetime measure of velocity in 1m/s\r\n");
+     8bc:	8b eb       	ldi	r24, 0xBB	; 187
+     8be:	92 e0       	ldi	r25, 0x02	; 2
+     8c0:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+
+				wdt_reset();
+     8c4:	a8 95       	wdr
+				lidar_setVelocityEnable(1);
+     8c6:	84 2d       	mov	r24, r4
+     8c8:	0e 94 05 01 	call	0x20a	; 0x20a <lidar_setVelocityEnable>
+				v = lidar_getVelocityAVG(avg);
+     8cc:	81 2f       	mov	r24, r17
+     8ce:	0e 94 5d 01 	call	0x2ba	; 0x2ba <lidar_getVelocityAVG>
+     8d2:	c8 2f       	mov	r28, r24
+     8d4:	88 0f       	add	r24, r24
+     8d6:	dd 0b       	sbc	r29, r29
+				lidar_setVelocityDisable();
+     8d8:	0e 94 1c 01 	call	0x238	; 0x238 <lidar_setVelocityDisable>
+				serial_write_string("Velocity = ");
+     8dc:	89 ed       	ldi	r24, 0xD9	; 217
+     8de:	93 e0       	ldi	r25, 0x03	; 3
+     8e0:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				//konvertierung von signed auf unsigned
+				if (v<0)
+     8e4:	dd 23       	and	r29, r29
+     8e6:	3c f4       	brge	.+14     	; 0x8f6 <main+0x350>
+				{
+					v = v*(-1);
+     8e8:	d1 95       	neg	r29
+     8ea:	c1 95       	neg	r28
+     8ec:	d1 09       	sbc	r29, r1
+					serial_write_string("-");
+     8ee:	85 ee       	ldi	r24, 0xE5	; 229
+     8f0:	93 e0       	ldi	r25, 0x03	; 3
+     8f2:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				}
+				serial_write_int(v);
+     8f6:	ce 01       	movw	r24, r28
+     8f8:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <serial_write_int>
+				serial_write_string("\r\n");
+     8fc:	86 e9       	ldi	r24, 0x96	; 150
+     8fe:	93 e0       	ldi	r25, 0x03	; 3
+     900:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+
+				
+
+				
+				break;
+     904:	9f ce       	rjmp	.-706    	; 0x644 <main+0x9e>
+				//////////////////////////////////////////////////////////////////////////
+				case '8': serial_write_string("#8 : Onetime measure of velocity in 10cm/s\r\n");
+     906:	86 ee       	ldi	r24, 0xE6	; 230
+     908:	92 e0       	ldi	r25, 0x02	; 2
+     90a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+
+				wdt_reset();
+     90e:	a8 95       	wdr
+				lidar_setVelocityEnable(0);
+     910:	8b 2d       	mov	r24, r11
+     912:	0e 94 05 01 	call	0x20a	; 0x20a <lidar_setVelocityEnable>
+				v = lidar_getVelocityAVG(avg);
+     916:	81 2f       	mov	r24, r17
+     918:	0e 94 5d 01 	call	0x2ba	; 0x2ba <lidar_getVelocityAVG>
+     91c:	c8 2f       	mov	r28, r24
+     91e:	88 0f       	add	r24, r24
+     920:	dd 0b       	sbc	r29, r29
+				lidar_setVelocityDisable();
+     922:	0e 94 1c 01 	call	0x238	; 0x238 <lidar_setVelocityDisable>
+				serial_write_string("Velocity = ");
+     926:	89 ed       	ldi	r24, 0xD9	; 217
+     928:	93 e0       	ldi	r25, 0x03	; 3
+     92a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				//converting signed to unsigned
+				if (v<0)
+     92e:	dd 23       	and	r29, r29
+     930:	3c f4       	brge	.+14     	; 0x940 <__stack+0x41>
+				{
+					v = v*(-1);
+     932:	d1 95       	neg	r29
+     934:	c1 95       	neg	r28
+     936:	d1 09       	sbc	r29, r1
+					serial_write_string("-");
+     938:	85 ee       	ldi	r24, 0xE5	; 229
+     93a:	93 e0       	ldi	r25, 0x03	; 3
+     93c:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				}
+				serial_write_int(v);
+     940:	ce 01       	movw	r24, r28
+     942:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <serial_write_int>
+				serial_write_string("\r\n");
+     946:	86 e9       	ldi	r24, 0x96	; 150
+     948:	93 e0       	ldi	r25, 0x03	; 3
+     94a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+
+				
+				break;
+     94e:	7a ce       	rjmp	.-780    	; 0x644 <main+0x9e>
+				//////////////////////////////////////////////////////////////////////////
+				case '9': serial_write_string("#9 x: Set Offset of measurement\r\n");
+     950:	83 e1       	ldi	r24, 0x13	; 19
+     952:	93 e0       	ldi	r25, 0x03	; 3
+     954:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+
+				wdt_reset();
+     958:	a8 95       	wdr
+				serial_read_char();
+     95a:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+				int16_t offset = serial_read_int();
+     95e:	0e 94 31 05 	call	0xa62	; 0xa62 <serial_read_int>
+				lidar_setDistanceCalibration(offset);
+     962:	0e 94 7d 01 	call	0x2fa	; 0x2fa <lidar_setDistanceCalibration>
+				serial_write_string("Offset = ");
+     966:	87 ee       	ldi	r24, 0xE7	; 231
+     968:	93 e0       	ldi	r25, 0x03	; 3
+     96a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				serial_write_int(lidar_getDistanceCalibration());
+     96e:	0e 94 96 01 	call	0x32c	; 0x32c <lidar_getDistanceCalibration>
+     972:	08 2e       	mov	r0, r24
+     974:	00 0c       	add	r0, r0
+     976:	99 0b       	sbc	r25, r25
+     978:	0e 94 f8 04 	call	0x9f0	; 0x9f0 <serial_write_int>
+				serial_write_string("\r\n");
+     97c:	86 e9       	ldi	r24, 0x96	; 150
+     97e:	93 e0       	ldi	r25, 0x03	; 3
+     980:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+				
+				break;
+     984:	5f ce       	rjmp	.-834    	; 0x644 <main+0x9e>
+				//////////////////////////////////////////////////////////////////////////
+				default: serial_write_string("Unknown code!\r\n");
+     986:	81 ef       	ldi	r24, 0xF1	; 241
+     988:	93 e0       	ldi	r25, 0x03	; 3
+     98a:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+     98e:	5a ce       	rjmp	.-844    	; 0x644 <main+0x9e>
+
+00000990 <serial_init>:
+ *  After this, the BAUD-Rate will be set and the Interrupts will be enabled. 
+ */
+
+void serial_init(void){
+	
+	readpointer = buffer;
+     990:	85 e0       	ldi	r24, 0x05	; 5
+     992:	94 e0       	ldi	r25, 0x04	; 4
+     994:	90 93 1c 04 	sts	0x041C, r25
+     998:	80 93 1b 04 	sts	0x041B, r24
+	writepointer = buffer;
+     99c:	90 93 1a 04 	sts	0x041A, r25
+     9a0:	80 93 19 04 	sts	0x0419, r24
+	
+	//Set BAUD-Rate
+	UBRR0H = UBRRH_VALUE;
+     9a4:	10 92 c5 00 	sts	0x00C5, r1
+	UBRR0L = UBRRL_VALUE;
+     9a8:	81 e1       	ldi	r24, 0x11	; 17
+     9aa:	80 93 c4 00 	sts	0x00C4, r24
+	
+	//Set 8 Data-Bit, 1 Stop-Bit, No Parity
+	UCSR0C |= (1<<UCSZ01)|(1<<UCSZ00);
+     9ae:	e2 ec       	ldi	r30, 0xC2	; 194
+     9b0:	f0 e0       	ldi	r31, 0x00	; 0
+     9b2:	80 81       	ld	r24, Z
+     9b4:	86 60       	ori	r24, 0x06	; 6
+     9b6:	80 83       	st	Z, r24
+
+	
+	//Set RX and TX ENABLE
+	UCSR0B = (1 << RXEN0) | (1 << TXEN0)  | (1<<RXCIE0);
+     9b8:	88 e9       	ldi	r24, 0x98	; 152
+     9ba:	80 93 c1 00 	sts	0x00C1, r24
+	sei();
+     9be:	78 94       	sei
+     9c0:	08 95       	ret
+
+000009c2 <serial_write_char>:
+ *  \param c charater to send
+ */
+
+void serial_write_char(unsigned char c){
+	// Wait for empty DATA Register
+	while ( !(UCSR0A & (1 << UDRE0)) ){
+     9c2:	e0 ec       	ldi	r30, 0xC0	; 192
+     9c4:	f0 e0       	ldi	r31, 0x00	; 0
+     9c6:	90 81       	ld	r25, Z
+     9c8:	95 ff       	sbrs	r25, 5
+     9ca:	fd cf       	rjmp	.-6      	; 0x9c6 <serial_write_char+0x4>
+	}
+	//Write CHAR to DATA Register
+	UDR0 = c;
+     9cc:	80 93 c6 00 	sts	0x00C6, r24
+     9d0:	08 95       	ret
+
+000009d2 <serial_write_string>:
+ *
+ *  Send a string over the UART.
+ *  \param string pointer of the first character of the string
+ */
+
+void serial_write_string(char *string){
+     9d2:	cf 93       	push	r28
+     9d4:	df 93       	push	r29
+     9d6:	ec 01       	movw	r28, r24
+	while (*string != '\0'){
+     9d8:	88 81       	ld	r24, Y
+     9da:	88 23       	and	r24, r24
+     9dc:	31 f0       	breq	.+12     	; 0x9ea <serial_write_string+0x18>
+     9de:	21 96       	adiw	r28, 0x01	; 1
+		serial_write_char(*string);
+     9e0:	0e 94 e1 04 	call	0x9c2	; 0x9c2 <serial_write_char>
+ *  Send a string over the UART.
+ *  \param string pointer of the first character of the string
+ */
+
+void serial_write_string(char *string){
+	while (*string != '\0'){
+     9e4:	89 91       	ld	r24, Y+
+     9e6:	81 11       	cpse	r24, r1
+     9e8:	fb cf       	rjmp	.-10     	; 0x9e0 <serial_write_string+0xe>
+		serial_write_char(*string);
+		string ++;
+	}
+}
+     9ea:	df 91       	pop	r29
+     9ec:	cf 91       	pop	r28
+     9ee:	08 95       	ret
+
+000009f0 <serial_write_int>:
+ *  Send an integer over the UART.
+ *  \param i integer to send
+ */
+
+
+void serial_write_int(uint16_t i){
+     9f0:	cf 93       	push	r28
+     9f2:	df 93       	push	r29
+     9f4:	00 d0       	rcall	.+0      	; 0x9f6 <serial_write_int+0x6>
+     9f6:	00 d0       	rcall	.+0      	; 0x9f8 <serial_write_int+0x8>
+     9f8:	00 d0       	rcall	.+0      	; 0x9fa <serial_write_int+0xa>
+     9fa:	cd b7       	in	r28, 0x3d	; 61
+     9fc:	de b7       	in	r29, 0x3e	; 62
+    } else if (__radix < 2 || __radix > 36) {
+	*__s = 0;
+	return __s;
+    } else {
+	extern char *__itoa_ncheck (int, char *, unsigned char);
+	return __itoa_ncheck (__val, __s, __radix);
+     9fe:	4a e0       	ldi	r20, 0x0A	; 10
+     a00:	be 01       	movw	r22, r28
+     a02:	6f 5f       	subi	r22, 0xFF	; 255
+     a04:	7f 4f       	sbci	r23, 0xFF	; 255
+     a06:	0e 94 d7 07 	call	0xfae	; 0xfae <__itoa_ncheck>
+	char buffer[NUMBER_OF_DIGITS+1];
+	itoa(i, buffer, 10 );
+	serial_write_string(buffer);
+     a0a:	ce 01       	movw	r24, r28
+     a0c:	01 96       	adiw	r24, 0x01	; 1
+     a0e:	0e 94 e9 04 	call	0x9d2	; 0x9d2 <serial_write_string>
+}
+     a12:	26 96       	adiw	r28, 0x06	; 6
+     a14:	0f b6       	in	r0, 0x3f	; 63
+     a16:	f8 94       	cli
+     a18:	de bf       	out	0x3e, r29	; 62
+     a1a:	0f be       	out	0x3f, r0	; 63
+     a1c:	cd bf       	out	0x3d, r28	; 61
+     a1e:	df 91       	pop	r29
+     a20:	cf 91       	pop	r28
+     a22:	08 95       	ret
+
+00000a24 <serial_read_char>:
+ *  \return Received character
+ */
+
+char serial_read_char(void){
+	char data;
+	if (writepointer != readpointer)
+     a24:	e0 91 1b 04 	lds	r30, 0x041B
+     a28:	f0 91 1c 04 	lds	r31, 0x041C
+     a2c:	80 91 19 04 	lds	r24, 0x0419
+     a30:	90 91 1a 04 	lds	r25, 0x041A
+     a34:	8e 17       	cp	r24, r30
+     a36:	9f 07       	cpc	r25, r31
+     a38:	91 f0       	breq	.+36     	; 0xa5e <serial_read_char+0x3a>
+	{
+		data = *readpointer;
+     a3a:	80 81       	ld	r24, Z
+		if (readpointer == (buffer + BUFFER_SIZE-1))
+     a3c:	94 e0       	ldi	r25, 0x04	; 4
+     a3e:	e8 31       	cpi	r30, 0x18	; 24
+     a40:	f9 07       	cpc	r31, r25
+     a42:	39 f4       	brne	.+14     	; 0xa52 <serial_read_char+0x2e>
+		{
+			readpointer = buffer;
+     a44:	25 e0       	ldi	r18, 0x05	; 5
+     a46:	34 e0       	ldi	r19, 0x04	; 4
+     a48:	30 93 1c 04 	sts	0x041C, r19
+     a4c:	20 93 1b 04 	sts	0x041B, r18
+     a50:	08 95       	ret
+		}
+		else
+		{
+			readpointer++;
+     a52:	31 96       	adiw	r30, 0x01	; 1
+     a54:	f0 93 1c 04 	sts	0x041C, r31
+     a58:	e0 93 1b 04 	sts	0x041B, r30
+     a5c:	08 95       	ret
+		}
+	}
+	else
+	{
+		data = '\0';
+     a5e:	80 e0       	ldi	r24, 0x00	; 0
+	}
+	return data;
+}
+     a60:	08 95       	ret
+
+00000a62 <serial_read_int>:
+ *
+ *  Read a signed integer (16-Bit) out of the buffer. 
+ *  \return Received integer
+ */
+
+int16_t serial_read_int(){
+     a62:	df 92       	push	r13
+     a64:	ef 92       	push	r14
+     a66:	ff 92       	push	r15
+     a68:	0f 93       	push	r16
+     a6a:	1f 93       	push	r17
+     a6c:	cf 93       	push	r28
+     a6e:	df 93       	push	r29
+     a70:	1f 92       	push	r1
+     a72:	cd b7       	in	r28, 0x3d	; 61
+     a74:	de b7       	in	r29, 0x3e	; 62
+	int16_t value = 0;
+	char c = 0;
+     a76:	19 82       	std	Y+1, r1	; 0x01
+     a78:	0f 2e       	mov	r0, r31
+     a7a:	f6 e0       	ldi	r31, 0x06	; 6
+     a7c:	ff 2e       	mov	r15, r31
+     a7e:	f0 2d       	mov	r31, r0
+	char minus = 1;
+     a80:	ee 24       	eor	r14, r14
+     a82:	e3 94       	inc	r14
+ *  Read a signed integer (16-Bit) out of the buffer. 
+ *  \return Received integer
+ */
+
+int16_t serial_read_int(){
+	int16_t value = 0;
+     a84:	00 e0       	ldi	r16, 0x00	; 0
+     a86:	10 e0       	ldi	r17, 0x00	; 0
+	for (uint8_t i = 0; i<=NUMBER_OF_DIGITS;i++)
+	{
+		c = serial_read_char();
+		if (value == 0 && c == '-')
+		{
+			minus = -1;
+     a88:	dd 24       	eor	r13, r13
+     a8a:	da 94       	dec	r13
+	int16_t value = 0;
+	char c = 0;
+	char minus = 1;
+	for (uint8_t i = 0; i<=NUMBER_OF_DIGITS;i++)
+	{
+		c = serial_read_char();
+     a8c:	0e 94 12 05 	call	0xa24	; 0xa24 <serial_read_char>
+     a90:	89 83       	std	Y+1, r24	; 0x01
+		if (value == 0 && c == '-')
+     a92:	01 15       	cp	r16, r1
+     a94:	11 05       	cpc	r17, r1
+     a96:	19 f4       	brne	.+6      	; 0xa9e <serial_read_int+0x3c>
+     a98:	8d 32       	cpi	r24, 0x2D	; 45
+     a9a:	69 f5       	brne	.+90     	; 0xaf6 <serial_read_int+0x94>
+     a9c:	1f c0       	rjmp	.+62     	; 0xadc <serial_read_int+0x7a>
+		{
+			minus = -1;
+			continue;
+		}
+		if (c < 58 && c > 47 )
+     a9e:	80 53       	subi	r24, 0x30	; 48
+     aa0:	8a 30       	cpi	r24, 0x0A	; 10
+     aa2:	b0 f4       	brcc	.+44     	; 0xad0 <serial_read_int+0x6e>
+		{
+			if (value < 5000)
+     aa4:	08 38       	cpi	r16, 0x88	; 136
+     aa6:	83 e1       	ldi	r24, 0x13	; 19
+     aa8:	18 07       	cpc	r17, r24
+     aaa:	14 f5       	brge	.+68     	; 0xaf0 <serial_read_int+0x8e>
+			{
+				value = value * 10 + atoi(&c);
+     aac:	c8 01       	movw	r24, r16
+     aae:	88 0f       	add	r24, r24
+     ab0:	99 1f       	adc	r25, r25
+     ab2:	00 0f       	add	r16, r16
+     ab4:	11 1f       	adc	r17, r17
+     ab6:	00 0f       	add	r16, r16
+     ab8:	11 1f       	adc	r17, r17
+     aba:	00 0f       	add	r16, r16
+     abc:	11 1f       	adc	r17, r17
+     abe:	08 0f       	add	r16, r24
+     ac0:	19 1f       	adc	r17, r25
+     ac2:	ce 01       	movw	r24, r28
+     ac4:	01 96       	adiw	r24, 0x01	; 1
+     ac6:	0e 94 b9 07 	call	0xf72	; 0xf72 <atoi>
+     aca:	08 0f       	add	r16, r24
+     acc:	19 1f       	adc	r17, r25
+     ace:	07 c0       	rjmp	.+14     	; 0xade <serial_read_int+0x7c>
+				return 0;
+			}
+		}
+		else
+		{
+			return value * minus;
+     ad0:	e0 9e       	mul	r14, r16
+     ad2:	c0 01       	movw	r24, r0
+     ad4:	e1 9e       	mul	r14, r17
+     ad6:	90 0d       	add	r25, r0
+     ad8:	11 24       	eor	r1, r1
+     ada:	11 c0       	rjmp	.+34     	; 0xafe <serial_read_int+0x9c>
+	for (uint8_t i = 0; i<=NUMBER_OF_DIGITS;i++)
+	{
+		c = serial_read_char();
+		if (value == 0 && c == '-')
+		{
+			minus = -1;
+     adc:	ed 2c       	mov	r14, r13
+     ade:	fa 94       	dec	r15
+
+int16_t serial_read_int(){
+	int16_t value = 0;
+	char c = 0;
+	char minus = 1;
+	for (uint8_t i = 0; i<=NUMBER_OF_DIGITS;i++)
+     ae0:	f1 10       	cpse	r15, r1
+     ae2:	d4 cf       	rjmp	.-88     	; 0xa8c <serial_read_int+0x2a>
+		else
+		{
+			return value * minus;
+		}
+	}
+	return value * minus;
+     ae4:	e0 9e       	mul	r14, r16
+     ae6:	c0 01       	movw	r24, r0
+     ae8:	e1 9e       	mul	r14, r17
+     aea:	90 0d       	add	r25, r0
+     aec:	11 24       	eor	r1, r1
+     aee:	07 c0       	rjmp	.+14     	; 0xafe <serial_read_int+0x9c>
+			{
+				value = value * 10 + atoi(&c);
+			}
+			else
+			{
+				return 0;
+     af0:	80 e0       	ldi	r24, 0x00	; 0
+     af2:	90 e0       	ldi	r25, 0x00	; 0
+     af4:	04 c0       	rjmp	.+8      	; 0xafe <serial_read_int+0x9c>
+		if (value == 0 && c == '-')
+		{
+			minus = -1;
+			continue;
+		}
+		if (c < 58 && c > 47 )
+     af6:	80 53       	subi	r24, 0x30	; 48
+     af8:	8a 30       	cpi	r24, 0x0A	; 10
+     afa:	c0 f2       	brcs	.-80     	; 0xaac <serial_read_int+0x4a>
+     afc:	e9 cf       	rjmp	.-46     	; 0xad0 <serial_read_int+0x6e>
+		{
+			return value * minus;
+		}
+	}
+	return value * minus;
+}
+     afe:	0f 90       	pop	r0
+     b00:	df 91       	pop	r29
+     b02:	cf 91       	pop	r28
+     b04:	1f 91       	pop	r17
+     b06:	0f 91       	pop	r16
+     b08:	ff 90       	pop	r15
+     b0a:	ef 90       	pop	r14
+     b0c:	df 90       	pop	r13
+     b0e:	08 95       	ret
+
+00000b10 <__vector_18>:
+/*! \brief Interrupt Service Routine
+ *
+ *  Interrupt Service Routine for an UART receive Interrupt.
+ */
+
+ISR (USART_RX_vect){
+     b10:	1f 92       	push	r1
+     b12:	0f 92       	push	r0
+     b14:	0f b6       	in	r0, 0x3f	; 63
+     b16:	0f 92       	push	r0
+     b18:	11 24       	eor	r1, r1
+     b1a:	2f 93       	push	r18
+     b1c:	8f 93       	push	r24
+     b1e:	9f 93       	push	r25
+     b20:	ef 93       	push	r30
+     b22:	ff 93       	push	r31
+	cli();
+     b24:	f8 94       	cli
+	*writepointer = UDR0;
+     b26:	e0 91 19 04 	lds	r30, 0x0419
+     b2a:	f0 91 1a 04 	lds	r31, 0x041A
+     b2e:	80 91 c6 00 	lds	r24, 0x00C6
+     b32:	80 83       	st	Z, r24
+	if (writepointer == (buffer + BUFFER_SIZE-1))
+     b34:	80 91 19 04 	lds	r24, 0x0419
+     b38:	90 91 1a 04 	lds	r25, 0x041A
+     b3c:	24 e0       	ldi	r18, 0x04	; 4
+     b3e:	88 31       	cpi	r24, 0x18	; 24
+     b40:	92 07       	cpc	r25, r18
+     b42:	39 f4       	brne	.+14     	; 0xb52 <__vector_18+0x42>
+	{
+		writepointer = buffer;
+     b44:	85 e0       	ldi	r24, 0x05	; 5
+     b46:	94 e0       	ldi	r25, 0x04	; 4
+     b48:	90 93 1a 04 	sts	0x041A, r25
+     b4c:	80 93 19 04 	sts	0x0419, r24
+     b50:	05 c0       	rjmp	.+10     	; 0xb5c <__vector_18+0x4c>
+	}
+	else
+	{
+		writepointer++;
+     b52:	01 96       	adiw	r24, 0x01	; 1
+     b54:	90 93 1a 04 	sts	0x041A, r25
+     b58:	80 93 19 04 	sts	0x0419, r24
+	}
+	sei();
+     b5c:	78 94       	sei
+     b5e:	ff 91       	pop	r31
+     b60:	ef 91       	pop	r30
+     b62:	9f 91       	pop	r25
+     b64:	8f 91       	pop	r24
+     b66:	2f 91       	pop	r18
+     b68:	0f 90       	pop	r0
+     b6a:	0f be       	out	0x3f, r0	; 63
+     b6c:	0f 90       	pop	r0
+     b6e:	1f 90       	pop	r1
+     b70:	18 95       	reti
+
+00000b72 <servo_timer_init>:
+ * @date	22.12.2015
+ **************************************************************************************************/
+
+void servo_timer_init(){
+	
+	DDRB |= (1<<PWMS);
+     b72:	21 9a       	sbi	0x04, 1	; 4
+	PORTB = (1<<PWMS);
+     b74:	82 e0       	ldi	r24, 0x02	; 2
+     b76:	85 b9       	out	0x05, r24	; 5
+
+	TCCR1A = (1<<COM1A1) | (1<<WGM11);
+     b78:	82 e8       	ldi	r24, 0x82	; 130
+     b7a:	80 93 80 00 	sts	0x0080, r24
+	TCCR1B = (1<<WGM13) | (1<<WGM12) | (1<<CS11) | (1<<CS10) ; // FAST PWM , TOP = ICR1, Prescaler 64 -> 50Hz = 16Mhz/(64*(1+ICR1)) -> ICR1 = 4999
+     b7e:	8b e1       	ldi	r24, 0x1B	; 27
+     b80:	80 93 81 00 	sts	0x0081, r24
+
+	ICR1 = 4999;	
+     b84:	87 e8       	ldi	r24, 0x87	; 135
+     b86:	93 e1       	ldi	r25, 0x13	; 19
+     b88:	90 93 87 00 	sts	0x0087, r25
+     b8c:	80 93 86 00 	sts	0x0086, r24
+     b90:	08 95       	ret
+
+00000b92 <servo_init>:
+ * @author	Alex
+ * @date	22.12.2015
+ **************************************************************************************************/
+
+void servo_init(){
+	servo_timer_init();
+     b92:	0e 94 b9 05 	call	0xb72	; 0xb72 <servo_timer_init>
+	OCR1A = POS_MAX;
+     b96:	8f e3       	ldi	r24, 0x3F	; 63
+     b98:	92 e0       	ldi	r25, 0x02	; 2
+     b9a:	90 93 89 00 	sts	0x0089, r25
+     b9e:	80 93 88 00 	sts	0x0088, r24
+     ba2:	08 95       	ret
+
+00000ba4 <servo_toPosition>:
+ * @date	22.12.2015
+ *
+ * @param	deg	The degrees.
+ **************************************************************************************************/
+
+void servo_toPosition(char deg){
+     ba4:	48 2f       	mov	r20, r24
+	assert(deg <= 90);
+     ba6:	8b 35       	cpi	r24, 0x5B	; 91
+     ba8:	10 f0       	brcs	.+4      	; 0xbae <servo_toPosition+0xa>
+     baa:	0e 94 b4 07 	call	0xf68	; 0xf68 <abort>
+	char s = SERVO_MAX_DEG-deg;
+     bae:	24 eb       	ldi	r18, 0xB4	; 180
+     bb0:	28 1b       	sub	r18, r24
+	if (s>=0 && s<=SERVO_MAX_DEG)
+     bb2:	25 3b       	cpi	r18, 0xB5	; 181
+     bb4:	80 f4       	brcc	.+32     	; 0xbd6 <servo_toPosition+0x32>
+	{
+			OCR1A = POS_MIN + ((POS_MAX-POS_MIN)/(SERVO_MAX_DEG/10) * (s))/10;
+     bb6:	37 e1       	ldi	r19, 0x17	; 23
+     bb8:	23 9f       	mul	r18, r19
+     bba:	c0 01       	movw	r24, r0
+     bbc:	11 24       	eor	r1, r1
+     bbe:	6a e0       	ldi	r22, 0x0A	; 10
+     bc0:	70 e0       	ldi	r23, 0x00	; 0
+     bc2:	0e 94 9a 07 	call	0xf34	; 0xf34 <__divmodhi4>
+     bc6:	6a 56       	subi	r22, 0x6A	; 106
+     bc8:	7f 4f       	sbci	r23, 0xFF	; 255
+     bca:	70 93 89 00 	sts	0x0089, r23
+     bce:	60 93 88 00 	sts	0x0088, r22
+			servo_position = deg;
+     bd2:	40 93 04 04 	sts	0x0404, r20
+     bd6:	08 95       	ret
+
+00000bd8 <servo_get_position>:
+ * @return	Servo position in degrees.
+ **************************************************************************************************/
+
+char servo_get_position(){
+	return servo_position;
+     bd8:	80 91 04 04 	lds	r24, 0x0404
+     bdc:	08 95       	ret
+
+00000bde <twi_stop>:
+}
+
+// Stop TWI Communication
+static uint8_t twi_stop(void){
+	//Stop Communication
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+     bde:	ec eb       	ldi	r30, 0xBC	; 188
+     be0:	f0 e0       	ldi	r31, 0x00	; 0
+     be2:	84 e9       	ldi	r24, 0x94	; 148
+     be4:	80 83       	st	Z, r24
+	
+	uint8_t timeout = timeoutValue;
+     be6:	90 91 01 01 	lds	r25, 0x0101
+	while (TWCR & (1<<TWSTO)){
+     bea:	20 81       	ld	r18, Z
+     bec:	82 2f       	mov	r24, r18
+     bee:	80 71       	andi	r24, 0x10	; 16
+     bf0:	24 ff       	sbrs	r18, 4
+     bf2:	15 c0       	rjmp	.+42     	; 0xc1e <twi_stop+0x40>
+		if (timeout > 0)
+     bf4:	91 11       	cpse	r25, r1
+     bf6:	05 c0       	rjmp	.+10     	; 0xc02 <twi_stop+0x24>
+			_delay_us(TIMEOUT_DELAYWERT);
+			timeout--;
+		}
+		else
+		{
+			return TWI_TIMEOUT_ERROR;
+     bf8:	83 e0       	ldi	r24, 0x03	; 3
+     bfa:	08 95       	ret
+	//Stop Communication
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+	
+	uint8_t timeout = timeoutValue;
+	while (TWCR & (1<<TWSTO)){
+		if (timeout > 0)
+     bfc:	91 11       	cpse	r25, r1
+     bfe:	03 c0       	rjmp	.+6      	; 0xc06 <twi_stop+0x28>
+     c00:	0d c0       	rjmp	.+26     	; 0xc1c <twi_stop+0x3e>
+static uint8_t twi_stop(void){
+	//Stop Communication
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+	
+	uint8_t timeout = timeoutValue;
+	while (TWCR & (1<<TWSTO)){
+     c02:	ec eb       	ldi	r30, 0xBC	; 188
+     c04:	f0 e0       	ldi	r31, 0x00	; 0
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+     c06:	85 e8       	ldi	r24, 0x85	; 133
+     c08:	8a 95       	dec	r24
+     c0a:	f1 f7       	brne	.-4      	; 0xc08 <twi_stop+0x2a>
+     c0c:	00 00       	nop
+		if (timeout > 0)
+		{
+			_delay_us(TIMEOUT_DELAYWERT);
+			timeout--;
+     c0e:	91 50       	subi	r25, 0x01	; 1
+static uint8_t twi_stop(void){
+	//Stop Communication
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+	
+	uint8_t timeout = timeoutValue;
+	while (TWCR & (1<<TWSTO)){
+     c10:	20 81       	ld	r18, Z
+     c12:	82 2f       	mov	r24, r18
+     c14:	80 71       	andi	r24, 0x10	; 16
+     c16:	24 fd       	sbrc	r18, 4
+     c18:	f1 cf       	rjmp	.-30     	; 0xbfc <twi_stop+0x1e>
+     c1a:	08 95       	ret
+			_delay_us(TIMEOUT_DELAYWERT);
+			timeout--;
+		}
+		else
+		{
+			return TWI_TIMEOUT_ERROR;
+     c1c:	83 e0       	ldi	r24, 0x03	; 3
+		}
+	}
+	
+	return TWI_STOP_OK;
+}
+     c1e:	08 95       	ret
+
+00000c20 <twi_sendAdress>:
+			return status;
+		}
+	}
+}
+
+static uint8_t twi_sendAdress(uint8_t address){	
+     c20:	cf 93       	push	r28
+	//Write LIDAR-Address to TWDR
+	TWDR = address;
+     c22:	80 93 bb 00 	sts	0x00BB, r24
+	
+	//Clear TWINT; Start transmission
+	TWCR = (1<<TWINT) | (1<<TWEN);
+     c26:	ec eb       	ldi	r30, 0xBC	; 188
+     c28:	f0 e0       	ldi	r31, 0x00	; 0
+     c2a:	84 e8       	ldi	r24, 0x84	; 132
+     c2c:	80 83       	st	Z, r24
+	
+	//Wait for TWINT-FLag; ACK has been received
+	uint8_t timeout = timeoutValue;
+     c2e:	80 91 01 01 	lds	r24, 0x0101
+	while( !(TWCR & (1<<TWINT)) ){
+     c32:	90 81       	ld	r25, Z
+     c34:	99 23       	and	r25, r25
+     c36:	8c f0       	brlt	.+34     	; 0xc5a <twi_sendAdress+0x3a>
+		if (timeout > 0)
+     c38:	81 11       	cpse	r24, r1
+     c3a:	05 c0       	rjmp	.+10     	; 0xc46 <twi_sendAdress+0x26>
+			_delay_us(TIMEOUT_DELAYWERT);
+			timeout--;
+		}
+		else
+		{
+			return TWI_TIMEOUT_ERROR;
+     c3c:	83 e0       	ldi	r24, 0x03	; 3
+     c3e:	37 c0       	rjmp	.+110    	; 0xcae <twi_sendAdress+0x8e>
+	TWCR = (1<<TWINT) | (1<<TWEN);
+	
+	//Wait for TWINT-FLag; ACK has been received
+	uint8_t timeout = timeoutValue;
+	while( !(TWCR & (1<<TWINT)) ){
+		if (timeout > 0)
+     c40:	81 11       	cpse	r24, r1
+     c42:	03 c0       	rjmp	.+6      	; 0xc4a <twi_sendAdress+0x2a>
+     c44:	2f c0       	rjmp	.+94     	; 0xca4 <twi_sendAdress+0x84>
+	//Clear TWINT; Start transmission
+	TWCR = (1<<TWINT) | (1<<TWEN);
+	
+	//Wait for TWINT-FLag; ACK has been received
+	uint8_t timeout = timeoutValue;
+	while( !(TWCR & (1<<TWINT)) ){
+     c46:	ec eb       	ldi	r30, 0xBC	; 188
+     c48:	f0 e0       	ldi	r31, 0x00	; 0
+     c4a:	95 e8       	ldi	r25, 0x85	; 133
+     c4c:	9a 95       	dec	r25
+     c4e:	f1 f7       	brne	.-4      	; 0xc4c <twi_sendAdress+0x2c>
+     c50:	00 00       	nop
+		if (timeout > 0)
+		{
+			_delay_us(TIMEOUT_DELAYWERT);
+			timeout--;
+     c52:	81 50       	subi	r24, 0x01	; 1
+	//Clear TWINT; Start transmission
+	TWCR = (1<<TWINT) | (1<<TWEN);
+	
+	//Wait for TWINT-FLag; ACK has been received
+	uint8_t timeout = timeoutValue;
+	while( !(TWCR & (1<<TWINT)) ){
+     c54:	90 81       	ld	r25, Z
+     c56:	99 23       	and	r25, r25
+     c58:	9c f7       	brge	.-26     	; 0xc40 <twi_sendAdress+0x20>
+			return TWI_TIMEOUT_ERROR;
+		}
+	}
+	
+	//Check if the Device has acknowledged the READ / WRITE mode
+	if ((TW_STATUS == TW_MT_SLA_ACK) || (TW_STATUS == TW_MR_SLA_ACK)){
+     c5a:	80 91 b9 00 	lds	r24, 0x00B9
+     c5e:	88 7f       	andi	r24, 0xF8	; 248
+     c60:	88 31       	cpi	r24, 0x18	; 24
+     c62:	11 f1       	breq	.+68     	; 0xca8 <twi_sendAdress+0x88>
+     c64:	80 91 b9 00 	lds	r24, 0x00B9
+     c68:	88 7f       	andi	r24, 0xF8	; 248
+     c6a:	80 34       	cpi	r24, 0x40	; 64
+     c6c:	f9 f0       	breq	.+62     	; 0xcac <twi_sendAdress+0x8c>
+		return TWI_OK;
+	}
+	if ((TW_STATUS == TW_MT_SLA_NACK) || (TW_STATUS == TW_MR_SLA_NACK))
+     c6e:	80 91 b9 00 	lds	r24, 0x00B9
+     c72:	88 7f       	andi	r24, 0xF8	; 248
+     c74:	80 32       	cpi	r24, 0x20	; 32
+     c76:	29 f0       	breq	.+10     	; 0xc82 <twi_sendAdress+0x62>
+     c78:	80 91 b9 00 	lds	r24, 0x00B9
+     c7c:	88 7f       	andi	r24, 0xF8	; 248
+     c7e:	88 34       	cpi	r24, 0x48	; 72
+     c80:	41 f4       	brne	.+16     	; 0xc92 <twi_sendAdress+0x72>
+	{
+		uint8_t status = TW_STATUS;
+     c82:	80 91 b9 00 	lds	r24, 0x00B9
+     c86:	c8 2f       	mov	r28, r24
+     c88:	c8 7f       	andi	r28, 0xF8	; 248
+		twi_stop();
+     c8a:	0e 94 ef 05 	call	0xbde	; 0xbde <twi_stop>
+		return status;
+     c8e:	8c 2f       	mov	r24, r28
+     c90:	0e c0       	rjmp	.+28     	; 0xcae <twi_sendAdress+0x8e>
+	} 
+	else
+	{
+		uint8_t status = TW_STATUS;
+     c92:	80 91 b9 00 	lds	r24, 0x00B9
+	TWCR = (1<<TWEN) | (1<<TWEA);
+}
+
+static void twi_lockUp(){
+	//Release SDA and SCL to high
+	TWCR =0;
+     c96:	ec eb       	ldi	r30, 0xBC	; 188
+     c98:	f0 e0       	ldi	r31, 0x00	; 0
+     c9a:	10 82       	st	Z, r1
+	TWCR = (1<<TWEN) | (1<<TWEA);
+     c9c:	94 e4       	ldi	r25, 0x44	; 68
+     c9e:	90 83       	st	Z, r25
+	} 
+	else
+	{
+		uint8_t status = TW_STATUS;
+		twi_lockUp();
+		return status;
+     ca0:	88 7f       	andi	r24, 0xF8	; 248
+     ca2:	05 c0       	rjmp	.+10     	; 0xcae <twi_sendAdress+0x8e>
+			_delay_us(TIMEOUT_DELAYWERT);
+			timeout--;
+		}
+		else
+		{
+			return TWI_TIMEOUT_ERROR;
+     ca4:	83 e0       	ldi	r24, 0x03	; 3
+     ca6:	03 c0       	rjmp	.+6      	; 0xcae <twi_sendAdress+0x8e>
+		}
+	}
+	
+	//Check if the Device has acknowledged the READ / WRITE mode
+	if ((TW_STATUS == TW_MT_SLA_ACK) || (TW_STATUS == TW_MR_SLA_ACK)){
+		return TWI_OK;
+     ca8:	80 e0       	ldi	r24, 0x00	; 0
+     caa:	01 c0       	rjmp	.+2      	; 0xcae <twi_sendAdress+0x8e>
+     cac:	80 e0       	ldi	r24, 0x00	; 0
+	{
+		uint8_t status = TW_STATUS;
+		twi_lockUp();
+		return status;
+	}
+}
+     cae:	cf 91       	pop	r28
+     cb0:	08 95       	ret
+
+00000cb2 <twi_write>:
+
+//Write to TWDR Register; Shift to SDA 
+static uint8_t twi_write(uint8_t data){
+     cb2:	cf 93       	push	r28
+	//Load DATA to TWDR Register
+	TWDR = data;
+     cb4:	80 93 bb 00 	sts	0x00BB, r24
+	//Clear TWINT to start transmission
+	TWCR = (1 << TWINT) | (1 << TWEN);
+     cb8:	ec eb       	ldi	r30, 0xBC	; 188
+     cba:	f0 e0       	ldi	r31, 0x00	; 0
+     cbc:	84 e8       	ldi	r24, 0x84	; 132
+     cbe:	80 83       	st	Z, r24
+	//Wait for TWINT Flag; -> DATA transmitted and ACK/NACK received.
+uint8_t timeout = timeoutValue;
+     cc0:	80 91 01 01 	lds	r24, 0x0101
+while( !(TWCR & (1<<TWINT)) ){
+     cc4:	90 81       	ld	r25, Z
+     cc6:	99 23       	and	r25, r25
+     cc8:	8c f0       	brlt	.+34     	; 0xcec <twi_write+0x3a>
+	if (timeout > 0)
+     cca:	81 11       	cpse	r24, r1
+     ccc:	05 c0       	rjmp	.+10     	; 0xcd8 <twi_write+0x26>
+		_delay_us(TIMEOUT_DELAYWERT);
+		timeout--;
+	}
+	else
+	{
+		return TWI_TIMEOUT_ERROR;
+     cce:	83 e0       	ldi	r24, 0x03	; 3
+     cd0:	2b c0       	rjmp	.+86     	; 0xd28 <twi_write+0x76>
+	//Clear TWINT to start transmission
+	TWCR = (1 << TWINT) | (1 << TWEN);
+	//Wait for TWINT Flag; -> DATA transmitted and ACK/NACK received.
+uint8_t timeout = timeoutValue;
+while( !(TWCR & (1<<TWINT)) ){
+	if (timeout > 0)
+     cd2:	81 11       	cpse	r24, r1
+     cd4:	03 c0       	rjmp	.+6      	; 0xcdc <twi_write+0x2a>
+     cd6:	25 c0       	rjmp	.+74     	; 0xd22 <twi_write+0x70>
+	TWDR = data;
+	//Clear TWINT to start transmission
+	TWCR = (1 << TWINT) | (1 << TWEN);
+	//Wait for TWINT Flag; -> DATA transmitted and ACK/NACK received.
+uint8_t timeout = timeoutValue;
+while( !(TWCR & (1<<TWINT)) ){
+     cd8:	ec eb       	ldi	r30, 0xBC	; 188
+     cda:	f0 e0       	ldi	r31, 0x00	; 0
+     cdc:	95 e8       	ldi	r25, 0x85	; 133
+     cde:	9a 95       	dec	r25
+     ce0:	f1 f7       	brne	.-4      	; 0xcde <twi_write+0x2c>
+     ce2:	00 00       	nop
+	if (timeout > 0)
+	{
+		_delay_us(TIMEOUT_DELAYWERT);
+		timeout--;
+     ce4:	81 50       	subi	r24, 0x01	; 1
+	TWDR = data;
+	//Clear TWINT to start transmission
+	TWCR = (1 << TWINT) | (1 << TWEN);
+	//Wait for TWINT Flag; -> DATA transmitted and ACK/NACK received.
+uint8_t timeout = timeoutValue;
+while( !(TWCR & (1<<TWINT)) ){
+     ce6:	90 81       	ld	r25, Z
+     ce8:	99 23       	and	r25, r25
+     cea:	9c f7       	brge	.-26     	; 0xcd2 <twi_write+0x20>
+	{
+		return TWI_TIMEOUT_ERROR;
+	}
+}
+	//Check TWI Status;
+	if (TW_STATUS == TW_MT_DATA_ACK ){ 
+     cec:	80 91 b9 00 	lds	r24, 0x00B9
+     cf0:	88 7f       	andi	r24, 0xF8	; 248
+     cf2:	88 32       	cpi	r24, 0x28	; 40
+     cf4:	c1 f0       	breq	.+48     	; 0xd26 <twi_write+0x74>
+		return TWI_WRITE_OK;
+	}
+	if (TW_STATUS == TW_MR_DATA_NACK)
+     cf6:	80 91 b9 00 	lds	r24, 0x00B9
+     cfa:	88 7f       	andi	r24, 0xF8	; 248
+     cfc:	88 35       	cpi	r24, 0x58	; 88
+     cfe:	41 f4       	brne	.+16     	; 0xd10 <twi_write+0x5e>
+	{
+		uint8_t status = TW_STATUS;
+     d00:	80 91 b9 00 	lds	r24, 0x00B9
+     d04:	c8 2f       	mov	r28, r24
+     d06:	c8 7f       	andi	r28, 0xF8	; 248
+		twi_stop();
+     d08:	0e 94 ef 05 	call	0xbde	; 0xbde <twi_stop>
+		return status;
+     d0c:	8c 2f       	mov	r24, r28
+     d0e:	0c c0       	rjmp	.+24     	; 0xd28 <twi_write+0x76>
+	} 
+	else
+	{
+		uint8_t status = TW_STATUS;
+     d10:	80 91 b9 00 	lds	r24, 0x00B9
+	TWCR = (1<<TWEN) | (1<<TWEA);
+}
+
+static void twi_lockUp(){
+	//Release SDA and SCL to high
+	TWCR =0;
+     d14:	ec eb       	ldi	r30, 0xBC	; 188
+     d16:	f0 e0       	ldi	r31, 0x00	; 0
+     d18:	10 82       	st	Z, r1
+	TWCR = (1<<TWEN) | (1<<TWEA);
+     d1a:	94 e4       	ldi	r25, 0x44	; 68
+     d1c:	90 83       	st	Z, r25
+	} 
+	else
+	{
+		uint8_t status = TW_STATUS;
+		twi_lockUp();
+		return status;
+     d1e:	88 7f       	andi	r24, 0xF8	; 248
+     d20:	03 c0       	rjmp	.+6      	; 0xd28 <twi_write+0x76>
+		_delay_us(TIMEOUT_DELAYWERT);
+		timeout--;
+	}
+	else
+	{
+		return TWI_TIMEOUT_ERROR;
+     d22:	83 e0       	ldi	r24, 0x03	; 3
+     d24:	01 c0       	rjmp	.+2      	; 0xd28 <twi_write+0x76>
+	}
+}
+	//Check TWI Status;
+	if (TW_STATUS == TW_MT_DATA_ACK ){ 
+		return TWI_WRITE_OK;
+     d26:	80 e0       	ldi	r24, 0x00	; 0
+		uint8_t status = TW_STATUS;
+		twi_lockUp();
+		return status;
+		
+	}
+}
+     d28:	cf 91       	pop	r28
+     d2a:	08 95       	ret
+
+00000d2c <twi_init>:
+ *  This function inizialize the TWI-communication.
+ */
+void twi_init(void){
+	
+	//Initialize twi Prescaler
+	TWSR |= (0 << TWPS0);
+     d2c:	e9 eb       	ldi	r30, 0xB9	; 185
+     d2e:	f0 e0       	ldi	r31, 0x00	; 0
+     d30:	80 81       	ld	r24, Z
+     d32:	80 83       	st	Z, r24
+	TWSR |= (0 << TWPS1);
+     d34:	80 81       	ld	r24, Z
+     d36:	80 83       	st	Z, r24
+	
+	//TWBR Abhängig von F_CPU, daher per Define berechnet
+	//set SCL to 100kHz
+	TWBR = TWBR_val;
+     d38:	88 e4       	ldi	r24, 0x48	; 72
+     d3a:	80 93 b8 00 	sts	0x00B8, r24
+	
+	//Enable TWI anc ACKS
+	TWCR = (1<<TWEN) | (1<<TWEA);
+     d3e:	84 e4       	ldi	r24, 0x44	; 68
+     d40:	80 93 bc 00 	sts	0x00BC, r24
+     d44:	08 95       	ret
+
+00000d46 <twi_get_status>:
+ *
+ *  Get the Status of the TWI/I2C Communication. Status are the upper 5 Bits
+ */
+uint8_t twi_get_status(void){
+	//status with mask. 
+	return TW_STATUS;	
+     d46:	80 91 b9 00 	lds	r24, 0x00B9
+}
+     d4a:	88 7f       	andi	r24, 0xF8	; 248
+     d4c:	08 95       	ret
+
+00000d4e <twi_start>:
+}
+
+//Start TWI Communication
+static uint8_t twi_start(){
+	
+	uint8_t status = twi_get_status();
+     d4e:	0e 94 a3 06 	call	0xd46	; 0xd46 <twi_get_status>
+	//uint8_t timeout =0;
+	//Send Start condition
+	TWCR |= (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+     d52:	ec eb       	ldi	r30, 0xBC	; 188
+     d54:	f0 e0       	ldi	r31, 0x00	; 0
+     d56:	80 81       	ld	r24, Z
+     d58:	84 6a       	ori	r24, 0xA4	; 164
+     d5a:	80 83       	st	Z, r24
+	//Wait for TWINT Flag set; -> Start condition has been transmitted
+	uint8_t timeout = timeoutValue;
+     d5c:	80 91 01 01 	lds	r24, 0x0101
+	while( !(TWCR & (1<<TWINT)) ){
+     d60:	90 81       	ld	r25, Z
+     d62:	99 23       	and	r25, r25
+     d64:	8c f0       	brlt	.+34     	; 0xd88 <twi_start+0x3a>
+		if (timeout > 0)
+     d66:	81 11       	cpse	r24, r1
+     d68:	05 c0       	rjmp	.+10     	; 0xd74 <twi_start+0x26>
+			_delay_us(TIMEOUT_DELAYWERT);
+			timeout--;
+		}
+		else
+		{
+			return TWI_CONNECTION_ERROR;
+     d6a:	85 e0       	ldi	r24, 0x05	; 5
+     d6c:	08 95       	ret
+	//Send Start condition
+	TWCR |= (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+	//Wait for TWINT Flag set; -> Start condition has been transmitted
+	uint8_t timeout = timeoutValue;
+	while( !(TWCR & (1<<TWINT)) ){
+		if (timeout > 0)
+     d6e:	81 11       	cpse	r24, r1
+     d70:	03 c0       	rjmp	.+6      	; 0xd78 <twi_start+0x2a>
+     d72:	18 c0       	rjmp	.+48     	; 0xda4 <twi_start+0x56>
+	//uint8_t timeout =0;
+	//Send Start condition
+	TWCR |= (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+	//Wait for TWINT Flag set; -> Start condition has been transmitted
+	uint8_t timeout = timeoutValue;
+	while( !(TWCR & (1<<TWINT)) ){
+     d74:	ec eb       	ldi	r30, 0xBC	; 188
+     d76:	f0 e0       	ldi	r31, 0x00	; 0
+     d78:	95 e8       	ldi	r25, 0x85	; 133
+     d7a:	9a 95       	dec	r25
+     d7c:	f1 f7       	brne	.-4      	; 0xd7a <twi_start+0x2c>
+     d7e:	00 00       	nop
+		if (timeout > 0)
+		{
+			_delay_us(TIMEOUT_DELAYWERT);
+			timeout--;
+     d80:	81 50       	subi	r24, 0x01	; 1
+	//uint8_t timeout =0;
+	//Send Start condition
+	TWCR |= (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+	//Wait for TWINT Flag set; -> Start condition has been transmitted
+	uint8_t timeout = timeoutValue;
+	while( !(TWCR & (1<<TWINT)) ){
+     d82:	90 81       	ld	r25, Z
+     d84:	99 23       	and	r25, r25
+     d86:	9c f7       	brge	.-26     	; 0xd6e <twi_start+0x20>
+			return TWI_CONNECTION_ERROR;
+		}
+	}
+	
+
+	status = twi_get_status();
+     d88:	0e 94 a3 06 	call	0xd46	; 0xd46 <twi_get_status>
+	if ((status == TW_START) || (status == TW_REP_START))
+     d8c:	88 30       	cpi	r24, 0x08	; 8
+     d8e:	61 f0       	breq	.+24     	; 0xda8 <twi_start+0x5a>
+     d90:	80 31       	cpi	r24, 0x10	; 16
+     d92:	61 f0       	breq	.+24     	; 0xdac <twi_start+0x5e>
+	{
+		return TWI_OK;
+	}
+	else
+	{
+		if (status == TW_MT_ARB_LOST)
+     d94:	88 33       	cpi	r24, 0x38	; 56
+     d96:	59 f4       	brne	.+22     	; 0xdae <twi_start+0x60>
+	TWCR = (1<<TWEN) | (1<<TWEA);
+}
+
+static void twi_lockUp(){
+	//Release SDA and SCL to high
+	TWCR =0;
+     d98:	ec eb       	ldi	r30, 0xBC	; 188
+     d9a:	f0 e0       	ldi	r31, 0x00	; 0
+     d9c:	10 82       	st	Z, r1
+	TWCR = (1<<TWEN) | (1<<TWEA);
+     d9e:	94 e4       	ldi	r25, 0x44	; 68
+     da0:	90 83       	st	Z, r25
+     da2:	08 95       	ret
+			_delay_us(TIMEOUT_DELAYWERT);
+			timeout--;
+		}
+		else
+		{
+			return TWI_CONNECTION_ERROR;
+     da4:	85 e0       	ldi	r24, 0x05	; 5
+     da6:	08 95       	ret
+	
+
+	status = twi_get_status();
+	if ((status == TW_START) || (status == TW_REP_START))
+	{
+		return TWI_OK;
+     da8:	80 e0       	ldi	r24, 0x00	; 0
+     daa:	08 95       	ret
+     dac:	80 e0       	ldi	r24, 0x00	; 0
+		else
+		{
+			return status;
+		}
+	}
+}
+     dae:	08 95       	ret
+
+00000db0 <twi_writeReg>:
+ *	\param regaddr Address of the Register
+ *	\param data	Data to write
+ *
+ */
+uint8_t twi_writeReg(uint8_t devaddr, uint8_t regaddr, uint8_t data)
+{
+     db0:	1f 93       	push	r17
+     db2:	cf 93       	push	r28
+     db4:	df 93       	push	r29
+     db6:	c8 2f       	mov	r28, r24
+     db8:	d6 2f       	mov	r29, r22
+     dba:	14 2f       	mov	r17, r20
+	//Start TWI/I2C Communication
+	uint8_t error =0;
+	error = twi_start();
+     dbc:	0e 94 a7 06 	call	0xd4e	; 0xd4e <twi_start>
+	if (error != TWI_OK) {
+     dc0:	81 11       	cpse	r24, r1
+     dc2:	12 c0       	rjmp	.+36     	; 0xde8 <twi_writeReg+0x38>
+		return error;
+	}
+	//Device-Address with write
+	error = twi_sendAdress(devaddr<<1);
+     dc4:	8c 2f       	mov	r24, r28
+     dc6:	88 0f       	add	r24, r24
+     dc8:	0e 94 10 06 	call	0xc20	; 0xc20 <twi_sendAdress>
+	if (error != TWI_OK)
+     dcc:	81 11       	cpse	r24, r1
+     dce:	0c c0       	rjmp	.+24     	; 0xde8 <twi_writeReg+0x38>
+	{
+		return error;
+	}
+	//Send Register-Address for Write-Operation to Device
+	error = twi_write(regaddr);
+     dd0:	8d 2f       	mov	r24, r29
+     dd2:	0e 94 59 06 	call	0xcb2	; 0xcb2 <twi_write>
+	if (error != TWI_WRITE_OK)
+     dd6:	81 11       	cpse	r24, r1
+     dd8:	07 c0       	rjmp	.+14     	; 0xde8 <twi_writeReg+0x38>
+	{
+		return error;
+	}
+	
+	//Send Value to Device
+	error = twi_write(data);
+     dda:	81 2f       	mov	r24, r17
+     ddc:	0e 94 59 06 	call	0xcb2	; 0xcb2 <twi_write>
+	if (error != TWI_WRITE_OK){
+     de0:	81 11       	cpse	r24, r1
+     de2:	02 c0       	rjmp	.+4      	; 0xde8 <twi_writeReg+0x38>
+		return error;
+	}
+	//End TWI/I2C Communication
+	error = twi_stop();
+     de4:	0e 94 ef 05 	call	0xbde	; 0xbde <twi_stop>
+	if (error != TWI_STOP_OK) {
+		return error;
+	}
+	return TWI_WRITE_REG_OK;
+}
+     de8:	df 91       	pop	r29
+     dea:	cf 91       	pop	r28
+     dec:	1f 91       	pop	r17
+     dee:	08 95       	ret
+
+00000df0 <twi_readReg>:
+ *	\param regaddr	Address of the Register
+ *	\param data		Pointer for saving point of the data
+ *	\param length	Length of byte to read
+ */
+uint8_t twi_readReg(uint8_t devaddr, uint8_t regaddr, uint8_t* data, uint8_t length)
+{
+     df0:	cf 92       	push	r12
+     df2:	df 92       	push	r13
+     df4:	ff 92       	push	r15
+     df6:	0f 93       	push	r16
+     df8:	1f 93       	push	r17
+     dfa:	cf 93       	push	r28
+     dfc:	df 93       	push	r29
+     dfe:	c8 2f       	mov	r28, r24
+     e00:	16 2f       	mov	r17, r22
+     e02:	f4 2e       	mov	r15, r20
+     e04:	05 2f       	mov	r16, r21
+     e06:	d2 2f       	mov	r29, r18
+	//Start TWI/I2C Communication (Write-Mode)
+	uint8_t nack = length -1;
+	uint8_t error =0;
+	error = twi_start();
+     e08:	0e 94 a7 06 	call	0xd4e	; 0xd4e <twi_start>
+	if (error) {
+     e0c:	81 11       	cpse	r24, r1
+     e0e:	76 c0       	rjmp	.+236    	; 0xefc <twi_readReg+0x10c>
+		return error;
+	}
+	//Device-Address with write
+	error = twi_sendAdress(devaddr<<1);
+     e10:	cc 0f       	add	r28, r28
+     e12:	8c 2f       	mov	r24, r28
+     e14:	0e 94 10 06 	call	0xc20	; 0xc20 <twi_sendAdress>
+	if (error)
+     e18:	81 11       	cpse	r24, r1
+     e1a:	70 c0       	rjmp	.+224    	; 0xefc <twi_readReg+0x10c>
+	{
+		return error;
+	}
+	//Send Register-Address for Read-Operation to Device
+	error = twi_write(regaddr);
+     e1c:	81 2f       	mov	r24, r17
+     e1e:	0e 94 59 06 	call	0xcb2	; 0xcb2 <twi_write>
+	if (error)
+     e22:	81 11       	cpse	r24, r1
+     e24:	6b c0       	rjmp	.+214    	; 0xefc <twi_readReg+0x10c>
+	{
+		return error;
+	}
+	
+	error = twi_start();
+     e26:	0e 94 a7 06 	call	0xd4e	; 0xd4e <twi_start>
+	if (error) {
+     e2a:	81 11       	cpse	r24, r1
+     e2c:	67 c0       	rjmp	.+206    	; 0xefc <twi_readReg+0x10c>
+		return error;
+	}
+	
+	//Switch Communication to Read-Mode
+	error = twi_sendAdress((devaddr<<1) + 0x01);
+     e2e:	81 e0       	ldi	r24, 0x01	; 1
+     e30:	8c 0f       	add	r24, r28
+     e32:	0e 94 10 06 	call	0xc20	; 0xc20 <twi_sendAdress>
+	if (error) {
+     e36:	81 11       	cpse	r24, r1
+     e38:	61 c0       	rjmp	.+194    	; 0xefc <twi_readReg+0x10c>
+		return error;
+	}
+	
+	//Read Values from Device
+	for (uint8_t i = 0; i < (length); i++)
+     e3a:	dd 23       	and	r29, r29
+     e3c:	09 f4       	brne	.+2      	; 0xe40 <twi_readReg+0x50>
+     e3e:	5a c0       	rjmp	.+180    	; 0xef4 <twi_readReg+0x104>
+     e40:	cf 2c       	mov	r12, r15
+     e42:	d0 2e       	mov	r13, r16
+     e44:	60 e0       	ldi	r22, 0x00	; 0
+ *	\param length	Length of byte to read
+ */
+uint8_t twi_readReg(uint8_t devaddr, uint8_t regaddr, uint8_t* data, uint8_t length)
+{
+	//Start TWI/I2C Communication (Write-Mode)
+	uint8_t nack = length -1;
+     e46:	cf ef       	ldi	r28, 0xFF	; 255
+     e48:	cd 0f       	add	r28, r29
+}
+
+//Read with ACK signal
+static uint8_t twi_read_ack(void){
+	//READ with ACK
+	TWCR = ((1<<TWINT) | (1<<TWEN) | (1<<TWEA));
+     e4a:	ec eb       	ldi	r30, 0xBC	; 188
+     e4c:	f0 e0       	ldi	r31, 0x00	; 0
+     e4e:	74 ec       	ldi	r23, 0xC4	; 196
+	{
+		return TWI_TIMEOUT_ERROR;
+	}
+}
+	
+	if (TW_STATUS == TW_MT_ARB_LOST)
+     e50:	29 eb       	ldi	r18, 0xB9	; 185
+     e52:	30 e0       	ldi	r19, 0x00	; 0
+}
+
+static void twi_lockUp(){
+	//Release SDA and SCL to high
+	TWCR =0;
+	TWCR = (1<<TWEN) | (1<<TWEA);
+     e54:	14 e4       	ldi	r17, 0x44	; 68
+}
+
+//Read without ACK signal
+static uint8_t twi_read_nack(void){
+	//READ without ACK
+	TWCR = ((1<<TWINT) | (1<<TWEN));
+     e56:	04 e8       	ldi	r16, 0x84	; 132
+			if (error != TW_MR_DATA_ACK)
+			{
+				return error;
+			}
+		}
+		data[i] = TWDR;
+     e58:	4b eb       	ldi	r20, 0xBB	; 187
+     e5a:	50 e0       	ldi	r21, 0x00	; 0
+	}
+	
+	//Read Values from Device
+	for (uint8_t i = 0; i < (length); i++)
+	{
+		if (i == nack)
+     e5c:	6c 13       	cpse	r22, r28
+     e5e:	20 c0       	rjmp	.+64     	; 0xea0 <twi_readReg+0xb0>
+}
+
+//Read without ACK signal
+static uint8_t twi_read_nack(void){
+	//READ without ACK
+	TWCR = ((1<<TWINT) | (1<<TWEN));
+     e60:	00 83       	st	Z, r16
+uint8_t timeout = timeoutValue;
+     e62:	80 91 01 01 	lds	r24, 0x0101
+     e66:	07 c0       	rjmp	.+14     	; 0xe76 <twi_readReg+0x86>
+while( !(TWCR & (1<<TWINT)) ){
+	if (timeout > 0)
+     e68:	88 23       	and	r24, r24
+     e6a:	c1 f0       	breq	.+48     	; 0xe9c <twi_readReg+0xac>
+     e6c:	95 e8       	ldi	r25, 0x85	; 133
+     e6e:	9a 95       	dec	r25
+     e70:	f1 f7       	brne	.-4      	; 0xe6e <twi_readReg+0x7e>
+     e72:	00 00       	nop
+	{
+		_delay_us(TIMEOUT_DELAYWERT);
+		timeout--;
+     e74:	81 50       	subi	r24, 0x01	; 1
+//Read without ACK signal
+static uint8_t twi_read_nack(void){
+	//READ without ACK
+	TWCR = ((1<<TWINT) | (1<<TWEN));
+uint8_t timeout = timeoutValue;
+while( !(TWCR & (1<<TWINT)) ){
+     e76:	90 81       	ld	r25, Z
+     e78:	99 23       	and	r25, r25
+     e7a:	b4 f7       	brge	.-20     	; 0xe68 <twi_readReg+0x78>
+	{
+		return TWI_TIMEOUT_ERROR;
+	}
+}
+	
+	if (TW_STATUS == TW_MT_ARB_LOST)
+     e7c:	d9 01       	movw	r26, r18
+     e7e:	8c 91       	ld	r24, X
+     e80:	88 7f       	andi	r24, 0xF8	; 248
+     e82:	88 33       	cpi	r24, 0x38	; 56
+     e84:	29 f4       	brne	.+10     	; 0xe90 <twi_readReg+0xa0>
+	{
+		uint8_t status = TW_STATUS;
+     e86:	8c 91       	ld	r24, X
+     e88:	88 7f       	andi	r24, 0xF8	; 248
+	TWCR = (1<<TWEN) | (1<<TWEA);
+}
+
+static void twi_lockUp(){
+	//Release SDA and SCL to high
+	TWCR =0;
+     e8a:	10 82       	st	Z, r1
+	TWCR = (1<<TWEN) | (1<<TWEA);
+     e8c:	10 83       	st	Z, r17
+     e8e:	03 c0       	rjmp	.+6      	; 0xe96 <twi_readReg+0xa6>
+		twi_lockUp();
+		return status;
+	}
+	
+	//Return Status
+	return TW_STATUS;
+     e90:	d9 01       	movw	r26, r18
+     e92:	8c 91       	ld	r24, X
+     e94:	88 7f       	andi	r24, 0xF8	; 248
+	for (uint8_t i = 0; i < (length); i++)
+	{
+		if (i == nack)
+		{
+			error = twi_read_nack();
+			if (error != TW_MR_DATA_NACK)
+     e96:	88 35       	cpi	r24, 0x58	; 88
+     e98:	29 f1       	breq	.+74     	; 0xee4 <twi_readReg+0xf4>
+     e9a:	30 c0       	rjmp	.+96     	; 0xefc <twi_readReg+0x10c>
+		_delay_us(TIMEOUT_DELAYWERT);
+		timeout--;
+	}
+	else
+	{
+		return TWI_TIMEOUT_ERROR;
+     e9c:	83 e0       	ldi	r24, 0x03	; 3
+		if (i == nack)
+		{
+			error = twi_read_nack();
+			if (error != TW_MR_DATA_NACK)
+			{
+				return error;
+     e9e:	2e c0       	rjmp	.+92     	; 0xefc <twi_readReg+0x10c>
+}
+
+//Read with ACK signal
+static uint8_t twi_read_ack(void){
+	//READ with ACK
+	TWCR = ((1<<TWINT) | (1<<TWEN) | (1<<TWEA));
+     ea0:	70 83       	st	Z, r23
+uint8_t timeout = timeoutValue;
+     ea2:	80 91 01 01 	lds	r24, 0x0101
+while( !(TWCR & (1<<TWINT)) ){
+     ea6:	90 81       	ld	r25, Z
+     ea8:	99 23       	and	r25, r25
+     eaa:	6c f0       	brlt	.+26     	; 0xec6 <twi_readReg+0xd6>
+	if (timeout > 0)
+     eac:	81 11       	cpse	r24, r1
+     eae:	03 c0       	rjmp	.+6      	; 0xeb6 <twi_readReg+0xc6>
+     eb0:	24 c0       	rjmp	.+72     	; 0xefa <twi_readReg+0x10a>
+     eb2:	88 23       	and	r24, r24
+     eb4:	11 f1       	breq	.+68     	; 0xefa <twi_readReg+0x10a>
+     eb6:	b5 e8       	ldi	r27, 0x85	; 133
+     eb8:	ba 95       	dec	r27
+     eba:	f1 f7       	brne	.-4      	; 0xeb8 <twi_readReg+0xc8>
+     ebc:	00 00       	nop
+	{
+		_delay_us(TIMEOUT_DELAYWERT);
+		timeout--;
+     ebe:	81 50       	subi	r24, 0x01	; 1
+//Read with ACK signal
+static uint8_t twi_read_ack(void){
+	//READ with ACK
+	TWCR = ((1<<TWINT) | (1<<TWEN) | (1<<TWEA));
+uint8_t timeout = timeoutValue;
+while( !(TWCR & (1<<TWINT)) ){
+     ec0:	90 81       	ld	r25, Z
+     ec2:	99 23       	and	r25, r25
+     ec4:	b4 f7       	brge	.-20     	; 0xeb2 <twi_readReg+0xc2>
+	{
+		return TWI_TIMEOUT_ERROR;
+	}
+}
+	
+	if (TW_STATUS == TW_MT_ARB_LOST)
+     ec6:	d9 01       	movw	r26, r18
+     ec8:	8c 91       	ld	r24, X
+     eca:	88 7f       	andi	r24, 0xF8	; 248
+     ecc:	88 33       	cpi	r24, 0x38	; 56
+     ece:	29 f4       	brne	.+10     	; 0xeda <twi_readReg+0xea>
+	{
+		uint8_t status = TW_STATUS;
+     ed0:	8c 91       	ld	r24, X
+     ed2:	88 7f       	andi	r24, 0xF8	; 248
+	TWCR = (1<<TWEN) | (1<<TWEA);
+}
+
+static void twi_lockUp(){
+	//Release SDA and SCL to high
+	TWCR =0;
+     ed4:	10 82       	st	Z, r1
+	TWCR = (1<<TWEN) | (1<<TWEA);
+     ed6:	10 83       	st	Z, r17
+     ed8:	03 c0       	rjmp	.+6      	; 0xee0 <twi_readReg+0xf0>
+		twi_lockUp();
+		return status;
+	}
+	
+	//Return Status
+	return TW_STATUS;
+     eda:	d9 01       	movw	r26, r18
+     edc:	8c 91       	ld	r24, X
+     ede:	88 7f       	andi	r24, 0xF8	; 248
+			}
+		} 
+		else
+		{
+			error = twi_read_ack();
+			if (error != TW_MR_DATA_ACK)
+     ee0:	80 35       	cpi	r24, 0x50	; 80
+     ee2:	61 f4       	brne	.+24     	; 0xefc <twi_readReg+0x10c>
+			{
+				return error;
+			}
+		}
+		data[i] = TWDR;
+     ee4:	da 01       	movw	r26, r20
+     ee6:	8c 91       	ld	r24, X
+     ee8:	d6 01       	movw	r26, r12
+     eea:	8d 93       	st	X+, r24
+     eec:	6d 01       	movw	r12, r26
+	if (error) {
+		return error;
+	}
+	
+	//Read Values from Device
+	for (uint8_t i = 0; i < (length); i++)
+     eee:	6f 5f       	subi	r22, 0xFF	; 255
+     ef0:	6d 13       	cpse	r22, r29
+     ef2:	b4 cf       	rjmp	.-152    	; 0xe5c <twi_readReg+0x6c>
+			}
+		}
+		data[i] = TWDR;
+	}
+	//Stop Communication
+	error = twi_stop();
+     ef4:	0e 94 ef 05 	call	0xbde	; 0xbde <twi_stop>
+     ef8:	01 c0       	rjmp	.+2      	; 0xefc <twi_readReg+0x10c>
+		_delay_us(TIMEOUT_DELAYWERT);
+		timeout--;
+	}
+	else
+	{
+		return TWI_TIMEOUT_ERROR;
+     efa:	83 e0       	ldi	r24, 0x03	; 3
+	if (error != TWI_STOP_OK)
+	{
+		return error;
+	}
+	return TWI_READ_REG_OK;
+}
+     efc:	df 91       	pop	r29
+     efe:	cf 91       	pop	r28
+     f00:	1f 91       	pop	r17
+     f02:	0f 91       	pop	r16
+     f04:	ff 90       	pop	r15
+     f06:	df 90       	pop	r13
+     f08:	cf 90       	pop	r12
+     f0a:	08 95       	ret
+
+00000f0c <__udivmodhi4>:
+     f0c:	aa 1b       	sub	r26, r26
+     f0e:	bb 1b       	sub	r27, r27
+     f10:	51 e1       	ldi	r21, 0x11	; 17
+     f12:	07 c0       	rjmp	.+14     	; 0xf22 <__udivmodhi4_ep>
+
+00000f14 <__udivmodhi4_loop>:
+     f14:	aa 1f       	adc	r26, r26
+     f16:	bb 1f       	adc	r27, r27
+     f18:	a6 17       	cp	r26, r22
+     f1a:	b7 07       	cpc	r27, r23
+     f1c:	10 f0       	brcs	.+4      	; 0xf22 <__udivmodhi4_ep>
+     f1e:	a6 1b       	sub	r26, r22
+     f20:	b7 0b       	sbc	r27, r23
+
+00000f22 <__udivmodhi4_ep>:
+     f22:	88 1f       	adc	r24, r24
+     f24:	99 1f       	adc	r25, r25
+     f26:	5a 95       	dec	r21
+     f28:	a9 f7       	brne	.-22     	; 0xf14 <__udivmodhi4_loop>
+     f2a:	80 95       	com	r24
+     f2c:	90 95       	com	r25
+     f2e:	bc 01       	movw	r22, r24
+     f30:	cd 01       	movw	r24, r26
+     f32:	08 95       	ret
+
+00000f34 <__divmodhi4>:
+     f34:	97 fb       	bst	r25, 7
+     f36:	07 2e       	mov	r0, r23
+     f38:	16 f4       	brtc	.+4      	; 0xf3e <__divmodhi4+0xa>
+     f3a:	00 94       	com	r0
+     f3c:	07 d0       	rcall	.+14     	; 0xf4c <__divmodhi4_neg1>
+     f3e:	77 fd       	sbrc	r23, 7
+     f40:	09 d0       	rcall	.+18     	; 0xf54 <__divmodhi4_neg2>
+     f42:	0e 94 86 07 	call	0xf0c	; 0xf0c <__udivmodhi4>
+     f46:	07 fc       	sbrc	r0, 7
+     f48:	05 d0       	rcall	.+10     	; 0xf54 <__divmodhi4_neg2>
+     f4a:	3e f4       	brtc	.+14     	; 0xf5a <__divmodhi4_exit>
+
+00000f4c <__divmodhi4_neg1>:
+     f4c:	90 95       	com	r25
+     f4e:	81 95       	neg	r24
+     f50:	9f 4f       	sbci	r25, 0xFF	; 255
+     f52:	08 95       	ret
+
+00000f54 <__divmodhi4_neg2>:
+     f54:	70 95       	com	r23
+     f56:	61 95       	neg	r22
+     f58:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000f5a <__divmodhi4_exit>:
+     f5a:	08 95       	ret
+
+00000f5c <__tablejump2__>:
+     f5c:	ee 0f       	add	r30, r30
+     f5e:	ff 1f       	adc	r31, r31
+     f60:	05 90       	lpm	r0, Z+
+     f62:	f4 91       	lpm	r31, Z
+     f64:	e0 2d       	mov	r30, r0
+     f66:	09 94       	ijmp
+
+00000f68 <abort>:
+     f68:	81 e0       	ldi	r24, 0x01	; 1
+     f6a:	90 e0       	ldi	r25, 0x00	; 0
+     f6c:	f8 94       	cli
+     f6e:	0c 94 14 08 	jmp	0x1028	; 0x1028 <_exit>
+
+00000f72 <atoi>:
+     f72:	fc 01       	movw	r30, r24
+     f74:	88 27       	eor	r24, r24
+     f76:	99 27       	eor	r25, r25
+     f78:	e8 94       	clt
+     f7a:	21 91       	ld	r18, Z+
+     f7c:	20 32       	cpi	r18, 0x20	; 32
+     f7e:	e9 f3       	breq	.-6      	; 0xf7a <atoi+0x8>
+     f80:	29 30       	cpi	r18, 0x09	; 9
+     f82:	10 f0       	brcs	.+4      	; 0xf88 <atoi+0x16>
+     f84:	2e 30       	cpi	r18, 0x0E	; 14
+     f86:	c8 f3       	brcs	.-14     	; 0xf7a <atoi+0x8>
+     f88:	2b 32       	cpi	r18, 0x2B	; 43
+     f8a:	41 f0       	breq	.+16     	; 0xf9c <atoi+0x2a>
+     f8c:	2d 32       	cpi	r18, 0x2D	; 45
+     f8e:	39 f4       	brne	.+14     	; 0xf9e <atoi+0x2c>
+     f90:	68 94       	set
+     f92:	04 c0       	rjmp	.+8      	; 0xf9c <atoi+0x2a>
+     f94:	0e 94 e2 07 	call	0xfc4	; 0xfc4 <__mulhi_const_10>
+     f98:	82 0f       	add	r24, r18
+     f9a:	91 1d       	adc	r25, r1
+     f9c:	21 91       	ld	r18, Z+
+     f9e:	20 53       	subi	r18, 0x30	; 48
+     fa0:	2a 30       	cpi	r18, 0x0A	; 10
+     fa2:	c0 f3       	brcs	.-16     	; 0xf94 <atoi+0x22>
+     fa4:	1e f4       	brtc	.+6      	; 0xfac <atoi+0x3a>
+     fa6:	90 95       	com	r25
+     fa8:	81 95       	neg	r24
+     faa:	9f 4f       	sbci	r25, 0xFF	; 255
+     fac:	08 95       	ret
+
+00000fae <__itoa_ncheck>:
+     fae:	bb 27       	eor	r27, r27
+     fb0:	4a 30       	cpi	r20, 0x0A	; 10
+     fb2:	31 f4       	brne	.+12     	; 0xfc0 <__itoa_ncheck+0x12>
+     fb4:	99 23       	and	r25, r25
+     fb6:	22 f4       	brpl	.+8      	; 0xfc0 <__itoa_ncheck+0x12>
+     fb8:	bd e2       	ldi	r27, 0x2D	; 45
+     fba:	90 95       	com	r25
+     fbc:	81 95       	neg	r24
+     fbe:	9f 4f       	sbci	r25, 0xFF	; 255
+     fc0:	0c 94 eb 07 	jmp	0xfd6	; 0xfd6 <__utoa_common>
+
+00000fc4 <__mulhi_const_10>:
+     fc4:	7a e0       	ldi	r23, 0x0A	; 10
+     fc6:	97 9f       	mul	r25, r23
+     fc8:	90 2d       	mov	r25, r0
+     fca:	87 9f       	mul	r24, r23
+     fcc:	80 2d       	mov	r24, r0
+     fce:	91 0d       	add	r25, r1
+     fd0:	11 24       	eor	r1, r1
+     fd2:	08 95       	ret
+
+00000fd4 <__utoa_ncheck>:
+     fd4:	bb 27       	eor	r27, r27
+
+00000fd6 <__utoa_common>:
+     fd6:	fb 01       	movw	r30, r22
+     fd8:	55 27       	eor	r21, r21
+     fda:	aa 27       	eor	r26, r26
+     fdc:	88 0f       	add	r24, r24
+     fde:	99 1f       	adc	r25, r25
+     fe0:	aa 1f       	adc	r26, r26
+     fe2:	a4 17       	cp	r26, r20
+     fe4:	10 f0       	brcs	.+4      	; 0xfea <__utoa_common+0x14>
+     fe6:	a4 1b       	sub	r26, r20
+     fe8:	83 95       	inc	r24
+     fea:	50 51       	subi	r21, 0x10	; 16
+     fec:	b9 f7       	brne	.-18     	; 0xfdc <__utoa_common+0x6>
+     fee:	a0 5d       	subi	r26, 0xD0	; 208
+     ff0:	aa 33       	cpi	r26, 0x3A	; 58
+     ff2:	08 f0       	brcs	.+2      	; 0xff6 <__utoa_common+0x20>
+     ff4:	a9 5d       	subi	r26, 0xD9	; 217
+     ff6:	a1 93       	st	Z+, r26
+     ff8:	00 97       	sbiw	r24, 0x00	; 0
+     ffa:	79 f7       	brne	.-34     	; 0xfda <__utoa_common+0x4>
+     ffc:	b1 11       	cpse	r27, r1
+     ffe:	b1 93       	st	Z+, r27
+    1000:	11 92       	st	Z+, r1
+    1002:	cb 01       	movw	r24, r22
+    1004:	0c 94 04 08 	jmp	0x1008	; 0x1008 <strrev>
+
+00001008 <strrev>:
+    1008:	dc 01       	movw	r26, r24
+    100a:	fc 01       	movw	r30, r24
+    100c:	67 2f       	mov	r22, r23
+    100e:	71 91       	ld	r23, Z+
+    1010:	77 23       	and	r23, r23
+    1012:	e1 f7       	brne	.-8      	; 0x100c <strrev+0x4>
+    1014:	32 97       	sbiw	r30, 0x02	; 2
+    1016:	04 c0       	rjmp	.+8      	; 0x1020 <strrev+0x18>
+    1018:	7c 91       	ld	r23, X
+    101a:	6d 93       	st	X+, r22
+    101c:	70 83       	st	Z, r23
+    101e:	62 91       	ld	r22, -Z
+    1020:	ae 17       	cp	r26, r30
+    1022:	bf 07       	cpc	r27, r31
+    1024:	c8 f3       	brcs	.-14     	; 0x1018 <strrev+0x10>
+    1026:	08 95       	ret
+
+00001028 <_exit>:
+    1028:	f8 94       	cli
+
+0000102a <__stop_program>:
+    102a:	ff cf       	rjmp	.-2      	; 0x102a <__stop_program>
